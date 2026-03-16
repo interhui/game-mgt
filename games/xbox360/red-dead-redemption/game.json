@@ -1,0 +1,20 @@
+{
+    "id": "xbox360-red-dead-redemption",
+    "name": "Red Dead Redemption",
+    "description": "开放世界西部动作冒险游戏，约翰·马斯顿的救赎之旅。",
+    "publishDate": "2010-05-18",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 4,
+    "totalPlayTime": 2400,
+    "lastPlayed": "2024-02-28",
+    "firstPlayed": "2024-01-20",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "开放世界巅峰之作！",
+    "tags": ["action", "adventure", "open-world"],
+    "customTags": ["神作", "必玩"],
+    "developer": "Rockstar San Diego",
+    "publisher": "Rockstar Games",
+    "genre": ["action", "adventure"]
+}

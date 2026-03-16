@@ -1,0 +1,20 @@
+{
+    "id": "switch-super-mario-odyssey",
+    "name": "Super Mario Odyssey",
+    "description": "3D马里奥冒险游戏，马里奥踏上拯救碧琪公主的旅程。",
+    "publishDate": "2017-10-27",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 2,
+    "totalPlayTime": 480,
+    "lastPlayed": "2023-12-25",
+    "firstPlayed": "2023-12-20",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "充满创意的箱庭游戏",
+    "tags": ["action", "adventure"],
+    "customTags": ["马里奥"],
+    "developer": "Nintendo EPD",
+    "publisher": "Nintendo",
+    "genre": ["action", "adventure"]
+}

@@ -1,0 +1,628 @@
+/**
+ * IPC 处理器
+ * 处理渲染进程和主进程之间的通信
+ */
+const { ipcMain, dialog, BrowserWindow } = require('electron');
+const path = require('path');
+const fs = require('fs');
+
+// 程序根目录
+const APP_ROOT = path.join(__dirname, '..', '..');
+
+/**
+ * 获取游戏目录的绝对路径
+ * @param {string} gamesDir - 游戏目录配置（可能是相对路径或绝对路径）
+ * @returns {string} 绝对路径
+ */
+function getGamesDirPath(gamesDir) {
+    if (!gamesDir) {
+        return path.join(APP_ROOT, 'games');
+    }
+    // 如果是绝对路径，直接返回
+    if (path.isAbsolute(gamesDir)) {
+        return gamesDir;
+    }
+    // 如果是相对路径，基于程序根目录解析
+    return path.join(APP_ROOT, gamesDir);
+}
+
+/**
+ * 设置所有 IPC 处理器
+ * @param {Object} services - 服务实例对象
+ */
+function setupIpcHandlers(services) {
+    const {
+        fileService,
+        gameService,
+        dbService,
+        settingsService,
+        launcherService,
+        tagService,
+        boxService,
+        getMainWindow,
+        createGameDetailWindow,
+        createBoxWindow
+    } = services;
+
+    // ==================== 游戏查询接口 ====================
+
+    // 获取所有平台
+    ipcMain.handle('get-platforms', async () => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const platforms = await fileService.getSimulatorFolders(gamesDir);
+            const stats = await gameService.getPlatformStats(platforms, gamesDir);
+            return stats;
+        } catch (error) {
+            console.error('Error getting platforms:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 获取指定平台的游戏列表
+    ipcMain.handle('get-games-by-platform', async (event, filters) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const { platform, status, sortBy, sortOrder } = filters || {};
+            const games = await gameService.getGamesByPlatform(platform, gamesDir, { status, sortBy, sortOrder });
+            return games;
+        } catch (error) {
+            console.error('Error getting games by platform:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 搜索游戏
+    ipcMain.handle('search-games', async (event, params) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const { keyword, filters = {} } = params;
+            const games = await gameService.searchGames(keyword, gamesDir, filters);
+            return games;
+        } catch (error) {
+            console.error('Error searching games:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 获取所有游戏
+    ipcMain.handle('get-all-games', async (event, filters) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const games = await gameService.getAllGames(gamesDir, filters);
+            return games;
+        } catch (error) {
+            console.error('Error getting all games:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 获取游戏详情
+    ipcMain.handle('get-game-detail', async (event, gameId) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const detail = await gameService.getGameDetail(gameId, gamesDir);
+            return detail;
+        } catch (error) {
+            console.error('Error getting game detail:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 游戏状态管理 ====================
+
+    // 更新游戏状态
+    ipcMain.handle('update-game-status', async (event, data) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const { gameId, status, playTime } = data;
+            const result = await gameService.updateGameState(gameId, status, playTime, gamesDir);
+            await dbService.saveGameState(gameId, { status, playTime });
+            return result;
+        } catch (error) {
+            console.error('Error updating game status:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 更新游戏时长
+    ipcMain.handle('update-game-playtime', async (event, data) => {
+        try {
+            const { gameId, duration } = data;
+            const result = await gameService.updatePlayTime(gameId, duration);
+            await dbService.updatePlayTime(gameId, duration);
+            return result;
+        } catch (error) {
+            console.error('Error updating playtime:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 标记/取消收藏
+    ipcMain.handle('toggle-favorite', async (event, gameId) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const isFavorite = await gameService.toggleFavorite(gameId, gamesDir);
+            await dbService.setFavorite(gameId, isFavorite);
+            return { favorite: isFavorite };
+        } catch (error) {
+            console.error('Error toggling favorite:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 保存用户评分
+    ipcMain.handle('save-game-rating', async (event, data) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const { gameId, rating, comment } = data;
+            await gameService.saveRating(gameId, rating, comment, gamesDir);
+            await dbService.saveUserRating(gameId, rating, comment);
+            return { success: true };
+        } catch (error) {
+            console.error('Error saving rating:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 标签管理 ====================
+
+    // 获取所有标签
+    ipcMain.handle('get-tags', async () => {
+        try {
+            const tags = await tagService.getAllTags();
+            return tags;
+        } catch (error) {
+            console.error('Error getting tags:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 创建新标签
+    ipcMain.handle('create-tag', async (event, tagData) => {
+        try {
+            const tag = await tagService.createTag(tagData.name, tagData.color);
+            return tag;
+        } catch (error) {
+            console.error('Error creating tag:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 删除标签
+    ipcMain.handle('delete-tag', async (event, tagId) => {
+        try {
+            await tagService.deleteTag(tagId);
+            return { success: true };
+        } catch (error) {
+            console.error('Error deleting tag:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 为游戏添加/移除标签
+    ipcMain.handle('manage-game-tags', async (event, data) => {
+        try {
+            const { gameId, tags, action } = data;
+            const result = await tagService.manageTags(gameId, tags, action);
+            return result;
+        } catch (error) {
+            console.error('Error managing tags:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 游戏启动 ====================
+
+    // 启动游戏
+    ipcMain.handle('launch-game', async (event, gamePath, platform) => {
+        try {
+            const emulatorPath = settingsService.getEmulatorPath(platform);
+            const result = await launcherService.launchGame(gamePath, platform, emulatorPath);
+            return result;
+        } catch (error) {
+            console.error('Error launching game:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 获取可用模拟器列表
+    ipcMain.handle('get-emulators', async () => {
+        try {
+            const emulators = launcherService.getAvailableEmulators();
+            return emulators;
+        } catch (error) {
+            console.error('Error getting emulators:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 统计数据 ====================
+
+    // 获取游戏统计数据
+    ipcMain.handle('get-game-stats', async (event, platform) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const stats = await gameService.getStats(platform, gamesDir);
+            return stats;
+        } catch (error) {
+            console.error('Error getting game stats:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 配置管理 ====================
+
+    // 获取应用配置
+    ipcMain.handle('get-settings', async () => {
+        try {
+            const settings = settingsService.getSettings();
+            return settings;
+        } catch (error) {
+            console.error('Error getting settings:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 保存应用配置
+    ipcMain.handle('save-settings', async (event, newSettings) => {
+        try {
+            settingsService.saveSettings(newSettings);
+            return { success: true };
+        } catch (error) {
+            console.error('Error saving settings:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 更新游戏目录配置
+    ipcMain.handle('update-games-dir', async (event, dirPath) => {
+        try {
+            settingsService.setGamesDir(dirPath);
+            return { success: true, dirPath };
+        } catch (error) {
+            console.error('Error updating games dir:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 获取游戏目录配置
+    ipcMain.handle('get-games-dir', async () => {
+        try {
+            const dir = settingsService.getGamesDir();
+            return { dirPath: dir };
+        } catch (error) {
+            console.error('Error getting games dir:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 切换主题
+    ipcMain.handle('set-theme', async (event, theme) => {
+        try {
+            settingsService.setTheme(theme);
+            // 通知所有窗口主题已更改
+            BrowserWindow.getAllWindows().forEach(win => {
+                win.webContents.send('theme-changed', theme);
+            });
+            return { success: true, theme };
+        } catch (error) {
+            console.error('Error setting theme:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 获取平台配置
+    ipcMain.handle('get-platform-config', async () => {
+        try {
+            const config = await fileService.getPlatformConfig();
+            return config;
+        } catch (error) {
+            console.error('Error getting platform config:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 批量操作 ====================
+
+    // 批量更新游戏状态
+    ipcMain.handle('batch-update-status', async (event, { gameIds, status }) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const result = await gameService.batchUpdateStatus(gameIds, status, gamesDir);
+            return result;
+        } catch (error) {
+            console.error('Error batch updating status:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 批量收藏/取消收藏
+    ipcMain.handle('batch-toggle-favorite', async (event, { gameIds }) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const result = await gameService.batchToggleFavorite(gameIds, gamesDir);
+            return result;
+        } catch (error) {
+            console.error('Error batch toggling favorite:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 批量删除游戏
+    ipcMain.handle('batch-delete-games', async (event, { gameIds }) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const result = await gameService.batchDeleteGames(gameIds, gamesDir);
+            return result;
+        } catch (error) {
+            console.error('Error batch deleting games:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 保存游戏编辑
+    ipcMain.handle('save-game-edit', async (event, gameData) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+
+            // 读取现有游戏数据
+            const gameFilePath = path.join(gamesDir, gameData.platform, gameData.folderName, 'game.json');
+            const existingData = JSON.parse(fs.readFileSync(gameFilePath, 'utf-8'));
+
+            // 更新可编辑字段
+            existingData.name = gameData.name;
+            existingData.publishDate = gameData.publishDate;
+            existingData.status = gameData.status;
+            existingData.userRating = gameData.userRating;
+            existingData.favorite = gameData.favorite;
+            existingData.tags = gameData.tags;
+            existingData.description = gameData.description;
+            existingData.userComment = gameData.userComment;
+
+            // 写入更新后的数据
+            fs.writeFileSync(gameFilePath, JSON.stringify(existingData, null, 2), 'utf-8');
+
+            // 通知主窗口刷新
+            const mainWindow = getMainWindow();
+            if (mainWindow) {
+                mainWindow.webContents.send('refresh-library');
+            }
+
+            return { success: true };
+        } catch (error) {
+            console.error('Error saving game edit:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 删除单个游戏
+    ipcMain.handle('delete-game', async (event, gameData) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+
+            // 删除游戏描述文件
+            const gameFilePath = path.join(gamesDir, gameData.platform, gameData.folderName, 'game.json');
+            if (fs.existsSync(gameFilePath)) {
+                fs.unlinkSync(gameFilePath);
+            }
+
+            // 通知主窗口刷新
+            const mainWindow = getMainWindow();
+            if (mainWindow) {
+                mainWindow.webContents.send('refresh-library');
+            }
+
+            return { success: true };
+        } catch (error) {
+            console.error('Error deleting game:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 游戏盒子管理 ====================
+
+    // 获取所有游戏盒子
+    ipcMain.handle('get-all-boxes', async () => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const boxes = await boxService.getAllBoxes(gamesDir);
+            return boxes;
+        } catch (error) {
+            console.error('Error getting all boxes:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 创建游戏盒子
+    ipcMain.handle('create-box', async (event, boxName) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const result = await boxService.createBox(boxName, gamesDir);
+            return result;
+        } catch (error) {
+            console.error('Error creating box:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 删除游戏盒子
+    ipcMain.handle('delete-box', async (event, boxName) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const result = await boxService.deleteBox(boxName, gamesDir);
+            return result;
+        } catch (error) {
+            console.error('Error deleting box:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 获取盒子详情
+    ipcMain.handle('get-box-detail', async (event, boxName) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const result = await boxService.getBoxDetail(boxName, gamesDir);
+            return result;
+        } catch (error) {
+            console.error('Error getting box detail:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 添加游戏到盒子
+    ipcMain.handle('add-game-to-box', async (event, data) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const { boxName, platform, gameInfo } = data;
+            const result = await boxService.addGameToBox(boxName, platform, gameInfo, gamesDir);
+            return result;
+        } catch (error) {
+            console.error('Error adding game to box:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 从盒子中移除游戏
+    ipcMain.handle('remove-game-from-box', async (event, data) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const { boxName, platform, gameId } = data;
+            const result = await boxService.removeGameFromBox(boxName, platform, gameId, gamesDir);
+            return result;
+        } catch (error) {
+            console.error('Error removing game from box:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 窗口管理 ====================
+
+    // 打开游戏详情窗口
+    ipcMain.handle('open-game-detail', async (event, gameData) => {
+        try {
+            createGameDetailWindow(gameData);
+            return { success: true };
+        } catch (error) {
+            console.error('Error opening game detail:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 关闭详情窗口
+    ipcMain.handle('close-detail-window', async () => {
+        try {
+            const windows = BrowserWindow.getAllWindows();
+            // 找到非主窗口（详情窗口）
+            const detailWin = windows.find(w => w !== BrowserWindow.getFocusedWindow()?.mainWindow);
+            if (detailWin) {
+                detailWin.close();
+            } else if (windows.length > 0) {
+                // 如果找不到，关闭最后一个窗口
+                windows[windows.length - 1].close();
+            }
+            return { success: true };
+        } catch (error) {
+            console.error('Error closing detail window:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 打开游戏盒子窗口
+    ipcMain.handle('open-box-window', async (event, boxName) => {
+        try {
+            createBoxWindow(boxName);
+            return { success: true };
+        } catch (error) {
+            console.error('Error opening box window:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== 文件选择对话框 ====================
+
+    // 选择目录
+    ipcMain.handle('select-directory', async () => {
+        try {
+            const result = await dialog.showOpenDialog({
+                properties: ['openDirectory']
+            });
+            if (result.canceled) {
+                return { canceled: true };
+            }
+            return { canceled: false, path: result.filePaths[0] };
+        } catch (error) {
+            console.error('Error selecting directory:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 选择文件
+    ipcMain.handle('select-file', async (event, filters) => {
+        try {
+            const result = await dialog.showOpenDialog({
+                properties: ['openFile'],
+                filters: filters || []
+            });
+            if (result.canceled) {
+                return { canceled: true };
+            }
+            return { canceled: false, path: result.filePaths[0] };
+        } catch (error) {
+            console.error('Error selecting file:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 调整窗口大小
+    ipcMain.handle('resize-window', async (event, width, height) => {
+        try {
+            const win = BrowserWindow.fromWebContents(event.sender);
+            if (win) {
+                win.setSize(width, height);
+            }
+            return { success: true };
+        } catch (error) {
+            console.error('Error resizing window:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 设置窗口最小尺寸
+    ipcMain.handle('set-min-size', async (event, minWidth, minHeight) => {
+        try {
+            const win = BrowserWindow.fromWebContents(event.sender);
+            if (win) {
+                win.setMinimumSize(minWidth, minHeight);
+            }
+            return { success: true };
+        } catch (error) {
+            console.error('Error setting min size:', error);
+            return { error: error.message };
+        }
+    });
+
+    console.log('IPC handlers setup complete');
+}
+
+module.exports = { setupIpcHandlers };

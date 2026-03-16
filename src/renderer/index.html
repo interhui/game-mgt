@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:;">
+    <title>游戏管理程序</title>
+    <link rel="stylesheet" href="css/themes/dark.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 顶部工具栏 -->
+        <header class="toolbar">
+            <div class="toolbar-left">
+                <div class="filter-group">
+                    <label>平台：</label>
+                    <select id="platform-filter" class="filter-select">
+                        <option value="">全部平台</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>排序：</label>
+                    <select id="sort-select" class="filter-select">
+                        <option value="name-asc">名称 ↑</option>
+                        <option value="name-desc">名称 ↓</option>
+                        <option value="rating-desc">评分 ↓</option>
+                        <option value="rating-asc">评分 ↑</option>
+                    </select>
+                </div>
+            </div>
+            <div class="toolbar-right">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索游戏...">
+                    <button id="search-btn" class="icon-btn">🔍</button>
+                    <button id="clear-search-btn" class="icon-btn clear-search-btn" style="display: none;">✕</button>
+                </div>
+                <button id="view-toggle" class="icon-btn" title="切换视图">▦</button>
+                <button id="settings-btn" class="icon-btn" title="设置">⚙</button>
+            </div>
+        </header>
+
+        <!-- 统计栏 -->
+        <div class="stats-bar">
+            <span id="total-games">游戏总数：0</span>
+            <span id="played-games">已玩：0</span>
+            <span id="playing-games">游玩中：0</span>
+            <span id="unplayed-games">未开始：0</span>
+        </div>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 侧边栏：平台列表 -->
+            <aside class="sidebar" id="sidebar">
+                <h3>模拟器</h3>
+                <ul class="platform-list" id="platform-list">
+                    <li class="platform-item active" data-platform="">
+                        <span class="platform-name">全部平台</span>
+                        <span class="game-count">0</span>
+                    </li>
+                </ul>
+
+                <!-- 游戏盒子 -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-header">
+                        <h3>游戏盒子</h3>
+                        <button id="add-box-btn" class="icon-btn small" title="创建盒子">+</button>
+                    </div>
+                    <ul class="box-list" id="box-list">
+                        <!-- 盒子列表将通过 JS 动态生成 -->
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- 游戏海报墙 -->
+            <section class="game-wall" id="game-wall">
+                <div class="games-grid" id="games-grid">
+                    <!-- 游戏卡片将通过 JS 动态生成 -->
+                </div>
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <p>暂无游戏</p>
+                    <p>请在游戏目录中添加游戏</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 创建盒子模态框 -->
+    <div id="create-box-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>创建游戏盒子</h2>
+                <button class="close-btn" id="close-create-box">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>盒子名称：</label>
+                    <input type="text" id="box-name-input" class="form-input" placeholder="输入盒子名称">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-create-box" class="btn btn-primary">创建</button>
+                <button id="cancel-create-box" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 设置模态框 -->
+    <div id="settings-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>设置</h2>
+                <button class="close-btn" id="close-settings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-group">
+                    <h3>外观</h3>
+                    <label>
+                        主题：
+                        <select id="theme-select">
+                            <option value="dark">深色</option>
+                            <option value="light">浅色</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="settings-group">
+                    <h3>布局</h3>
+                    <label>
+                        侧边栏宽度：
+                        <input type="number" id="sidebar-width" min="150" max="300" value="200">
+                    </label>
+                    <label>
+                        海报尺寸：
+                        <select id="poster-size">
+                            <option value="small">小</option>
+                            <option value="medium" selected>中</option>
+                            <option value="large">大</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="settings-group">
+                    <h3>游戏目录</h3>
+                    <div class="games-dir-config">
+                        <input type="text" id="games-dir-input" readonly>
+                        <button id="select-dir-btn">选择</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-settings" class="btn btn-primary">保存</button>
+                <button id="cancel-settings" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

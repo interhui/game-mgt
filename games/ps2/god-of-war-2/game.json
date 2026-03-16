@@ -1,0 +1,20 @@
+{
+    "id": "ps2-god-of-war-2",
+    "name": "God of War II",
+    "description": "动作冒险游戏，奎托斯展开对众神的复仇之旅。",
+    "publishDate": "2007-03-13",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 2,
+    "totalPlayTime": 600,
+    "lastPlayed": "2024-03-10",
+    "firstPlayed": "2024-03-08",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "打击感超棒！",
+    "tags": ["action", "adventure"],
+    "customTags": ["动作"],
+    "developer": "Santa Monica Studio",
+    "publisher": "Sony Computer Entertainment",
+    "genre": ["action", "adventure"]
+}

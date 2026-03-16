@@ -1,0 +1,27 @@
+{
+  "id": "xbox360-mass-effect-2",
+  "name": "Mass Effect 2",
+  "description": "科幻RPG，玩家需要组建团队对抗收集者。",
+  "publishDate": "2010-01-26",
+  "platform": "xbox360",
+  "status": "unplayed",
+  "playCount": 0,
+  "totalPlayTime": 0,
+  "lastPlayed": "",
+  "firstPlayed": "",
+  "favorite": true,
+  "userRating": 4,
+  "tags": [
+    "rpg",
+    "action",
+    "story"
+  ],
+  "customTags": [],
+  "developer": "BioWare",
+  "publisher": "Microsoft Game Studios",
+  "genre": [
+    "rpg",
+    "action"
+  ],
+  "userComment": ""
+}

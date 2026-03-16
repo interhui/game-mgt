@@ -1,0 +1,24 @@
+{
+  "id": "ps1-tekken-3",
+  "name": "Tekken 3",
+  "description": "经典3D格斗游戏。",
+  "publishDate": "1997-03-22",
+  "platform": "ps1",
+  "status": "playing",
+  "playCount": 0,
+  "totalPlayTime": 0,
+  "lastPlayed": "",
+  "firstPlayed": "",
+  "favorite": false,
+  "userRating": 4,
+  "tags": [
+    "fighting"
+  ],
+  "customTags": [],
+  "developer": "Namco",
+  "publisher": "Namco",
+  "genre": [
+    "fighting"
+  ],
+  "userComment": ""
+}

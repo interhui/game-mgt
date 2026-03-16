@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:;">
+    <title>游戏盒子</title>
+    <link rel="stylesheet" href="css/themes/dark.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/box.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 顶部工具栏 -->
+        <header class="toolbar">
+            <div class="toolbar-left">
+                <button id="back-btn" class="btn btn-secondary">← 返回</button>
+                <h2 id="box-title" class="box-title">游戏盒子</h2>
+            </div>
+            <div class="toolbar-right">
+                <button id="view-toggle" class="icon-btn" title="切换视图">▦</button>
+            </div>
+        </header>
+
+        <!-- 统计栏 -->
+        <div class="stats-bar">
+            <span id="total-games">游戏总数：0</span>
+            <span id="played-games">已玩：0</span>
+            <span id="playing-games">游戏中：0</span>
+            <span id="unplayed-games">未玩：0</span>
+        </div>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 游戏海报墙 -->
+            <section class="game-wall" id="game-wall">
+                <div class="games-grid" id="games-grid">
+                    <!-- 游戏卡片将通过 JS 动态生成 -->
+                </div>
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <p>暂无游戏</p>
+                    <p>请在游戏详情中添加游戏到盒子</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/box.js"></script>
+</body>
+</html>

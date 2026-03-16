@@ -1,0 +1,20 @@
+{
+    "id": "xbox360-the-elder-scrolls-v-skyrim",
+    "name": "The Elder Scrolls V: Skyrim",
+    "description": "开放世界奇幻RPG，玩家是传说中的龙裔。",
+    "publishDate": "2011-11-11",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 8,
+    "totalPlayTime": 3600,
+    "lastPlayed": "2024-03-05",
+    "firstPlayed": "2023-12-01",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "mod拯救世界！",
+    "tags": ["rpg", "adventure", "open-world"],
+    "customTags": ["神作", "经典"],
+    "developer": "Bethesda Game Studios",
+    "publisher": "Bethesda Softworks",
+    "genre": ["rpg", "adventure"]
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:;">
+    <title>游戏详情</title>
+    <link rel="stylesheet" href="css/themes/dark.css">
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+    <div id="app">
+        <header class="detail-header">
+            <div id="game-title-container"><h1 id="game-title">游戏详情</h1></div>
+            <button id="close-btn" class="close-btn">&times;</button>
+        </header>
+
+        <main class="detail-content">
+            <div class="game-poster-section">
+                <img id="game-poster" class="detail-poster" src="" alt="游戏封面">
+                <div id="poster-placeholder" class="poster-placeholder">🎮</div>
+            </div>
+
+            <div class="game-info-section">
+                <div class="info-row">
+                    <span class="label">游戏ID：</span>
+                    <span id="game-id" class="value game-id"></span>
+                </div>
+
+                <div class="info-row">
+                    <span class="label">平台：</span>
+                    <span id="game-platform" class="value"></span>
+                </div>
+
+                <div class="info-row">
+                    <span class="label">发行日期：</span>
+                    <div id="game-publish-date-container"><span id="game-publish-date" class="value"></span></div>
+                </div>
+
+                <div class="info-row">
+                    <span class="label">发行商：</span>
+                    <div id="game-publisher-container"><span id="game-publisher" class="value"></span></div>
+                </div>
+
+                <div class="info-row">
+                    <span class="label">游戏评分：</span>
+                    <div id="game-rating" class="rating-stars">
+                        <span class="star" data-rating="1">⭐</span>
+                        <span class="star" data-rating="2">⭐</span>
+                        <span class="star" data-rating="3">⭐</span>
+                        <span class="star" data-rating="4">⭐</span>
+                        <span class="star" data-rating="5">⭐</span>
+                    </div>
+                </div>
+
+                <div class="info-row favorite-row">
+                    <span class="label">收藏：</span>
+                    <button id="favorite-btn" class="favorite-btn" disabled>
+                        <span class="heart">🤍</span>
+                        <span class="text">收藏</span>
+                    </button>
+                </div>
+
+                <div class="info-row">
+                    <span class="label">标签：</span>
+                    <div id="game-tags" class="tags-container"></div>
+                </div>
+
+                <div class="description-section">
+                    <h3>游戏描述</h3>
+                    <div id="game-description-container"><p id="game-description" class="description"></p></div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="launch-btn" class="btn btn-primary">启动游戏</button>
+                    <button id="edit-btn" class="btn btn-secondary">编辑</button>
+                    <button id="delete-btn" class="btn btn-danger">删除</button>
+                    <button id="add-to-box-btn" class="btn btn-secondary">添加</button>
+                </div>
+
+                <!-- 添加到盒子弹窗 -->
+                <div id="add-to-box-modal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <h3>添加到游戏盒子</h3>
+                        <select id="box-select" class="box-select">
+                            <option value="">选择游戏盒子</option>
+                        </select>
+                        <div class="modal-actions">
+                            <button id="confirm-add-to-box" class="btn btn-primary">确定</button>
+                            <button id="cancel-add-to-box" class="btn btn-secondary">取消</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="edit-actions" class="action-buttons" style="display: none;">
+                    <button id="save-edit-btn" class="btn btn-primary">保存</button>
+                    <button id="cancel-edit-btn" class="btn btn-secondary">取消</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/detail.js"></script>
+</body>
+</html>

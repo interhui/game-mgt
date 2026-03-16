@@ -1,0 +1,20 @@
+{
+    "id": "ps2-gta-san-andreas",
+    "name": " GTA: San Andreas",
+    "description": "一款开放世界的动作冒险游戏，玩家可以在游戏中自由探索圣安地列斯城，完成各种任务。",
+    "publishDate": "2004-10-26",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 15,
+    "totalPlayTime": 3600,
+    "lastPlayed": "2024-02-15",
+    "firstPlayed": "2024-01-01",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "经典中的经典！",
+    "tags": ["action", "adventure", "open-world"],
+    "customTags": ["必玩", "神作"],
+    "developer": "Rockstar Games",
+    "publisher": "Rockstar Games",
+    "genre": ["action", "adventure"]
+}

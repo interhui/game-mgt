@@ -1,0 +1,71 @@
+{
+    "platforms": [
+        {
+            "id": "ps2",
+            "name": "PlayStation 2",
+            "shortName": "PS2",
+            "icon": "image/platform-icons/ps2.png",
+            "color": "#003791",
+            "emulatorId": "ps2",
+            "order": 1
+        },
+        {
+            "id": "ps1",
+            "name": "PlayStation",
+            "shortName": "PS1",
+            "icon": "image/platform-icons/ps1.png",
+            "color": "#003791",
+            "emulatorId": "ps1",
+            "order": 2
+        },
+        {
+            "id": "psp",
+            "name": "PlayStation Portable",
+            "shortName": "PSP",
+            "icon": "image/platform-icons/psp.png",
+            "color": "#003791",
+            "emulatorId": "psp",
+            "order": 3
+        },
+        {
+            "id": "xbox360",
+            "name": "Xbox 360",
+            "shortName": "X360",
+            "icon": "image/platform-icons/xbox360.png",
+            "color": "#107C10",
+            "emulatorId": "xbox360",
+            "order": 4
+        },
+        {
+            "id": "switch",
+            "name": "Nintendo Switch",
+            "shortName": "Switch",
+            "icon": "image/platform-icons/switch.png",
+            "color": "#E60012",
+            "emulatorId": "switch",
+            "order": 5
+        },
+        {
+            "id": "pc",
+            "name": "PC Games",
+            "shortName": "PC",
+            "icon": "image/platform-icons/pc.png",
+            "color": "#888888",
+            "emulatorId": null,
+            "order": 6
+        }
+    ],
+    "predefinedTags": [
+        { "id": "action", "name": "动作", "color": "#E60012" },
+        { "id": "adventure", "name": "冒险", "color": "#00B7C1" },
+        { "id": "rpg", "name": "角色扮演", "color": "#9B51E0" },
+        { "id": "strategy", "name": "策略", "color": "#F2C94C" },
+        { "id": "simulation", "name": "模拟", "color": "#51CF66" },
+        { "id": "sports", "name": "体育", "color": "#FF6B6B" },
+        { "id": "racing", "name": "竞速", "color": "#FF922B" },
+        { "id": "puzzle", "name": "解谜", "color": "#A78BFA" },
+        { "id": "horror", "name": "恐怖", "color": "#1F2937" },
+        { "id": "multiplayer", "name": "多人", "color": "#FB7185" }
+    ],
+    "customTags": []
+}

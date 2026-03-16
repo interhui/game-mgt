@@ -1,0 +1,19 @@
+{
+    "id": "psp-god-of-war-ghost-of-sparta",
+    "name": "God of War: Ghost of Sparta",
+    "description": "战神系列PSP作品，讲述奎托斯寻找弟弟的故事。",
+    "publishDate": "2010-10-21",
+    "platform": "psp",
+    "status": "playing",
+    "playCount": 1,
+    "totalPlayTime": 180,
+    "lastPlayed": "2024-03-12",
+    "firstPlayed": "2024-03-12",
+    "favorite": false,
+    "userRating": 4,
+    "tags": ["action", "adventure"],
+    "customTags": [],
+    "developer": "Ready at Dawn",
+    "publisher": "Sony Computer Entertainment",
+    "genre": ["action", "adventure"]
+}

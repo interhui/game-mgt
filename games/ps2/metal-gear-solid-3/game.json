@@ -1,0 +1,20 @@
+{
+    "id": "ps2-metal-gear-solid-3",
+    "name": "Metal Gear Solid 3: Snake Eater",
+    "description": "战术间谍动作游戏，讲述Big Boss的起源故事，玩家需要完成各种隐秘任务。",
+    "publishDate": "2004-11-16",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 8,
+    "totalPlayTime": 2400,
+    "lastPlayed": "2024-01-20",
+    "firstPlayed": "2024-01-10",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "剧情神作！",
+    "tags": ["action", "stealth", "story"],
+    "customTags": ["剧情向", "经典"],
+    "developer": "Konami",
+    "publisher": "Konami",
+    "genre": ["action", "stealth"]
+}

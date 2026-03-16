@@ -1,0 +1,20 @@
+{
+    "id": "psp-crisis-core-final-fantasy-vii",
+    "name": "Crisis Core: Final Fantasy VII",
+    "description": "最终幻想7前传，讲述扎克斯的故事。",
+    "publishDate": "2007-09-13",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 2,
+    "totalPlayTime": 720,
+    "lastPlayed": "2023-09-15",
+    "firstPlayed": "2023-08-20",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "感人至深！",
+    "tags": ["rpg", "story"],
+    "customTags": ["剧情向"],
+    "developer": "Square Enix",
+    "publisher": "Square Enix",
+    "genre": ["rpg"]
+}

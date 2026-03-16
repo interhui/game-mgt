@@ -1,0 +1,26 @@
+{
+  "id": "ps2-final-fantasy-x",
+  "name": "Final Fantasy X",
+  "description": "经典日式RPG游戏，讲述了召唤士尤娜与ティーダ的冒险故事。",
+  "publishDate": "2001-07-19",
+  "platform": "ps2",
+  "playCount": 3,
+  "totalPlayTime": 1800,
+  "lastPlayed": "2023-12-01",
+  "firstPlayed": "2023-11-15",
+  "favorite": true,
+  "userRating": 4,
+  "userComment": "经典JRPG",
+  "tags": [
+    "rpg",
+    "story"
+  ],
+  "customTags": [
+    "剧情向"
+  ],
+  "developer": "Square Enix",
+  "publisher": "Square Enix",
+  "genre": [
+    "rpg"
+  ]
+}

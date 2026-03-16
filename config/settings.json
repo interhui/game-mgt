@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "lastUpdate": 1773560220649,
+  "appearance": {
+    "theme": "dark",
+    "language": "zh-CN",
+    "showPlatformIcons": true,
+    "showDescriptions": true,
+    "enableAnimations": true
+  },
+  "layout": {
+    "sidebarWidth": 200,
+    "posterSize": "medium",
+    "columns": 6,
+    "viewMode": "grid",
+    "sortBy": "name-asc",
+    "sortOrder": "asc"
+  },
+  "library": {
+    "gamesDir": "D:\\Develop\\Workspace\\game-mgt\\games",
+    "scanOnStartup": true,
+    "autoRefresh": false,
+    "showHiddenFiles": false,
+    "includeSubfolders": true
+  },
+  "emulators": {
+    "ps2": {
+      "name": "PCSX2",
+      "path": "C:\\Emulators\\PCSX2\\pcsx2.exe",
+      "arguments": "-boot {gamePath}"
+    },
+    "ps1": {
+      "name": "DuckStation",
+      "path": "C:\\Emulators\\DuckStation\\duckstation.exe",
+      "arguments": "-batchmode -cdrom {gamePath}"
+    },
+    "psp": {
+      "name": "PPSSPP",
+      "path": "C:\\Emulators\\PPSSPP\\PPSSPPSDL.exe",
+      "arguments": "-boot {gamePath}"
+    },
+    "xbox360": {
+      "name": "Xenia",
+      "path": "C:\\Emulators\\Xenia\\xenia.exe",
+      "arguments": "--game {gamePath}"
+    },
+    "switch": {
+      "name": "Ryujinx",
+      "path": "C:\\Emulators\\Ryujinx\\ryujinx.exe",
+      "arguments": "{gamePath}"
+    }
+  },
+  "shortcuts": {
+    "openSearch": "Ctrl+F",
+    "focusSearch": "Ctrl+K",
+    "launchGame": "Enter",
+    "gameDetails": "Ctrl+D",
+    "editGame": "Ctrl+E",
+    "deleteGame": "Delete",
+    "toggleFavorite": "F",
+    "refreshLibrary": "R",
+    "openSettings": "Ctrl+Comma"
+  },
+  "notifications": {
+    "enableStartup": true,
+    "enableLibraryUpdate": true,
+    "showPlayReminders": true
+  },
+  "import": {
+    "autoImport": false,
+    "importPaths": []
+  }
+}

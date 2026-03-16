@@ -1,0 +1,19 @@
+{
+    "id": "ps1-castlevania-symphony-of-the-night",
+    "name": "Castlevania: Symphony of the Night",
+    "description": "经典横版动作冒险游戏，开创了Metroidvania类型。",
+    "publishDate": "1997-03-20",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 2,
+    "totalPlayTime": 300,
+    "lastPlayed": "2024-03-01",
+    "firstPlayed": "2024-02-20",
+    "favorite": false,
+    "userRating": 4,
+    "tags": ["action", "adventure"],
+    "customTags": [],
+    "developer": "Konami",
+    "publisher": "Konami",
+    "genre": ["action", "adventure"]
+}

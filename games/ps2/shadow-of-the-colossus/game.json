@@ -1,0 +1,19 @@
+{
+    "id": "ps2-shadow-of-the-colossus",
+    "name": "Shadow of the Colossus",
+    "description": "一款独特的动作冒险游戏，玩家需要击败16只巨像来拯救少女。",
+    "publishDate": "2005-10-27",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 0,
+    "tags": ["adventure", "puzzle"],
+    "customTags": [],
+    "developer": "Team Ico",
+    "publisher": "Sony Computer Entertainment",
+    "genre": ["adventure", "puzzle"]
+}
