@@ -1,0 +1,20 @@
+{
+  "ps1": [
+    {
+      "id": "ps1-resident-evil-2",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
+    },
+    {
+      "id": "ps1-tekken-3",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
+    }
+  ]
+}

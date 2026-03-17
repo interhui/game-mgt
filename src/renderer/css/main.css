@@ -489,7 +489,13 @@ body {
 
 .games-dir-config {
     display: flex;
+    align-items: center;
     gap: 8px;
+    margin-bottom: 8px;
+}
+
+.games-dir-config label {
+    min-width: 100px;
 }
 
 .games-dir-config input {

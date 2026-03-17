@@ -44,6 +44,8 @@ const elements = {
     posterSize: document.getElementById('poster-size'),
     gamesDirInput: document.getElementById('games-dir-input'),
     selectDirBtn: document.getElementById('select-dir-btn'),
+    gameboxDirInput: document.getElementById('gamebox-dir-input'),
+    selectGameboxDirBtn: document.getElementById('select-gamebox-dir-btn'),
     addBoxBtn: document.getElementById('add-box-btn'),
     boxList: document.getElementById('box-list'),
     createBoxModal: document.getElementById('create-box-modal'),
@@ -98,6 +100,7 @@ async function loadSettings() {
         elements.sidebarWidth.value = state.settings.layout.sidebarWidth;
         elements.posterSize.value = state.settings.layout.posterSize || 'medium';
         elements.gamesDirInput.value = state.settings.library.gamesDir;
+        elements.gameboxDirInput.value = state.settings.gamebox.gameboxDir;
 
         state.viewMode = state.settings.layout.viewMode;
     } catch (error) {
@@ -653,6 +656,14 @@ function bindEvents() {
         }
     });
 
+    // 选择游戏盒子目录
+    elements.selectGameboxDirBtn.addEventListener('click', async () => {
+        const result = await window.electronAPI.selectDirectory();
+        if (!result.canceled && result.path) {
+            elements.gameboxDirInput.value = result.path;
+        }
+    });
+
     // 主题切换
     elements.themeSelect.addEventListener('change', (e) => {
         applyTheme(e.target.value);
@@ -663,6 +674,11 @@ function bindEvents() {
         loadPlatforms();
         loadGames();
         loadStats();
+    });
+
+    // 监听盒子更新事件
+    window.addEventListener('box-updated', () => {
+        loadBoxes();
     });
 
     // 监听设置事件
@@ -747,6 +763,10 @@ async function saveSettingsHandler() {
             library: {
                 ...state.settings.library,
                 gamesDir: elements.gamesDirInput.value
+            },
+            gamebox: {
+                ...state.settings.gamebox,
+                gameboxDir: elements.gameboxDirInput.value
             }
         };
 

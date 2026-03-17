@@ -69,5 +69,8 @@
   "import": {
     "autoImport": false,
     "importPaths": []
+  },
+  "gamebox": {
+    "gameboxDir": "D:\\Develop\\Workspace\\game-mgt\\boxes"
   }
 }

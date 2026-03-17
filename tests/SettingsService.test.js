@@ -115,6 +115,21 @@ describe('SettingsService', () => {
         });
     });
 
+    describe('getGameboxDir / setGameboxDir', () => {
+        test('应该返回默认游戏盒子目录', () => {
+            const gameboxDir = settingsService.getGameboxDir();
+            expect(gameboxDir).toBeDefined();
+            expect(typeof gameboxDir).toBe('string');
+        });
+
+        test('应该设置游戏盒子目录', () => {
+            const newDir = 'D:\\Games\\MyGameboxes';
+            settingsService.setGameboxDir(newDir);
+
+            expect(settingsService.getGameboxDir()).toBe(newDir);
+        });
+    });
+
     describe('getEmulatorPath / setEmulatorConfig / getEmulatorConfig', () => {
         test('应该返回配置的模拟器路径', () => {
             const emulatorPath = settingsService.getEmulatorPath('ps2');

@@ -9,17 +9,19 @@ class SettingsService {
     constructor(settingsPath) {
         this.settingsPath = settingsPath;
         this.fileService = new FileService();
-        this.settings = null;
+        // 同步设置默认配置，保证 getSettings() 能立即返回有效值
+        this.settings = this.getDefaultSettings();
+        // 异步加载用户配置并合并
         this.loadSettings();
     }
 
     /**
      * 加载配置
      */
-    loadSettings() {
+    async loadSettings() {
         try {
             const defaultSettings = this.getDefaultSettings();
-            const settings = this.fileService.readJson(this.settingsPath);
+            const settings = await this.fileService.readJson(this.settingsPath);
 
             if (settings) {
                 // 合并默认配置和用户配置
@@ -126,6 +128,23 @@ class SettingsService {
      */
     setGamesDir(dir) {
         this.settings.library.gamesDir = dir;
+        this.saveSettings(this.settings);
+    }
+
+    /**
+     * 获取游戏盒子目录配置
+     * @returns {string} 游戏盒子目录路径
+     */
+    getGameboxDir() {
+        return this.settings.gamebox.gameboxDir || path.join(__dirname, '..', '..', 'gameboxes');
+    }
+
+    /**
+     * 设置游戏盒子目录
+     * @param {string} dir - 游戏盒子目录路径
+     */
+    setGameboxDir(dir) {
+        this.settings.gamebox.gameboxDir = dir;
         this.saveSettings(this.settings);
     }
 
@@ -258,6 +277,10 @@ class SettingsService {
             import: {
                 autoImport: false,
                 importPaths: []
+            },
+
+            gamebox: {
+                gameboxDir: path.join(__dirname, '..', '..', 'gameboxes')
             }
         };
     }

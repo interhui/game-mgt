@@ -439,9 +439,8 @@ function setupIpcHandlers(services) {
     // 获取所有游戏盒子
     ipcMain.handle('get-all-boxes', async () => {
         try {
-            const settings = settingsService.getSettings();
-            const gamesDir = getGamesDirPath(settings.library.gamesDir);
-            const boxes = await boxService.getAllBoxes(gamesDir);
+            const gameboxDir = settingsService.getGameboxDir();
+            const boxes = await boxService.getAllBoxes(gameboxDir);
             return boxes;
         } catch (error) {
             console.error('Error getting all boxes:', error);
@@ -452,9 +451,8 @@ function setupIpcHandlers(services) {
     // 创建游戏盒子
     ipcMain.handle('create-box', async (event, boxName) => {
         try {
-            const settings = settingsService.getSettings();
-            const gamesDir = getGamesDirPath(settings.library.gamesDir);
-            const result = await boxService.createBox(boxName, gamesDir);
+            const gameboxDir = settingsService.getGameboxDir();
+            const result = await boxService.createBox(boxName, gameboxDir);
             return result;
         } catch (error) {
             console.error('Error creating box:', error);
@@ -465,9 +463,8 @@ function setupIpcHandlers(services) {
     // 删除游戏盒子
     ipcMain.handle('delete-box', async (event, boxName) => {
         try {
-            const settings = settingsService.getSettings();
-            const gamesDir = getGamesDirPath(settings.library.gamesDir);
-            const result = await boxService.deleteBox(boxName, gamesDir);
+            const gameboxDir = settingsService.getGameboxDir();
+            const result = await boxService.deleteBox(boxName, gameboxDir);
             return result;
         } catch (error) {
             console.error('Error deleting box:', error);
@@ -478,9 +475,8 @@ function setupIpcHandlers(services) {
     // 获取盒子详情
     ipcMain.handle('get-box-detail', async (event, boxName) => {
         try {
-            const settings = settingsService.getSettings();
-            const gamesDir = getGamesDirPath(settings.library.gamesDir);
-            const result = await boxService.getBoxDetail(boxName, gamesDir);
+            const gameboxDir = settingsService.getGameboxDir();
+            const result = await boxService.getBoxDetail(boxName, gameboxDir);
             return result;
         } catch (error) {
             console.error('Error getting box detail:', error);
@@ -491,10 +487,9 @@ function setupIpcHandlers(services) {
     // 添加游戏到盒子
     ipcMain.handle('add-game-to-box', async (event, data) => {
         try {
-            const settings = settingsService.getSettings();
-            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const gameboxDir = settingsService.getGameboxDir();
             const { boxName, platform, gameInfo } = data;
-            const result = await boxService.addGameToBox(boxName, platform, gameInfo, gamesDir);
+            const result = await boxService.addGameToBox(boxName, platform, gameInfo, gameboxDir);
             return result;
         } catch (error) {
             console.error('Error adding game to box:', error);
@@ -505,10 +500,9 @@ function setupIpcHandlers(services) {
     // 从盒子中移除游戏
     ipcMain.handle('remove-game-from-box', async (event, data) => {
         try {
-            const settings = settingsService.getSettings();
-            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+            const gameboxDir = settingsService.getGameboxDir();
             const { boxName, platform, gameId } = data;
-            const result = await boxService.removeGameFromBox(boxName, platform, gameId, gamesDir);
+            const result = await boxService.removeGameFromBox(boxName, platform, gameId, gameboxDir);
             return result;
         } catch (error) {
             console.error('Error removing game from box:', error);

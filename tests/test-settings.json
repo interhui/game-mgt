@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "lastUpdate": 1773554788842,
+  "lastUpdate": 1773764402970,
   "appearance": {
-    "theme": "light",
+    "theme": "dark",
     "language": "zh-CN",
     "showPlatformIcons": true,
     "showDescriptions": true,
@@ -11,7 +11,7 @@
   "layout": {
     "sidebarWidth": 200,
     "posterSize": "medium",
-    "columns": 8,
+    "columns": 6,
     "viewMode": "grid",
     "sortBy": "name-asc",
     "sortOrder": "asc"
@@ -69,12 +69,8 @@
   "import": {
     "autoImport": false,
     "importPaths": []
-  }
-}}enableLibraryUpdate": true,
-    "showPlayReminders": true
   },
-  "import": {
-    "autoImport": false,
-    "importPaths": []
+  "gamebox": {
+    "gameboxDir": "D:\\Develop\\Workspace\\game-mgt\\src\\gameboxes"
   }
 }

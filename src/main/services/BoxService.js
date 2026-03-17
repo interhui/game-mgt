@@ -12,21 +12,21 @@ class BoxService {
 
     /**
      * 获取盒子目录路径
-     * @param {string} baseDir - 基础目录
+     * @param {string} gameboxDir - 游戏盒子目录
      * @returns {string} 盒子目录路径
      */
-    getBoxesDir(baseDir) {
-        return path.join(baseDir, 'boxes');
+    getBoxesDir(gameboxDir) {
+        return gameboxDir;
     }
 
     /**
      * 获取所有游戏盒子
-     * @param {string} baseDir - 基础目录
+     * @param {string} gameboxDir - 基础目录
      * @returns {Promise<Array>} 盒子列表
      */
-    async getAllBoxes(baseDir) {
+    async getAllBoxes(gameboxDir) {
         try {
-            const boxesDir = this.getBoxesDir(baseDir);
+            const boxesDir = this.getBoxesDir(gameboxDir);
             const exists = await this.fileService.fileExists(boxesDir);
 
             if (!exists) {
@@ -88,12 +88,12 @@ class BoxService {
     /**
      * 创建游戏盒子
      * @param {string} boxName - 盒子名称
-     * @param {string} baseDir - 基础目录
+     * @param {string} gameboxDir - 基础目录
      * @returns {Promise<object>} 创建结果
      */
-    async createBox(boxName, baseDir) {
+    async createBox(boxName, gameboxDir) {
         try {
-            const boxesDir = this.getBoxesDir(baseDir);
+            const boxesDir = this.getBoxesDir(gameboxDir);
 
             // 确保盒子目录存在
             await this.fileService.ensureDir(boxesDir);
@@ -120,12 +120,12 @@ class BoxService {
     /**
      * 删除游戏盒子
      * @param {string} boxName - 盒子名称
-     * @param {string} baseDir - 基础目录
+     * @param {string} gameboxDir - 基础目录
      * @returns {Promise<object>} 删除结果
      */
-    async deleteBox(boxName, baseDir) {
+    async deleteBox(boxName, gameboxDir) {
         try {
-            const boxesDir = this.getBoxesDir(baseDir);
+            const boxesDir = this.getBoxesDir(gameboxDir);
             const boxPath = path.join(boxesDir, `${boxName}.json`);
 
             const exists = await this.fileService.fileExists(boxPath);
@@ -145,12 +145,12 @@ class BoxService {
     /**
      * 获取盒子详情
      * @param {string} boxName - 盒子名称
-     * @param {string} baseDir - 基础目录
+     * @param {string} gameboxDir - 基础目录
      * @returns {Promise<object>} 盒子详情
      */
-    async getBoxDetail(boxName, baseDir) {
+    async getBoxDetail(boxName, gameboxDir) {
         try {
-            const boxesDir = this.getBoxesDir(baseDir);
+            const boxesDir = this.getBoxesDir(gameboxDir);
             const boxData = await this.readBoxFile(boxesDir, boxName);
 
             if (!boxData) {
@@ -172,12 +172,12 @@ class BoxService {
      * @param {string} boxName - 盒子名称
      * @param {object} gameInfo - 游戏信息（包含id, status等）
      * @param {string} platform - 游戏平台
-     * @param {string} baseDir - 基础目录
+     * @param {string} gameboxDir - 基础目录
      * @returns {Promise<object>} 添加结果
      */
-    async addGameToBox(boxName, platform, gameInfo, baseDir) {
+    async addGameToBox(boxName, platform, gameInfo, gameboxDir) {
         try {
-            const boxesDir = this.getBoxesDir(baseDir);
+            const boxesDir = this.getBoxesDir(gameboxDir);
             const boxPath = path.join(boxesDir, `${boxName}.json`);
 
             // 读取现有盒子数据
@@ -228,12 +228,12 @@ class BoxService {
      * @param {string} boxName - 盒子名称
      * @param {string} gameId - 游戏ID
      * @param {string} platform - 游戏平台
-     * @param {string} baseDir - 基础目录
+     * @param {string} gameboxDir - 基础目录
      * @returns {Promise<object>} 移除结果
      */
-    async removeGameFromBox(boxName, platform, gameId, baseDir) {
+    async removeGameFromBox(boxName, platform, gameId, gameboxDir) {
         try {
-            const boxesDir = this.getBoxesDir(baseDir);
+            const boxesDir = this.getBoxesDir(gameboxDir);
             const boxData = await this.readBoxFile(boxesDir, boxName);
 
             if (!boxData || !boxData[platform]) {
@@ -265,12 +265,12 @@ class BoxService {
      * @param {string} platform - 游戏平台
      * @param {string} gameId - 游戏ID
      * @param {object} gameInfo - 游戏信息
-     * @param {string} baseDir - 基础目录
+     * @param {string} gameboxDir - 基础目录
      * @returns {Promise<object>} 更新结果
      */
-    async updateGameInBox(boxName, platform, gameId, gameInfo, baseDir) {
+    async updateGameInBox(boxName, platform, gameId, gameInfo, gameboxDir) {
         try {
-            const boxesDir = this.getBoxesDir(baseDir);
+            const boxesDir = this.getBoxesDir(gameboxDir);
             const boxData = await this.readBoxFile(boxesDir, boxName);
 
             if (!boxData || !boxData[platform]) {
