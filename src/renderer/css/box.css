@@ -1,31 +1,147 @@
 /* 游戏盒子页面样式 */
 
+/* 盒子标题 */
 .box-title {
     margin: 0;
     font-size: 18px;
     font-weight: 600;
     color: var(--text-color);
+    margin-left: 8px;
 }
 
+/* 工具栏左侧 */
 .toolbar-left {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
 }
 
-/* 盒子视图游戏卡片样式 */
+/* 盒子主内容区：分栏布局 */
+.box-main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* 盒子侧边栏 */
+.box-sidebar {
+    width: 180px;
+    min-width: 180px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+.box-sidebar h3 {
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* 平台列表 */
+.box-platform-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.box-platform-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.box-platform-item:hover {
+    background-color: var(--hover-bg);
+}
+
+.box-platform-item.active {
+    background-color: var(--active-bg);
+    border-left: 3px solid var(--primary-color);
+}
+
+.box-platform-item .platform-name {
+    font-size: 14px;
+}
+
+.box-platform-item .game-count {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background-color: var(--card-bg);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* 盒子游戏区域 */
+.box-game-wall {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 盒子过滤栏 */
+.box-filter-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+/* 盒子游戏网格 */
+.box-games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--poster-min-width), 1fr));
+    gap: var(--poster-gap);
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+}
+
+/* 盒子游戏卡片 */
 .box-game-card {
     position: relative;
+    width: 100%;
+    max-width: var(--poster-max-width);
+    aspect-ratio: 2 / 3;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    display: flex;
+    flex-direction: column;
 }
 
-.box-game-card .game-card {
-    position: relative;
+.box-game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
 }
 
+.box-game-card .game-poster,
+.box-game-card .game-poster-placeholder {
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.box-game-card .game-info {
+    padding: 8px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+/* 移除按钮 */
 .box-game-card .remove-btn {
     position: absolute;
     top: 8px;
-    right: 8px;
+    left: 8px;
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -38,70 +154,258 @@
     justify-content: center;
     font-size: 14px;
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, background-color 0.2s;
     z-index: 10;
-}
-
-.box-game-card .remove-btn:hover {
-    background-color: var(--danger-color);
 }
 
 .box-game-card:hover .remove-btn {
     opacity: 1;
 }
 
-/* 列表视图盒子游戏状态 */
-.box-list-status {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 12px;
+.box-game-card .remove-btn:hover {
+    background-color: #f44336;
 }
 
-.box-list-status.played {
-    background-color: #4caf50;
-    color: white;
-}
-
-.box-list-status.playing {
-    background-color: #2196f3;
-    color: white;
-}
-
-.box-list-status.completed {
-    background-color: #9c27b0;
-    color: white;
-}
-
-.box-list-status.unplayed {
-    background-color: #9e9e9e;
-    color: white;
-}
-
-/* 网格视图状态标签 */
+/* 状态标签 */
 .box-status-tag {
     position: absolute;
     top: 8px;
-    left: 8px;
+    right: 8px;
     padding: 2px 8px;
     border-radius: 4px;
     font-size: 11px;
+    font-weight: 500;
     color: white;
     z-index: 5;
 }
 
-.box-status-tag.played {
-    background-color: #4caf50;
+.box-status-tag.unplayed {
+    background-color: #9e9e9e;
 }
 
 .box-status-tag.playing {
     background-color: #2196f3;
 }
 
+.box-status-tag.played {
+    background-color: #4caf50;
+}
+
 .box-status-tag.completed {
     background-color: #9c27b0;
 }
 
-.box-status-tag.unplayed {
+/* 列表状态样式 */
+.box-list-status {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+}
+
+.box-list-status.unplayed {
     background-color: #9e9e9e;
+}
+
+.box-list-status.playing {
+    background-color: #2196f3;
+}
+
+.box-list-status.played {
+    background-color: #4caf50;
+}
+
+.box-list-status.completed {
+    background-color: #9c27b0;
+}
+
+/* 列表视图样式 */
+.box-games-grid.list-view {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    gap: 0;
+}
+
+.box-games-grid.list-view .box-game-card {
+    display: table-row;
+    height: 60px;
+    cursor: pointer;
+    max-width: none;
+    aspect-ratio: auto;
+}
+
+.box-games-grid.list-view .box-game-card > * {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.box-games-grid.list-view .box-status-tag {
+    position: static;
+    padding: 2px 6px;
+    font-size: 11px;
+}
+
+.box-games-grid.list-view .game-poster,
+.box-games-grid.list-view .game-poster-placeholder {
+    width: 45px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.box-games-grid.list-view .game-poster-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg);
+}
+
+.box-games-grid.list-view .game-checkbox {
+    width: 40px;
+    text-align: center;
+}
+
+.box-games-grid.list-view .game-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.box-games-grid.list-view .game-action-col {
+    width: 60px;
+    text-align: center;
+}
+
+.box-games-grid.list-view .game-action-col .remove-btn {
+    position: static;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 4px;
+    padding: 0;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-games-grid.list-view .game-action-col .remove-btn:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.box-games-grid.list-view .game-icon {
+    width: 40px;
+    padding: 0;
+}
+
+.box-games-grid.list-view .game-icon img,
+.box-games-grid.list-view .game-icon .game-icon-placeholder {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.box-games-grid.list-view .game-icon .game-icon-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg);
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.box-games-grid.list-view .game-id-col {
+    width: 120px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-games-grid.list-view .game-name {
+    width: 120px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-games-grid.list-view .game-platform-info {
+    width: 60px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.box-games-grid.list-view .game-status {
+    width: 60px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.box-games-grid.list-view .game-publish-date {
+    width: 90px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.box-games-grid.list-view .game-time {
+    width: 80px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.box-games-grid.list-view .game-description-col {
+    width: 120px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: left;
+    padding: 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-games-grid.list-view .game-last-played {
+    width: 90px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.box-games-grid.list-view .game-rating {
+    width: 60px;
+    font-size: 12px;
+    color: #f5c518;
+    text-align: center;
+}
+
+/* 列表视图表头 */
+.box-games-grid.list-view .list-view-header {
+    display: table-row;
+    background-color: var(--sidebar-bg);
+    height: 40px;
+}
+
+.box-games-grid.list-view .list-view-header > * {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--border-color);
+    white-space: nowrap;
 }

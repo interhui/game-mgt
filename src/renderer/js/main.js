@@ -299,14 +299,14 @@ function updateBoxList(boxes) {
             item.classList.add('active');
             state.currentBox = item.dataset.box;
 
-            // 打开盒子视图
+            // 打开盒子视图（新窗口）
             openBoxView(state.currentBox);
         });
     });
 }
 
 /**
- * 打开盒子视图
+ * 打开盒子视图（新窗口）
  */
 async function openBoxView(boxName) {
     try {
@@ -747,7 +747,6 @@ function bindEvents() {
  */
 async function saveSettingsHandler() {
     try {
-        const oldGamesDir = state.settings.library.gamesDir;
         const newSettings = {
             ...state.settings,
             appearance: {
@@ -779,7 +778,7 @@ async function saveSettingsHandler() {
         // 关闭模态框
         elements.settingsModal.style.display = 'none';
 
-        // 重新加载所有游戏（无论是否更改了游戏目录）
+        // 重新加载所有游戏
         await loadPlatforms();
         await loadGames();
         await loadStats();

@@ -16,5 +16,15 @@
       "totalPlayTime": 0,
       "playCount": 0
     }
+  ],
+  "xbox360": [
+    {
+      "id": "xbox360-mass-effect-2",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
+    }
   ]
 }

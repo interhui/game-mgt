@@ -144,7 +144,8 @@ class GameService {
                 const lowerKeyword = keyword.toLowerCase();
                 results = results.filter(game =>
                     game.name.toLowerCase().includes(lowerKeyword) ||
-                    (game.description && game.description.toLowerCase().includes(lowerKeyword))
+                    (game.description && game.description.toLowerCase().includes(lowerKeyword)) ||
+                    (game.tags && game.tags.some(tag => tag.toLowerCase().includes(lowerKeyword)))
                 );
             }
 
