@@ -210,6 +210,7 @@ function createBoxWindow(boxName) {
         minWidth: 800,
         minHeight: 600,
         title: `游戏盒子 - ${boxName}`,
+        autoHideMenuBar: true,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             contextIsolation: true,
