@@ -30,6 +30,7 @@
                 </div>
             </div>
             <div class="toolbar-right">
+                <button id="batch-add-btn" class="btn btn-secondary" style="display: none;">批量添加</button>
                 <div class="search-box">
                     <input type="text" id="search-input" placeholder="搜索游戏...">
                     <button id="search-btn" class="icon-btn">🔍</button>
@@ -101,6 +102,29 @@
             <div class="modal-footer">
                 <button id="confirm-create-box" class="btn btn-primary">创建</button>
                 <button id="cancel-create-box" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 批量添加游戏到盒子模态框 -->
+    <div id="batch-add-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>添加到游戏盒子</h2>
+                <button class="close-btn" id="close-batch-add">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="batch-add-info" style="margin-bottom: 16px; color: var(--text-secondary);"></p>
+                <div class="form-group">
+                    <label>选择游戏盒子：</label>
+                    <select id="batch-box-select" class="form-input">
+                        <option value="">选择游戏盒子...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-batch-add" class="btn btn-primary">添加</button>
+                <button id="cancel-batch-add" class="btn btn-secondary">取消</button>
             </div>
         </div>
     </div>

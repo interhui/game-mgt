@@ -52,7 +52,15 @@ const elements = {
     boxNameInput: document.getElementById('box-name-input'),
     confirmCreateBox: document.getElementById('confirm-create-box'),
     cancelCreateBox: document.getElementById('cancel-create-box'),
-    closeCreateBox: document.getElementById('close-create-box')
+    closeCreateBox: document.getElementById('close-create-box'),
+    // 批量添加相关
+    batchAddBtn: document.getElementById('batch-add-btn'),
+    batchAddModal: document.getElementById('batch-add-modal'),
+    batchAddInfo: document.getElementById('batch-add-info'),
+    batchBoxSelect: document.getElementById('batch-box-select'),
+    confirmBatchAdd: document.getElementById('confirm-batch-add'),
+    cancelBatchAdd: document.getElementById('cancel-batch-add'),
+    closeBatchAdd: document.getElementById('close-batch-add')
 };
 
 /**
@@ -474,6 +482,7 @@ function bindCheckboxEvents(games) {
                 state.selectedGames.clear();
             }
             renderGames(games);
+            updateBatchAddButtonVisibility();
         });
     }
 
@@ -500,6 +509,9 @@ function bindCheckboxEvents(games) {
             if (selectAll) {
                 selectAll.checked = state.selectedGames.size === games.length && games.length > 0;
             }
+
+            // 更新批量添加按钮可见性
+            updateBatchAddButtonVisibility();
         });
     });
 
@@ -529,8 +541,23 @@ function bindCheckboxEvents(games) {
             if (selectAll) {
                 selectAll.checked = state.selectedGames.size === games.length && games.length > 0;
             }
+
+            // 更新批量添加按钮可见性
+            updateBatchAddButtonVisibility();
         });
     });
+}
+
+/**
+ * 更新批量添加按钮可见性
+ */
+function updateBatchAddButtonVisibility() {
+    if (state.selectedGames.size > 0) {
+        elements.batchAddBtn.style.display = 'block';
+        elements.batchAddBtn.textContent = `批量添加 (${state.selectedGames.size})`;
+    } else {
+        elements.batchAddBtn.style.display = 'none';
+    }
 }
 
 /**
@@ -738,6 +765,105 @@ function bindEvents() {
     elements.createBoxModal.addEventListener('click', (e) => {
         if (e.target === elements.createBoxModal) {
             elements.createBoxModal.style.display = 'none';
+        }
+    });
+
+    // ==================== 批量添加相关事件 ====================
+
+    // 批量添加按钮
+    elements.batchAddBtn.addEventListener('click', async () => {
+        if (state.selectedGames.size === 0) {
+            alert('请先选择要添加的游戏');
+            return;
+        }
+
+        // 获取所有盒子
+        const boxes = await window.electronAPI.getAllBoxes();
+
+        if (!boxes || boxes.length === 0) {
+            alert('请先创建游戏盒子');
+            return;
+        }
+
+        // 填充盒子选择下拉框
+        elements.batchBoxSelect.innerHTML = '<option value="">选择游戏盒子...</option>';
+        boxes.forEach(box => {
+            const option = document.createElement('option');
+            option.value = box.name;
+            option.textContent = `${box.name} (${box.gameCount}个游戏)`;
+            elements.batchBoxSelect.appendChild(option);
+        });
+
+        // 显示已选游戏数量
+        elements.batchAddInfo.textContent = `已选择 ${state.selectedGames.size} 个游戏`;
+
+        // 显示模态框
+        elements.batchAddModal.style.display = 'flex';
+    });
+
+    // 确认批量添加
+    elements.confirmBatchAdd.addEventListener('click', async () => {
+        const boxName = elements.batchBoxSelect.value;
+
+        if (!boxName) {
+            alert('请选择游戏盒子');
+            return;
+        }
+
+        try {
+            let addedCount = 0;
+            const selectedGameIds = Array.from(state.selectedGames);
+
+            for (const gameId of selectedGameIds) {
+                const game = state.games.find(g => g.id === gameId);
+                if (game) {
+                    const result = await window.electronAPI.addGameToBox({
+                        boxName: boxName,
+                        platform: game.platform,
+                        gameInfo: {
+                            id: game.gameId,
+                            status: 'unplayed',
+                            firstPlayed: '',
+                            lastPlayed: '',
+                            totalPlayTime: 0,
+                            playCount: 0
+                        }
+                    });
+
+                    if (!result.error) {
+                        addedCount++;
+                    }
+                }
+            }
+
+            alert(`已经添加${addedCount}个到${boxName}`);
+
+            // 关闭模态框
+            elements.batchAddModal.style.display = 'none';
+
+            // 清空选择
+            state.selectedGames.clear();
+            await loadGames();
+        } catch (error) {
+            console.error('Error batch adding to box:', error);
+            alert('添加失败: ' + error.message);
+        }
+    });
+
+    // 取消批量添加
+    elements.cancelBatchAdd.addEventListener('click', () => {
+        elements.batchAddModal.style.display = 'none';
+    });
+
+    // 关闭批量添加模态框
+    elements.closeBatchAdd.addEventListener('click', () => {
+        elements.batchAddModal.style.display = 'none';
+    });
+
+    // 点击模态框外部关闭
+    elements.batchAddModal.addEventListener('click', (e) => {
+        if (e.target === elements.batchAddModal) {
+            elements.batchAddModal.style.display = 'none';
         }
     });
 }

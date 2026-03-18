@@ -23,11 +23,43 @@
       "lastPlayed": "",
       "totalPlayTime": 0,
       "playCount": 0
+    },
+    {
+      "id": "ps1-metal-gear-solid",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
+    },
+    {
+      "id": "ps1-castlevania-symphony-of-the-night",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
     }
   ],
   "xbox360": [
     {
       "id": "xbox360-mass-effect-2",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
+    },
+    {
+      "id": "xbox360-the-elder-scrolls-v-skyrim",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
+    },
+    {
+      "id": "xbox360-red-dead-redemption",
       "status": "unplayed",
       "firstPlayed": "",
       "lastPlayed": "",
