@@ -560,8 +560,6 @@ async function removeGameFromBox(gameId) {
         if (!result.error) {
             // 重新加载盒子数据
             await loadBoxData();
-            // 通知主窗口刷新盒子列表（更新游戏数量）
-            window.dispatchEvent(new CustomEvent('box-updated'));
         } else {
             alert('移除失败: ' + result.error);
         }

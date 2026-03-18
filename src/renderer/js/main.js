@@ -677,7 +677,7 @@ function bindEvents() {
     });
 
     // 监听盒子更新事件
-    window.addEventListener('box-updated', () => {
+    window.electronAPI.onBoxUpdated(() => {
         loadBoxes();
     });
 
@@ -782,6 +782,8 @@ async function saveSettingsHandler() {
         await loadPlatforms();
         await loadGames();
         await loadStats();
+        // 重新加载盒子列表
+        await loadBoxes();
     } catch (error) {
         console.error('Error saving settings:', error);
     }

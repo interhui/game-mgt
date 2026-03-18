@@ -492,8 +492,6 @@ function bindEvents() {
             if (!result.error) {
                 alert('添加成功');
                 elements.addToBoxModal.style.display = 'none';
-                // 通知主窗口刷新盒子列表
-                window.dispatchEvent(new CustomEvent('box-updated'));
             } else {
                 alert('添加失败: ' + result.error);
             }

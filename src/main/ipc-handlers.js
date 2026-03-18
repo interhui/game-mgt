@@ -448,11 +448,20 @@ function setupIpcHandlers(services) {
         }
     });
 
+    // 通知主窗口刷新盒子列表
+    function notifyBoxUpdated() {
+        const mainWindow = getMainWindow();
+        if (mainWindow) {
+            mainWindow.webContents.send('box-updated');
+        }
+    }
+
     // 创建游戏盒子
     ipcMain.handle('create-box', async (event, boxName) => {
         try {
             const gameboxDir = settingsService.getGameboxDir();
             const result = await boxService.createBox(boxName, gameboxDir);
+            notifyBoxUpdated();
             return result;
         } catch (error) {
             console.error('Error creating box:', error);
@@ -465,6 +474,7 @@ function setupIpcHandlers(services) {
         try {
             const gameboxDir = settingsService.getGameboxDir();
             const result = await boxService.deleteBox(boxName, gameboxDir);
+            notifyBoxUpdated();
             return result;
         } catch (error) {
             console.error('Error deleting box:', error);
@@ -490,6 +500,7 @@ function setupIpcHandlers(services) {
             const gameboxDir = settingsService.getGameboxDir();
             const { boxName, platform, gameInfo } = data;
             const result = await boxService.addGameToBox(boxName, platform, gameInfo, gameboxDir);
+            notifyBoxUpdated();
             return result;
         } catch (error) {
             console.error('Error adding game to box:', error);
@@ -503,6 +514,7 @@ function setupIpcHandlers(services) {
             const gameboxDir = settingsService.getGameboxDir();
             const { boxName, platform, gameId } = data;
             const result = await boxService.removeGameFromBox(boxName, platform, gameId, gameboxDir);
+            notifyBoxUpdated();
             return result;
         } catch (error) {
             console.error('Error removing game from box:', error);

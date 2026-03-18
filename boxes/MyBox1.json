@@ -15,11 +15,29 @@
       "lastPlayed": "",
       "totalPlayTime": 0,
       "playCount": 0
+    },
+    {
+      "id": "ps1-final-fantasy-vii",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
     }
   ],
   "xbox360": [
     {
       "id": "xbox360-mass-effect-2",
+      "status": "unplayed",
+      "firstPlayed": "",
+      "lastPlayed": "",
+      "totalPlayTime": 0,
+      "playCount": 0
+    }
+  ],
+  "psp": [
+    {
+      "id": "psp-crisis-core-final-fantasy-vii",
       "status": "unplayed",
       "firstPlayed": "",
       "lastPlayed": "",

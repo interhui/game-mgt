@@ -70,6 +70,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
     onRefreshLibrary: (callback) => {
         ipcRenderer.on('refresh-library', callback);
     },
+    onBoxUpdated: (callback) => {
+        ipcRenderer.on('box-updated', callback);
+    },
     onOpenSettings: (callback) => {
         ipcRenderer.on('open-settings', callback);
     },
