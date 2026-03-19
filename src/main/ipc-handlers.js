@@ -521,6 +521,20 @@ function setupIpcHandlers(services) {
         }
     });
 
+    // 更新盒子中游戏的状态
+    ipcMain.handle('update-game-in-box', async (event, data) => {
+        try {
+            const gameboxDir = settingsService.getGameboxDir();
+            const { boxName, platform, gameId, gameInfo } = data;
+            const result = await boxService.updateGameInBox(boxName, platform, gameId, gameInfo, gameboxDir);
+            notifyBoxUpdated();
+            return result;
+        } catch (error) {
+            console.error('Error updating game in box:', error);
+            return { error: error.message };
+        }
+    });
+
     // ==================== 窗口管理 ====================
 
     // 打开游戏详情窗口

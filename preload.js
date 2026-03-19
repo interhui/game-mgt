@@ -56,6 +56,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     getBoxDetail: (boxName) => ipcRenderer.invoke('get-box-detail', boxName),
     addGameToBox: (data) => ipcRenderer.invoke('add-game-to-box', data),
     removeGameFromBox: (data) => ipcRenderer.invoke('remove-game-from-box', data),
+    updateGameInBox: (data) => ipcRenderer.invoke('update-game-in-box', data),
 
     // 窗口管理
     openGameDetail: (gameData) => ipcRenderer.invoke('open-game-detail', gameData),

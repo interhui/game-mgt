@@ -80,6 +80,45 @@
         </main>
     </div>
 
+    <!-- 修改游戏状态弹窗 -->
+    <div id="status-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>修改游戏状态</h2>
+                <button id="close-status-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="status-game-name" class="status-game-name"></p>
+                <div class="status-radio-group">
+                    <label class="status-radio">
+                        <input type="radio" name="status" value="unplayed">
+                        <span class="status-dot unplayed"></span>
+                        <span>未玩</span>
+                    </label>
+                    <label class="status-radio">
+                        <input type="radio" name="status" value="playing">
+                        <span class="status-dot playing"></span>
+                        <span>游戏中</span>
+                    </label>
+                    <label class="status-radio">
+                        <input type="radio" name="status" value="played">
+                        <span class="status-dot played"></span>
+                        <span>已玩</span>
+                    </label>
+                    <label class="status-radio">
+                        <input type="radio" name="status" value="completed">
+                        <span class="status-dot completed"></span>
+                        <span>已完成</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-status-btn" class="btn btn-secondary">取消</button>
+                <button id="confirm-status-btn" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/box.js"></script>
 </body>
 </html>

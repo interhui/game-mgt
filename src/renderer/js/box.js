@@ -36,8 +36,15 @@ const elements = {
     platformList: document.getElementById('platform-list'),
     platformFilter: document.getElementById('platform-filter'),
     statusFilter: document.getElementById('status-filter'),
-    sortSelect: document.getElementById('sort-select')
+    sortSelect: document.getElementById('sort-select'),
+    statusModal: document.getElementById('status-modal'),
+    statusGameName: document.getElementById('status-game-name'),
+    confirmStatusBtn: document.getElementById('confirm-status-btn'),
+    cancelStatusBtn: document.getElementById('cancel-status-btn')
 };
+
+// 当前正在修改状态的游戏
+let currentStatusGame = null;
 
 // 平台名称映射
 const platformNames = {
@@ -152,6 +159,27 @@ function bindEvents() {
     // 批量移除按钮
     elements.batchRemoveBtn.addEventListener('click', async () => {
         await batchRemoveGames();
+    });
+
+    // 状态修改弹窗按钮
+    elements.confirmStatusBtn.addEventListener('click', async () => {
+        await confirmStatusChange();
+    });
+
+    elements.cancelStatusBtn.addEventListener('click', () => {
+        closeStatusModal();
+    });
+
+    // 关闭按钮
+    document.getElementById('close-status-modal').addEventListener('click', () => {
+        closeStatusModal();
+    });
+
+    // 点击弹窗外部关闭
+    elements.statusModal.addEventListener('click', (e) => {
+        if (e.target === elements.statusModal) {
+            closeStatusModal();
+        }
     });
 }
 
@@ -400,7 +428,7 @@ function renderGames(games) {
                     <div class="game-publish-date">${game.publishDate || '-'}</div>
                     <div class="game-time">${formatPlaytime(game.boxTotalPlayTime)}</div>
                     <div class="game-last-played">${game.boxLastPlayed || '-'}</div>
-                    <div class="game-status"><span class="box-list-status ${game.boxStatus || 'unplayed'}">${getStatusText(game.boxStatus)}</span></div>
+                    <div class="game-status"><span class="box-list-status ${game.boxStatus || 'unplayed'}" data-game-id="${game.gameId}" data-platform="${game.platform}">${getStatusText(game.boxStatus)}</span></div>
                     <div class="game-rating">${game.userRating ? '⭐'.repeat(game.userRating) : '-'}</div>
                 </div>
             `;
@@ -409,7 +437,7 @@ function renderGames(games) {
             return `
                 <div class="box-game-card game-card" data-game-id="${game.gameId}">
                     <button class="remove-btn" data-game-id="${game.gameId}" title="从盒子中移除">✕</button>
-                    <span class="box-status-tag ${game.boxStatus || 'unplayed'}">${getStatusText(game.boxStatus)}</span>
+                    <span class="box-status-tag ${game.boxStatus || 'unplayed'}" data-game-id="${game.gameId}" data-platform="${game.platform}">${getStatusText(game.boxStatus)}</span>
                     ${game.poster ?
                         `<img class="game-poster" src="${game.poster}" alt="${game.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                          <div class="game-poster-placeholder" style="display:none;">🎮</div>` :
@@ -447,6 +475,16 @@ function renderGames(games) {
             e.stopPropagation();
             const gameId = btn.dataset.gameId;
             await removeGameFromBox(gameId);
+        });
+    });
+
+    // 绑定状态标签点击事件
+    document.querySelectorAll('.box-status-tag, .box-list-status').forEach(tag => {
+        tag.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const gameId = tag.dataset.gameId;
+            const platform = tag.dataset.platform;
+            openStatusModal(gameId, platform);
         });
     });
 
@@ -644,6 +682,68 @@ function updateBatchButtonVisibility() {
         elements.batchRemoveBtn.style.display = 'block';
     } else {
         elements.batchRemoveBtn.style.display = 'none';
+    }
+}
+
+/**
+ * 打开状态修改弹窗
+ */
+function openStatusModal(gameId, platform) {
+    const game = state.games.find(g => g.gameId === gameId);
+    if (!game) return;
+
+    currentStatusGame = { gameId, platform, game };
+    elements.statusGameName.textContent = game.name;
+
+    // 设置单选框的选中状态
+    const currentStatus = game.boxStatus || 'unplayed';
+    const radioButtons = document.querySelectorAll('input[name="status"]');
+    radioButtons.forEach(radio => {
+        radio.checked = radio.value === currentStatus;
+    });
+
+    elements.statusModal.style.display = 'flex';
+}
+
+/**
+ * 关闭状态修改弹窗
+ */
+function closeStatusModal() {
+    elements.statusModal.style.display = 'none';
+    currentStatusGame = null;
+}
+
+/**
+ * 确认状态修改
+ */
+async function confirmStatusChange() {
+    if (!currentStatusGame) return;
+
+    const { gameId, platform, game } = currentStatusGame;
+    const selectedRadio = document.querySelector('input[name="status"]:checked');
+    if (!selectedRadio) return;
+
+    const newStatus = selectedRadio.value;
+
+    try {
+        const result = await window.electronAPI.updateGameInBox({
+            boxName: state.boxName,
+            platform: platform,
+            gameId: gameId,
+            gameInfo: {
+                status: newStatus
+            }
+        });
+
+        if (!result.error) {
+            closeStatusModal();
+            await loadBoxData();
+        } else {
+            alert('修改状态失败: ' + result.error);
+        }
+    } catch (error) {
+        console.error('Error updating game status:', error);
+        alert('修改状态失败: ' + error.message);
     }
 }
 
