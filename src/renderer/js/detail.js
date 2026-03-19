@@ -34,6 +34,15 @@ const elements = {
     editActions: document.getElementById('edit-actions'),
     normalActions: document.getElementById('normal-actions'),
     boxActions: document.getElementById('box-actions'),
+    boxInfoSection: document.getElementById('box-info-section'),
+    boxStatus: document.getElementById('box-status'),
+    boxPlayTime: document.getElementById('box-play-time'),
+    boxLastPlayed: document.getElementById('box-last-played'),
+    editStatusBtn: document.getElementById('edit-status-btn'),
+    editStatusActionBtn: document.getElementById('edit-status-action-btn'),
+    editStatusModal: document.getElementById('edit-status-modal'),
+    confirmEditStatus: document.getElementById('confirm-edit-status'),
+    cancelEditStatus: document.getElementById('cancel-edit-status'),
     addToBoxBtn: document.getElementById('add-to-box-btn'),
     addToBoxModal: document.getElementById('add-to-box-modal'),
     boxSelect: document.getElementById('box-select'),
@@ -105,13 +114,26 @@ function loadGameDetail(game) {
     // 描述
     elements.gameDescription.textContent = game.description || '暂无描述';
 
-    // 根据来源显示不同的按钮
+    // 盒子特有信息
     if (fromBox) {
         elements.normalActions.style.display = 'none';
         elements.boxActions.style.display = 'flex';
+        elements.boxInfoSection.style.display = 'block';
+
+        // 游戏状态
+        const status = game.boxStatus || 'unplayed';
+        elements.boxStatus.textContent = getStatusText(status);
+        elements.boxStatus.className = `value box-status-tag-display ${status}`;
+
+        // 游戏时间
+        elements.boxPlayTime.textContent = formatPlaytime(game.boxTotalPlayTime);
+
+        // 最后游戏
+        elements.boxLastPlayed.textContent = game.boxLastPlayed || '-';
     } else {
         elements.normalActions.style.display = 'flex';
         elements.boxActions.style.display = 'none';
+        elements.boxInfoSection.style.display = 'none';
     }
 }
 
@@ -178,6 +200,89 @@ function getPlatformName(platformId) {
         'n64': 'Nintendo 64'
     };
     return platformNames[platformId] || platformId;
+}
+
+/**
+ * 获取状态文本
+ */
+function getStatusText(status) {
+    const statusMap = {
+        'unplayed': '未玩',
+        'playing': '游戏中',
+        'played': '已玩',
+        'completed': '已完成'
+    };
+    return statusMap[status] || status;
+}
+
+/**
+ * 格式化游戏时长
+ */
+function formatPlaytime(minutes) {
+    if (!minutes || minutes === 0) return '-';
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    if (hours === 0) return `${mins}分钟`;
+    return `${hours}小时${mins > 0 ? mins + '分钟' : ''}`;
+}
+
+/**
+ * 打开状态修改弹窗
+ */
+function openStatusModal() {
+    if (!fromBox) return;
+
+    const status = currentGame.boxStatus || 'unplayed';
+    const radioButtons = document.querySelectorAll('input[name="edit-status"]');
+    radioButtons.forEach(radio => {
+        radio.checked = radio.value === status;
+    });
+
+    elements.editStatusModal.style.display = 'flex';
+}
+
+/**
+ * 关闭状态修改弹窗
+ */
+function closeStatusModal() {
+    elements.editStatusModal.style.display = 'none';
+}
+
+/**
+ * 确认状态修改
+ */
+async function confirmStatusEdit() {
+    if (!fromBox || !boxName) return;
+
+    const selectedRadio = document.querySelector('input[name="edit-status"]:checked');
+    if (!selectedRadio) return;
+
+    const newStatus = selectedRadio.value;
+
+    try {
+        const result = await window.electronAPI.updateGameInBox({
+            boxName: boxName,
+            platform: currentGame.platform,
+            gameId: currentGame.gameId,
+            gameInfo: {
+                status: newStatus
+            }
+        });
+
+        if (!result.error) {
+            closeStatusModal();
+            // 更新当前游戏数据
+            currentGame.boxStatus = newStatus;
+            // 更新显示
+            elements.boxStatus.textContent = getStatusText(newStatus);
+            elements.boxStatus.className = `value box-status-tag-display ${newStatus}`;
+        } else {
+            alert('修改状态失败: ' + result.error);
+        }
+    } catch (error) {
+        console.error('Error updating game status:', error);
+        alert('修改状态失败: ' + error.message);
+    }
 }
 
 /**
@@ -570,6 +675,32 @@ function bindEvents() {
         } catch (error) {
             console.error('Error launching game:', error);
             alert('启动游戏失败: ' + error.message);
+        }
+    });
+
+    // 修改状态按钮（盒子模式）
+    elements.editStatusBtn.addEventListener('click', () => {
+        openStatusModal();
+    });
+
+    elements.editStatusActionBtn.addEventListener('click', () => {
+        openStatusModal();
+    });
+
+    // 确认修改状态
+    elements.confirmEditStatus.addEventListener('click', async () => {
+        await confirmStatusEdit();
+    });
+
+    // 取消修改状态
+    elements.cancelEditStatus.addEventListener('click', () => {
+        closeStatusModal();
+    });
+
+    // 点击模态框外部关闭
+    elements.editStatusModal.addEventListener('click', (e) => {
+        if (e.target === elements.editStatusModal) {
+            closeStatusModal();
         }
     });
 }

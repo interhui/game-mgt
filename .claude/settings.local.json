@@ -3,7 +3,8 @@
     "allow": [
       "WebSearch",
       "Bash(cd:*)",
-      "Bash(npm test:*)"
+      "Bash(npm test:*)",
+      "Bash(node:*)"
     ]
   }
 }

@@ -167,9 +167,9 @@ function createGameDetailWindow(gameData) {
 
     detailWindow = new BrowserWindow({
         width: 800,
-        height: 600,
+        height: 680,
         minWidth: 600,
-        minHeight: 500,
+        minHeight: 580,
         frame: false,
         title: '游戏详情',
         webPreferences: {
