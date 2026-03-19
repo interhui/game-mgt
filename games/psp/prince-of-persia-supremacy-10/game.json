@@ -1,0 +1,26 @@
+{
+    "id": "psp-prince-of-persia-supremacy-10",
+    "name": "Prince of Persia Supremacy 10",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2004-10-25",
+    "platform": "psp",
+    "status": "played",
+    "playCount": 16,
+    "totalPlayTime": 2141,
+    "lastPlayed": "2020-09-06",
+    "firstPlayed": "2021-02-04",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Square Enix",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

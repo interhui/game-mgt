@@ -1,0 +1,26 @@
+{
+    "id": "switch-grid-4",
+    "name": "Grid 4",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2000-02-04",
+    "platform": "switch",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "action",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Obsidian Entertainment",
+    "publisher": "Compile Heart",
+    "genre": [
+        "action",
+        "adventure"
+    ]
+}

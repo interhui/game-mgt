@@ -1,0 +1,26 @@
+{
+    "id": "ps2-wipeout-shadow",
+    "name": "Wipeout Shadow",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2000-01-19",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 49,
+    "totalPlayTime": 2729,
+    "lastPlayed": "2024-05-12",
+    "firstPlayed": "2022-08-28",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Sega",
+    "publisher": "Microsoft Game Studios",
+    "genre": [
+        "rpg",
+        "action"
+    ]
+}

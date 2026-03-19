@@ -1,0 +1,26 @@
+{
+    "id": "psp-guitar-hero-shadow-18",
+    "name": "Guitar Hero Shadow 18",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2010-09-17",
+    "platform": "psp",
+    "status": "played",
+    "playCount": 34,
+    "totalPlayTime": 347,
+    "lastPlayed": "2020-08-16",
+    "firstPlayed": "2019-09-27",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "platformer",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Idea Factory",
+    "genre": [
+        "platformer",
+        "action"
+    ]
+}

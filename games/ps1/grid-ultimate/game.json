@@ -1,0 +1,26 @@
+{
+    "id": "ps1-grid-ultimate",
+    "name": "Grid Ultimate",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2002-08-23",
+    "platform": "ps1",
+    "status": "played",
+    "playCount": 31,
+    "totalPlayTime": 2525,
+    "lastPlayed": "2022-09-11",
+    "firstPlayed": "2019-12-20",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "2K Boston",
+    "publisher": "Konami",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

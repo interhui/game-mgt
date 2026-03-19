@@ -1,0 +1,26 @@
+{
+    "id": "pc-suikoden-destiny",
+    "name": "Suikoden Destiny",
+    "description": "一款充满动作冒险元素的作品，玩家将在游戏中体验到精彩的故事情节和紧张刺激的战斗。",
+    "publishDate": "2003-07-25",
+    "platform": "pc",
+    "status": "played",
+    "playCount": 4,
+    "totalPlayTime": 4423,
+    "lastPlayed": "2020-10-22",
+    "firstPlayed": "2023-06-08",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "rpg",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "Capcom",
+    "genre": [
+        "rpg",
+        "action"
+    ]
+}

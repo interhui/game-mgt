@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-nba-live-4",
+    "name": "NBA Live 4",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2024-03-03",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 38,
+    "totalPlayTime": 4802,
+    "lastPlayed": "2022-08-12",
+    "firstPlayed": "2023-11-04",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "party"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "FromSoftware",
+    "genre": [
+        "party"
+    ]
+}

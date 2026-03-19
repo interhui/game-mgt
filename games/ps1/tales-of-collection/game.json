@@ -1,0 +1,24 @@
+{
+    "id": "ps1-tales-of-collection",
+    "name": "Tales of Collection",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2013-02-04",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 21,
+    "totalPlayTime": 3487,
+    "lastPlayed": "2020-12-14",
+    "firstPlayed": "2018-12-24",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Atlus",
+    "genre": [
+        "strategy"
+    ]
+}

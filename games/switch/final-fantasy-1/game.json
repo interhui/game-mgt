@@ -1,0 +1,24 @@
+{
+    "id": "switch-final-fantasy-1",
+    "name": "Final Fantasy 1",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2018-04-08",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 28,
+    "totalPlayTime": 738,
+    "lastPlayed": "2022-09-26",
+    "firstPlayed": "2022-11-13",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "2K Boston",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "rpg"
+    ]
+}

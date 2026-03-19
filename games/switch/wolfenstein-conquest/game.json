@@ -1,0 +1,26 @@
+{
+    "id": "switch-wolfenstein-conquest",
+    "name": "Wolfenstein Conquest",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2003-03-03",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 24,
+    "totalPlayTime": 834,
+    "lastPlayed": "2024-02-11",
+    "firstPlayed": "2021-04-01",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "platformer",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Capcom",
+    "publisher": "Idea Factory",
+    "genre": [
+        "platformer",
+        "action"
+    ]
+}

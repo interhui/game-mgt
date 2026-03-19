@@ -1,0 +1,24 @@
+{
+    "id": "switch-final-fantasy-part-1",
+    "name": "Final Fantasy Part 1",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2009-10-12",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 21,
+    "totalPlayTime": 1774,
+    "lastPlayed": "2021-12-16",
+    "firstPlayed": "2021-12-11",
+    "favorite": true,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Bethesda Game Studios",
+    "publisher": "Capcom",
+    "genre": [
+        "simulation"
+    ]
+}

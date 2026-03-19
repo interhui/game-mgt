@@ -1,0 +1,26 @@
+{
+    "id": "ps1-nba-2k-prime",
+    "name": "NBA 2K Prime",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2009-09-23",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "Sucker Punch",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

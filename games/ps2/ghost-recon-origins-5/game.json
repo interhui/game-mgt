@@ -1,0 +1,26 @@
+{
+    "id": "ps2-ghost-recon-origins-5",
+    "name": "Ghost Recon Origins 5",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2007-10-29",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 29,
+    "totalPlayTime": 1364,
+    "lastPlayed": "2020-12-07",
+    "firstPlayed": "2019-08-21",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

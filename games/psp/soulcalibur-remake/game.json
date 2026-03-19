@@ -1,0 +1,26 @@
+{
+    "id": "psp-soulcalibur-remake",
+    "name": "Soulcalibur Remake",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2021-03-01",
+    "platform": "psp",
+    "status": "playing",
+    "playCount": 36,
+    "totalPlayTime": 709,
+    "lastPlayed": "2021-01-03",
+    "firstPlayed": "2020-05-31",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "shooter",
+        "tps"
+    ],
+    "customTags": [],
+    "developer": "Konami",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "shooter",
+        "tps"
+    ]
+}

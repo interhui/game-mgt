@@ -1,0 +1,28 @@
+{
+    "id": "ps2-wipeout-domination",
+    "name": "Wipeout Domination",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2004-02-20",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 17,
+    "totalPlayTime": 1252,
+    "lastPlayed": "2023-10-09",
+    "firstPlayed": "2019-04-16",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "action",
+        "adventure",
+        "open-world"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Sega",
+    "genre": [
+        "action",
+        "adventure",
+        "open-world"
+    ]
+}

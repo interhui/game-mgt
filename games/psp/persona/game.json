@@ -1,0 +1,26 @@
+{
+    "id": "psp-persona",
+    "name": "Persona",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2003-03-12",
+    "platform": "psp",
+    "status": "playing",
+    "playCount": 50,
+    "totalPlayTime": 326,
+    "lastPlayed": "2021-12-18",
+    "firstPlayed": "2023-12-17",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "shooter",
+        "fps"
+    ],
+    "customTags": [],
+    "developer": "Sega",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "shooter",
+        "fps"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-tales-of-prime",
+    "name": "Tales of Prime",
+    "description": "一款充满动作冒险元素的作品，玩家将在游戏中体验到精彩的故事情节和紧张刺激的战斗。",
+    "publishDate": "2006-10-20",
+    "platform": "xbox360",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Capcom",
+    "genre": [
+        "strategy"
+    ]
+}

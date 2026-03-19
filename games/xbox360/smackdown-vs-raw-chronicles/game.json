@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-smackdown-vs-raw-chronicles",
+    "name": "SmackDown vs Raw Chronicles",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2019-11-20",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 42,
+    "totalPlayTime": 4813,
+    "lastPlayed": "2024-02-17",
+    "firstPlayed": "2020-06-28",
+    "favorite": true,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "horror",
+        "survival"
+    ],
+    "customTags": [],
+    "developer": "Bethesda Game Studios",
+    "publisher": "Koei Tecmo",
+    "genre": [
+        "horror",
+        "survival"
+    ]
+}

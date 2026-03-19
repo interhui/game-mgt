@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-devil-may-cry",
+    "name": "Devil May Cry",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2001-09-21",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 7,
+    "totalPlayTime": 1145,
+    "lastPlayed": "2023-11-03",
+    "firstPlayed": "2019-04-20",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Koei",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "action",
+        "rpg"
+    ]
+}

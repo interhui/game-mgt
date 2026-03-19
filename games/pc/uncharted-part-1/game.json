@@ -1,0 +1,26 @@
+{
+    "id": "pc-uncharted-part-1",
+    "name": "Uncharted Part 1",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2009-06-01",
+    "platform": "pc",
+    "status": "played",
+    "playCount": 34,
+    "totalPlayTime": 2260,
+    "lastPlayed": "2021-11-29",
+    "firstPlayed": "2021-04-06",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Rockstar North",
+    "publisher": "Sega",
+    "genre": [
+        "rpg",
+        "action"
+    ]
+}

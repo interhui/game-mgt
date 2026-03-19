@@ -1,0 +1,26 @@
+{
+    "id": "psp-kratos-revival",
+    "name": "Kratos Revival",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2009-05-14",
+    "platform": "psp",
+    "status": "playing",
+    "playCount": 33,
+    "totalPlayTime": 132,
+    "lastPlayed": "2023-08-23",
+    "firstPlayed": "2022-06-28",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Square Enix",
+    "genre": [
+        "racing",
+        "arcade"
+    ]
+}

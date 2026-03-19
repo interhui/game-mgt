@@ -1,0 +1,26 @@
+{
+    "id": "ps2-smackdown-vs-raw-revolution",
+    "name": "SmackDown vs Raw Revolution",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2024-10-23",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 22,
+    "totalPlayTime": 3480,
+    "lastPlayed": "2024-04-04",
+    "firstPlayed": "2021-11-23",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "fps"
+    ],
+    "customTags": [],
+    "developer": "Team Ninja",
+    "publisher": "Level-5",
+    "genre": [
+        "shooter",
+        "fps"
+    ]
+}

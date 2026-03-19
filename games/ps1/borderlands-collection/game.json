@@ -1,0 +1,26 @@
+{
+    "id": "ps1-borderlands-collection",
+    "name": "Borderlands Collection",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2012-02-24",
+    "platform": "ps1",
+    "status": "completed",
+    "playCount": 30,
+    "totalPlayTime": 4305,
+    "lastPlayed": "2020-01-24",
+    "firstPlayed": "2018-03-27",
+    "favorite": true,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "PlatinumGames",
+    "genre": [
+        "shooter",
+        "action"
+    ]
+}

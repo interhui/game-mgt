@@ -1,0 +1,26 @@
+{
+    "id": "psp-mana-anthology-15",
+    "name": "Mana Anthology 15",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2015-07-22",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 11,
+    "totalPlayTime": 1725,
+    "lastPlayed": "2024-06-18",
+    "firstPlayed": "2019-12-12",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "Konami",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

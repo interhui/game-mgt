@@ -1,0 +1,26 @@
+{
+    "id": "switch-borderlands-destiny",
+    "name": "Borderlands Destiny",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2017-06-09",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 30,
+    "totalPlayTime": 665,
+    "lastPlayed": "2022-01-18",
+    "firstPlayed": "2018-05-08",
+    "favorite": true,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "action",
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Bandai Namco",
+    "publisher": "Atlus",
+    "genre": [
+        "action",
+        "rpg"
+    ]
+}

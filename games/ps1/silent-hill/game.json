@@ -1,0 +1,26 @@
+{
+    "id": "ps1-silent-hill",
+    "name": "Silent Hill",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2014-10-15",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "horror",
+        "survival"
+    ],
+    "customTags": [],
+    "developer": "Rockstar North",
+    "publisher": "Atlus",
+    "genre": [
+        "horror",
+        "survival"
+    ]
+}

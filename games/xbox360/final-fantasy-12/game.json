@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-final-fantasy-12",
+    "name": "Final Fantasy 12",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2013-02-06",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 9,
+    "totalPlayTime": 335,
+    "lastPlayed": "2023-03-29",
+    "firstPlayed": "2019-05-20",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "sports",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Bandai Namco",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "sports",
+        "simulation"
+    ]
+}

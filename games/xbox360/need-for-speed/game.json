@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-need-for-speed",
+    "name": "Need for Speed",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2015-07-22",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 25,
+    "totalPlayTime": 741,
+    "lastPlayed": "2020-11-24",
+    "firstPlayed": "2022-09-03",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "Game Freak",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

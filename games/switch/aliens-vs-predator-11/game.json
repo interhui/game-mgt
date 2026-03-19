@@ -1,0 +1,26 @@
+{
+    "id": "switch-aliens-vs-predator-11",
+    "name": "Aliens vs Predator 11",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2018-09-24",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 45,
+    "totalPlayTime": 3189,
+    "lastPlayed": "2023-08-04",
+    "firstPlayed": "2020-04-13",
+    "favorite": true,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "tps"
+    ],
+    "customTags": [],
+    "developer": "Rockstar North",
+    "publisher": "Activision",
+    "genre": [
+        "shooter",
+        "tps"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "switch-crash-bandicoot-16",
+    "name": "Crash Bandicoot 16",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2015-03-28",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 19,
+    "totalPlayTime": 2571,
+    "lastPlayed": "2024-09-29",
+    "firstPlayed": "2020-02-18",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Santa Monica Studio",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

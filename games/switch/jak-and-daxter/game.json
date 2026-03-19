@@ -1,0 +1,26 @@
+{
+    "id": "switch-jak-and-daxter",
+    "name": "Jak and Daxter",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2006-12-24",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 11,
+    "totalPlayTime": 2728,
+    "lastPlayed": "2021-05-05",
+    "firstPlayed": "2023-07-27",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Square Enix",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

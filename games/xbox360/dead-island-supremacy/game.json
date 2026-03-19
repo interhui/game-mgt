@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-dead-island-supremacy",
+    "name": "Dead Island Supremacy",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2020-04-21",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 35,
+    "totalPlayTime": 374,
+    "lastPlayed": "2024-10-22",
+    "firstPlayed": "2021-12-26",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "racing"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "racing"
+    ]
+}

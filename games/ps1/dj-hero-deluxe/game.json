@@ -1,0 +1,26 @@
+{
+    "id": "ps1-dj-hero-deluxe",
+    "name": "DJ Hero Deluxe",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2005-11-07",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 7,
+    "totalPlayTime": 3253,
+    "lastPlayed": "2022-04-04",
+    "firstPlayed": "2023-02-10",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "sports",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Game Freak",
+    "publisher": "Ubisoft",
+    "genre": [
+        "sports",
+        "arcade"
+    ]
+}

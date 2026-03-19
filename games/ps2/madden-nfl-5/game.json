@@ -1,0 +1,26 @@
+{
+    "id": "ps2-madden-nfl-5",
+    "name": "Madden NFL 5",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2006-12-24",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 25,
+    "totalPlayTime": 3777,
+    "lastPlayed": "2023-03-21",
+    "firstPlayed": "2020-02-29",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "fps"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Nintendo",
+    "genre": [
+        "shooter",
+        "fps"
+    ]
+}

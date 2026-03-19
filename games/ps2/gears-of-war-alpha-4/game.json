@@ -1,0 +1,26 @@
+{
+    "id": "ps2-gears-of-war-alpha-4",
+    "name": "Gears of War Alpha 4",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2007-06-09",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 34,
+    "totalPlayTime": 2112,
+    "lastPlayed": "2022-02-02",
+    "firstPlayed": "2023-04-19",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "sports",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Obsidian Entertainment",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "sports",
+        "arcade"
+    ]
+}

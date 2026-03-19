@@ -1,0 +1,26 @@
+{
+    "id": "ps1-lufia-deluxe-19",
+    "name": "Lufia Deluxe 19",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2008-10-25",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 29,
+    "totalPlayTime": 4013,
+    "lastPlayed": "2024-05-22",
+    "firstPlayed": "2018-08-27",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "platformer",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Santa Monica Studio",
+    "publisher": "Square Enix",
+    "genre": [
+        "platformer",
+        "adventure"
+    ]
+}

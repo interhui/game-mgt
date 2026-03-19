@@ -1,0 +1,24 @@
+{
+    "id": "psp-final-fantasy-sequel",
+    "name": "Final Fantasy Sequel",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2022-07-26",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 47,
+    "totalPlayTime": 2255,
+    "lastPlayed": "2023-08-13",
+    "firstPlayed": "2022-03-26",
+    "favorite": true,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Compile Heart",
+    "genre": [
+        "rpg"
+    ]
+}

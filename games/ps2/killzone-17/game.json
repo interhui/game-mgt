@@ -1,0 +1,26 @@
+{
+    "id": "ps2-killzone-17",
+    "name": "Killzone 17",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2001-07-12",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 5,
+    "totalPlayTime": 4515,
+    "lastPlayed": "2024-02-20",
+    "firstPlayed": "2018-09-04",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Rockstar Leeds",
+    "publisher": "Sega",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "psp-borderlands",
+    "name": "Borderlands",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2024-10-14",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 50,
+    "totalPlayTime": 2230,
+    "lastPlayed": "2022-02-02",
+    "firstPlayed": "2018-11-27",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Intelligent Systems",
+    "publisher": "Square Enix",
+    "genre": [
+        "shooter",
+        "action"
+    ]
+}

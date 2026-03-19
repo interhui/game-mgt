@@ -1,0 +1,26 @@
+{
+    "id": "wii-shift-ultimate-9",
+    "name": "Shift Ultimate 9",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2010-03-30",
+    "platform": "wii",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "sports",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "Square Enix",
+    "genre": [
+        "sports",
+        "simulation"
+    ]
+}

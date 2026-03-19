@@ -1,0 +1,26 @@
+{
+    "id": "ps2-gran-turismo-premium",
+    "name": "Gran Turismo Premium",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2007-03-21",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

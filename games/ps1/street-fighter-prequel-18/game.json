@@ -1,0 +1,26 @@
+{
+    "id": "ps1-street-fighter-prequel-18",
+    "name": "Street Fighter Prequel 18",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2024-01-07",
+    "platform": "ps1",
+    "status": "completed",
+    "playCount": 14,
+    "totalPlayTime": 2419,
+    "lastPlayed": "2023-05-02",
+    "firstPlayed": "2023-02-16",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "action",
+        "fighting"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "action",
+        "fighting"
+    ]
+}

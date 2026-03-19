@@ -1,0 +1,26 @@
+{
+    "id": "switch-saints-row-resurrection",
+    "name": "Saints Row Resurrection",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2013-02-24",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 15,
+    "totalPlayTime": 83,
+    "lastPlayed": "2021-12-23",
+    "firstPlayed": "2022-03-13",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Activision",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-halo-special-4",
+    "name": "Halo Special 4",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2021-10-21",
+    "platform": "xbox360",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "fighting"
+    ],
+    "customTags": [],
+    "developer": "2K Boston",
+    "publisher": "Capcom",
+    "genre": [
+        "fighting"
+    ]
+}

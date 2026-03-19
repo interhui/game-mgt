@@ -1,0 +1,26 @@
+{
+    "id": "switch-fire-emblem",
+    "name": "Fire Emblem",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2016-04-10",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 33,
+    "totalPlayTime": 4403,
+    "lastPlayed": "2021-11-27",
+    "firstPlayed": "2020-03-30",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "fighting"
+    ],
+    "customTags": [],
+    "developer": "CD Projekt Red",
+    "publisher": "Level-5",
+    "genre": [
+        "action",
+        "fighting"
+    ]
+}

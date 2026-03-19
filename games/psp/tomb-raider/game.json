@@ -1,0 +1,24 @@
+{
+    "id": "psp-tomb-raider",
+    "name": "Tomb Raider",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2010-03-17",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 21,
+    "totalPlayTime": 4771,
+    "lastPlayed": "2023-07-26",
+    "firstPlayed": "2020-01-05",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "party"
+    ],
+    "customTags": [],
+    "developer": "2K Boston",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "party"
+    ]
+}

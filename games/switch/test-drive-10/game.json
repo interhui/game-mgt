@@ -1,0 +1,24 @@
+{
+    "id": "switch-test-drive-10",
+    "name": "Test Drive 10",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2016-07-30",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 20,
+    "totalPlayTime": 3448,
+    "lastPlayed": "2021-11-23",
+    "firstPlayed": "2019-11-03",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "fighting"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "Sega",
+    "genre": [
+        "fighting"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "psp-gran-turismo-alliance",
+    "name": "Gran Turismo Alliance",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2022-09-02",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 36,
+    "totalPlayTime": 2724,
+    "lastPlayed": "2020-08-12",
+    "firstPlayed": "2018-02-22",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "racing",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Activision",
+    "genre": [
+        "racing",
+        "arcade"
+    ]
+}

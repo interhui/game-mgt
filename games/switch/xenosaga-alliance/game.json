@@ -1,0 +1,26 @@
+{
+    "id": "switch-xenosaga-alliance",
+    "name": "Xenosaga Alliance",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2012-06-04",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 10,
+    "totalPlayTime": 1026,
+    "lastPlayed": "2020-02-07",
+    "firstPlayed": "2022-05-29",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "horror",
+        "survival"
+    ],
+    "customTags": [],
+    "developer": "BioWare",
+    "publisher": "Microsoft Game Studios",
+    "genre": [
+        "horror",
+        "survival"
+    ]
+}

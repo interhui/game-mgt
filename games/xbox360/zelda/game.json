@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-zelda",
+    "name": "Zelda",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2017-06-09",
+    "platform": "xbox360",
+    "status": "played",
+    "playCount": 45,
+    "totalPlayTime": 1074,
+    "lastPlayed": "2020-03-07",
+    "firstPlayed": "2020-12-24",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Atlus",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

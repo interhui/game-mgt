@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-grand-theft-auto-rebirth",
+    "name": "Grand Theft Auto Rebirth",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2006-12-22",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 33,
+    "totalPlayTime": 4951,
+    "lastPlayed": "2020-03-10",
+    "firstPlayed": "2022-04-26",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "CD Projekt Red",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

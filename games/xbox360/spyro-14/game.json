@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-spyro-14",
+    "name": "Spyro 14",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2019-05-19",
+    "platform": "xbox360",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "party"
+    ],
+    "customTags": [],
+    "developer": "FromSoftware",
+    "publisher": "Konami",
+    "genre": [
+        "party"
+    ]
+}

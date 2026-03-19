@@ -1,0 +1,26 @@
+{
+    "id": "ps2-kingdom-hearts-revival",
+    "name": "Kingdom Hearts Revival",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2013-10-22",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 14,
+    "totalPlayTime": 3734,
+    "lastPlayed": "2024-10-11",
+    "firstPlayed": "2020-03-15",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

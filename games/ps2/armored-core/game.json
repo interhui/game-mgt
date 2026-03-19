@@ -1,0 +1,26 @@
+{
+    "id": "ps2-armored-core",
+    "name": "Armored Core",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2018-08-03",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 38,
+    "totalPlayTime": 2363,
+    "lastPlayed": "2024-02-15",
+    "firstPlayed": "2020-03-16",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "CD Projekt Red",
+    "publisher": "Capcom",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-armored-core-15",
+    "name": "Armored Core 15",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2000-12-31",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 19,
+    "totalPlayTime": 234,
+    "lastPlayed": "2020-09-08",
+    "firstPlayed": "2018-04-11",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "Capcom",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

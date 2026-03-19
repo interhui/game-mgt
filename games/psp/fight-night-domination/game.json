@@ -1,0 +1,26 @@
+{
+    "id": "psp-fight-night-domination",
+    "name": "Fight Night Domination",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2011-10-18",
+    "platform": "psp",
+    "status": "playing",
+    "playCount": 12,
+    "totalPlayTime": 4498,
+    "lastPlayed": "2023-06-01",
+    "firstPlayed": "2021-09-30",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "fps"
+    ],
+    "customTags": [],
+    "developer": "Square Enix",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "shooter",
+        "fps"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "wii-predator",
+    "name": "Predator",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2016-05-29",
+    "platform": "wii",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "platformer"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "Rockstar Games",
+    "genre": [
+        "platformer"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "psp-assassin-s-creed-16",
+    "name": "Assassin's Creed 16",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2011-09-27",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 1,
+    "totalPlayTime": 2434,
+    "lastPlayed": "2022-06-02",
+    "firstPlayed": "2023-12-13",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "Bethesda Game Studios",
+    "publisher": "Koei Tecmo",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

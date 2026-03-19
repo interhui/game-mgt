@@ -1,0 +1,26 @@
+{
+    "id": "ps2-tomb-raider-beta",
+    "name": "Tomb Raider Beta",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2021-07-29",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 36,
+    "totalPlayTime": 3723,
+    "lastPlayed": "2021-06-14",
+    "firstPlayed": "2020-08-01",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Konami",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

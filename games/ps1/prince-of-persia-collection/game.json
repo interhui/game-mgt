@@ -1,0 +1,26 @@
+{
+    "id": "ps1-prince-of-persia-collection",
+    "name": "Prince of Persia Collection",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2016-04-17",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "fighting"
+    ],
+    "customTags": [],
+    "developer": "Omega Force",
+    "publisher": "Activision",
+    "genre": [
+        "action",
+        "fighting"
+    ]
+}

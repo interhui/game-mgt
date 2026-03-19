@@ -1,0 +1,24 @@
+{
+    "id": "wii-silent-hill-shadow",
+    "name": "Silent Hill Shadow",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2006-10-29",
+    "platform": "wii",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "puzzle"
+    ],
+    "customTags": [],
+    "developer": "Capcom",
+    "publisher": "Level-5",
+    "genre": [
+        "puzzle"
+    ]
+}

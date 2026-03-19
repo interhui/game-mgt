@@ -1,0 +1,26 @@
+{
+    "id": "ps1-kingdom-hearts-domination-13",
+    "name": "Kingdom Hearts Domination 13",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2012-08-21",
+    "platform": "ps1",
+    "status": "completed",
+    "playCount": 20,
+    "totalPlayTime": 3486,
+    "lastPlayed": "2023-09-29",
+    "firstPlayed": "2022-08-25",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Microsoft Game Studios",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "ps1-pokemon-part-3-12",
+    "name": "Pokemon Part 3 12",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2023-03-23",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Obsidian Entertainment",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "pc-rock-band-evolution",
+    "name": "Rock Band Evolution",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2007-07-27",
+    "platform": "pc",
+    "status": "playing",
+    "playCount": 32,
+    "totalPlayTime": 3001,
+    "lastPlayed": "2022-09-29",
+    "firstPlayed": "2020-04-21",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "action",
+        "rpg"
+    ]
+}

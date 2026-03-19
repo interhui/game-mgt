@@ -1,0 +1,24 @@
+{
+    "id": "ps1-condemned",
+    "name": "Condemned",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2005-06-03",
+    "platform": "ps1",
+    "status": "played",
+    "playCount": 27,
+    "totalPlayTime": 1683,
+    "lastPlayed": "2024-05-01",
+    "firstPlayed": "2021-08-31",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "platformer"
+    ],
+    "customTags": [],
+    "developer": "Rockstar North",
+    "publisher": "Activision",
+    "genre": [
+        "platformer"
+    ]
+}

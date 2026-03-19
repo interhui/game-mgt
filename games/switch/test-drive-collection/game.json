@@ -1,0 +1,26 @@
+{
+    "id": "switch-test-drive-collection",
+    "name": "Test Drive Collection",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2002-01-26",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 21,
+    "totalPlayTime": 4423,
+    "lastPlayed": "2021-09-12",
+    "firstPlayed": "2021-04-02",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "action",
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Monolith Soft",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "action",
+        "rpg"
+    ]
+}

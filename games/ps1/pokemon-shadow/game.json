@@ -1,0 +1,26 @@
+{
+    "id": "ps1-pokemon-shadow",
+    "name": "Pokemon Shadow",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2016-08-10",
+    "platform": "ps1",
+    "status": "played",
+    "playCount": 15,
+    "totalPlayTime": 5014,
+    "lastPlayed": "2024-08-18",
+    "firstPlayed": "2020-08-17",
+    "favorite": true,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "Rockstar North",
+    "publisher": "Atlus",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

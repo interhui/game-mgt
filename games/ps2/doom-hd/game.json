@@ -1,0 +1,26 @@
+{
+    "id": "ps2-doom-hd",
+    "name": "Doom HD",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2006-05-23",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 36,
+    "totalPlayTime": 4522,
+    "lastPlayed": "2024-04-06",
+    "firstPlayed": "2019-03-17",
+    "favorite": true,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "Omega Force",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "ps1-twisted-metal-7",
+    "name": "Twisted Metal 7",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2009-09-06",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 15,
+    "totalPlayTime": 3377,
+    "lastPlayed": "2020-04-27",
+    "firstPlayed": "2021-12-25",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "racing"
+    ],
+    "customTags": [],
+    "developer": "Sucker Punch",
+    "publisher": "Activision",
+    "genre": [
+        "racing"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "ps1-dead-island-revolution",
+    "name": "Dead Island Revolution",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2017-01-18",
+    "platform": "ps1",
+    "status": "played",
+    "playCount": 20,
+    "totalPlayTime": 5008,
+    "lastPlayed": "2020-06-24",
+    "firstPlayed": "2018-03-06",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "party"
+    ],
+    "customTags": [],
+    "developer": "Monolith Soft",
+    "publisher": "Ubisoft",
+    "genre": [
+        "party"
+    ]
+}

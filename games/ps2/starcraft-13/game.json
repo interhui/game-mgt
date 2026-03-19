@@ -1,0 +1,26 @@
+{
+    "id": "ps2-starcraft-13",
+    "name": "StarCraft 13",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2019-09-03",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Nintendo EPD",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "action",
+        "adventure"
+    ]
+}

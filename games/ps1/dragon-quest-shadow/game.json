@@ -1,0 +1,26 @@
+{
+    "id": "ps1-dragon-quest-shadow",
+    "name": "Dragon Quest Shadow",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2018-08-08",
+    "platform": "ps1",
+    "status": "completed",
+    "playCount": 31,
+    "totalPlayTime": 525,
+    "lastPlayed": "2022-06-23",
+    "firstPlayed": "2023-12-15",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "sports",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "CD Projekt Red",
+    "publisher": "Compile Heart",
+    "genre": [
+        "sports",
+        "simulation"
+    ]
+}

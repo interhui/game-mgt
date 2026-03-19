@@ -1,0 +1,26 @@
+{
+    "id": "psp-twisted-metal-anthology-7",
+    "name": "Twisted Metal Anthology 7",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2010-11-29",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 3,
+    "totalPlayTime": 2506,
+    "lastPlayed": "2024-01-12",
+    "firstPlayed": "2018-01-13",
+    "favorite": true,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Rockstar Leeds",
+    "publisher": "Idea Factory",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

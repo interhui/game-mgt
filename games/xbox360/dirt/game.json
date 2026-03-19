@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-dirt",
+    "name": "Dirt",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2005-07-17",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 8,
+    "totalPlayTime": 3268,
+    "lastPlayed": "2021-02-08",
+    "firstPlayed": "2018-06-24",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Konami",
+    "publisher": "PlatinumGames",
+    "genre": [
+        "rpg",
+        "strategy"
+    ]
+}

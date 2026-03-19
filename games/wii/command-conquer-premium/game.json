@@ -1,0 +1,26 @@
+{
+    "id": "wii-command-conquer-premium",
+    "name": "Command & Conquer Premium",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2020-01-08",
+    "platform": "wii",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "BioWare",
+    "publisher": "Capcom",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

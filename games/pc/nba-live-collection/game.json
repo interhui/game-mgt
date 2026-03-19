@@ -1,0 +1,24 @@
+{
+    "id": "pc-nba-live-collection",
+    "name": "NBA Live Collection",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2013-11-24",
+    "platform": "pc",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "TechTips",
+    "publisher": "Nintendo",
+    "genre": [
+        "simulation"
+    ]
+}

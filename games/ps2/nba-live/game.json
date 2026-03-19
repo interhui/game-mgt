@@ -1,0 +1,26 @@
+{
+    "id": "ps2-nba-live",
+    "name": "NBA Live",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2009-10-18",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 27,
+    "totalPlayTime": 506,
+    "lastPlayed": "2022-11-13",
+    "firstPlayed": "2023-10-11",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "fps"
+    ],
+    "customTags": [],
+    "developer": "343 Industries",
+    "publisher": "Konami",
+    "genre": [
+        "shooter",
+        "fps"
+    ]
+}

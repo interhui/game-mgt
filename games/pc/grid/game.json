@@ -1,0 +1,26 @@
+{
+    "id": "pc-grid",
+    "name": "Grid",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2011-11-01",
+    "platform": "pc",
+    "status": "played",
+    "playCount": 8,
+    "totalPlayTime": 649,
+    "lastPlayed": "2024-10-29",
+    "firstPlayed": "2020-02-22",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "Konami",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

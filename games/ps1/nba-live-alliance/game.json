@@ -1,0 +1,26 @@
+{
+    "id": "ps1-nba-live-alliance",
+    "name": "NBA Live Alliance",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2001-03-02",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "platformer",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Team Ninja",
+    "publisher": "Sega",
+    "genre": [
+        "platformer",
+        "adventure"
+    ]
+}

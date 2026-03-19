@@ -1,0 +1,26 @@
+{
+    "id": "ps2-mortal-kombat",
+    "name": "Mortal Kombat",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2007-06-30",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 2,
+    "totalPlayTime": 1503,
+    "lastPlayed": "2020-09-11",
+    "firstPlayed": "2022-05-28",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "tps"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Sega",
+    "genre": [
+        "shooter",
+        "tps"
+    ]
+}

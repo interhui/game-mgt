@@ -1,0 +1,26 @@
+{
+    "id": "ps2-metal-gear-premium-19",
+    "name": "Metal Gear Premium 19",
+    "description": "一款充满动作冒险元素的作品，玩家将在游戏中体验到精彩的故事情节和紧张刺激的战斗。",
+    "publishDate": "2010-08-02",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 48,
+    "totalPlayTime": 135,
+    "lastPlayed": "2020-01-05",
+    "firstPlayed": "2019-04-02",
+    "favorite": true,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "rpg",
+        "strategy"
+    ]
+}

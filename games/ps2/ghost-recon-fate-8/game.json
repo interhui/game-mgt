@@ -1,0 +1,26 @@
+{
+    "id": "ps2-ghost-recon-fate-8",
+    "name": "Ghost Recon Fate 8",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2007-09-17",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 28,
+    "totalPlayTime": 3306,
+    "lastPlayed": "2021-01-02",
+    "firstPlayed": "2018-12-13",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Compile Heart",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

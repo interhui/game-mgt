@@ -1,0 +1,24 @@
+{
+    "id": "ps1-uncharted-hd-10",
+    "name": "Uncharted HD 10",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2006-11-18",
+    "platform": "ps1",
+    "status": "played",
+    "playCount": 36,
+    "totalPlayTime": 131,
+    "lastPlayed": "2024-03-11",
+    "firstPlayed": "2020-05-12",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "rpg"
+    ]
+}

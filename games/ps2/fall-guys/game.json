@@ -1,0 +1,26 @@
+{
+    "id": "ps2-fall-guys",
+    "name": "Fall Guys",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2008-04-02",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "fps"
+    ],
+    "customTags": [],
+    "developer": "Konami",
+    "publisher": "Level-5",
+    "genre": [
+        "shooter",
+        "fps"
+    ]
+}

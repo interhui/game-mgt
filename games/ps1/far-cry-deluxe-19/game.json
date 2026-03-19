@@ -1,0 +1,28 @@
+{
+    "id": "ps1-far-cry-deluxe-19",
+    "name": "Far Cry Deluxe 19",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2009-01-08",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "action",
+        "adventure",
+        "open-world"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Nintendo",
+    "genre": [
+        "action",
+        "adventure",
+        "open-world"
+    ]
+}

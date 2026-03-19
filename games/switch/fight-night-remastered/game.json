@@ -1,0 +1,26 @@
+{
+    "id": "switch-fight-night-remastered",
+    "name": "Fight Night Remastered",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2008-04-16",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 44,
+    "totalPlayTime": 1644,
+    "lastPlayed": "2022-07-22",
+    "firstPlayed": "2023-05-02",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "sports",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "BioWare",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "sports",
+        "simulation"
+    ]
+}

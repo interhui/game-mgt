@@ -1,0 +1,26 @@
+{
+    "id": "wii-mortal-kombat-rebirth",
+    "name": "Mortal Kombat Rebirth",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2002-08-15",
+    "platform": "wii",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "FromSoftware",
+    "publisher": "Idea Factory",
+    "genre": [
+        "rpg",
+        "strategy"
+    ]
+}

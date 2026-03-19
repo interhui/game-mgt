@@ -1,0 +1,26 @@
+{
+    "id": "switch-dying-light-ultimate-1",
+    "name": "Dying Light Ultimate 1",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2017-05-26",
+    "platform": "switch",
+    "status": "played",
+    "playCount": 40,
+    "totalPlayTime": 2223,
+    "lastPlayed": "2023-12-08",
+    "firstPlayed": "2018-04-25",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "fighting",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Omega Force",
+    "publisher": "Atlus",
+    "genre": [
+        "fighting",
+        "arcade"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "pc-twisted-metal-anthology",
+    "name": "Twisted Metal Anthology",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2015-12-06",
+    "platform": "pc",
+    "status": "completed",
+    "playCount": 9,
+    "totalPlayTime": 1739,
+    "lastPlayed": "2023-03-20",
+    "firstPlayed": "2023-01-13",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "FromSoftware",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "action",
+        "adventure"
+    ]
+}

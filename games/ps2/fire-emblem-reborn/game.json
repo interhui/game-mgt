@@ -1,0 +1,26 @@
+{
+    "id": "ps2-fire-emblem-reborn",
+    "name": "Fire Emblem Reborn",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2018-10-14",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 23,
+    "totalPlayTime": 650,
+    "lastPlayed": "2023-05-23",
+    "firstPlayed": "2023-02-27",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "shooter",
+        "tps"
+    ],
+    "customTags": [],
+    "developer": "CD Projekt Red",
+    "publisher": "Konami",
+    "genre": [
+        "shooter",
+        "tps"
+    ]
+}

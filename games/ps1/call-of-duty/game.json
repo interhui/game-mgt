@@ -1,0 +1,24 @@
+{
+    "id": "ps1-call-of-duty",
+    "name": "Call of Duty",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2001-04-18",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 22,
+    "totalPlayTime": 358,
+    "lastPlayed": "2021-10-05",
+    "firstPlayed": "2020-07-21",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "party"
+    ],
+    "customTags": [],
+    "developer": "Team Ninja",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "party"
+    ]
+}

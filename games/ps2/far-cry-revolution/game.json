@@ -1,0 +1,24 @@
+{
+    "id": "ps2-far-cry-revolution",
+    "name": "Far Cry Revolution",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2016-09-09",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 48,
+    "totalPlayTime": 1837,
+    "lastPlayed": "2021-06-05",
+    "firstPlayed": "2021-07-30",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "strategy"
+    ]
+}

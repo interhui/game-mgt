@@ -1,0 +1,26 @@
+{
+    "id": "pc-dragon-quest",
+    "name": "Dragon Quest",
+    "description": "一款充满动作冒险元素的作品，玩家将在游戏中体验到精彩的故事情节和紧张刺激的战斗。",
+    "publishDate": "2019-12-21",
+    "platform": "pc",
+    "status": "completed",
+    "playCount": 19,
+    "totalPlayTime": 2552,
+    "lastPlayed": "2020-02-05",
+    "firstPlayed": "2022-11-18",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Obsidian Entertainment",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

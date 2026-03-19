@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-devil-trigger-ultimate-19",
+    "name": "Devil Trigger Ultimate 19",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2001-09-17",
+    "platform": "xbox360",
+    "status": "played",
+    "playCount": 12,
+    "totalPlayTime": 2560,
+    "lastPlayed": "2021-04-24",
+    "firstPlayed": "2023-02-12",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "343 Industries",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "simulation"
+    ]
+}

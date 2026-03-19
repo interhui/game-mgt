@@ -1,0 +1,26 @@
+{
+    "id": "pc-test-drive-revival-5",
+    "name": "Test Drive Revival 5",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2003-11-21",
+    "platform": "pc",
+    "status": "played",
+    "playCount": 40,
+    "totalPlayTime": 560,
+    "lastPlayed": "2020-02-20",
+    "firstPlayed": "2023-03-12",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "adventure",
+        "horror"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Compile Heart",
+    "genre": [
+        "adventure",
+        "horror"
+    ]
+}

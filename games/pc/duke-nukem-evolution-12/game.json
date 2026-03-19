@@ -1,0 +1,26 @@
+{
+    "id": "pc-duke-nukem-evolution-12",
+    "name": "Duke Nukem Evolution 12",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2003-01-30",
+    "platform": "pc",
+    "status": "completed",
+    "playCount": 17,
+    "totalPlayTime": 1235,
+    "lastPlayed": "2021-05-11",
+    "firstPlayed": "2020-02-07",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "horror",
+        "survival"
+    ],
+    "customTags": [],
+    "developer": "CD Projekt Red",
+    "publisher": "Sega",
+    "genre": [
+        "horror",
+        "survival"
+    ]
+}

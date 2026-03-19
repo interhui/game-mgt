@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-kirby-16",
+    "name": "Kirby 16",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2011-10-05",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 2,
+    "totalPlayTime": 502,
+    "lastPlayed": "2020-12-18",
+    "firstPlayed": "2018-04-22",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Level-5",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

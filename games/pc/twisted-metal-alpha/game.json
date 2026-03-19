@@ -1,0 +1,26 @@
+{
+    "id": "pc-twisted-metal-alpha",
+    "name": "Twisted Metal Alpha",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2024-08-20",
+    "platform": "pc",
+    "status": "playing",
+    "playCount": 46,
+    "totalPlayTime": 360,
+    "lastPlayed": "2021-10-29",
+    "firstPlayed": "2019-08-06",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Monolith Soft",
+    "publisher": "Capcom",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

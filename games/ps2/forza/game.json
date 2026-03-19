@@ -1,0 +1,24 @@
+{
+    "id": "ps2-forza",
+    "name": "Forza",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2018-08-31",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "sports"
+    ],
+    "customTags": [],
+    "developer": "Santa Monica Studio",
+    "publisher": "Konami",
+    "genre": [
+        "sports"
+    ]
+}

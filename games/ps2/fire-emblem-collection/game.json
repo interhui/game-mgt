@@ -1,0 +1,26 @@
+{
+    "id": "ps2-fire-emblem-collection",
+    "name": "Fire Emblem Collection",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2022-08-16",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 25,
+    "totalPlayTime": 71,
+    "lastPlayed": "2023-01-30",
+    "firstPlayed": "2021-01-29",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Konami",
+    "genre": [
+        "racing",
+        "arcade"
+    ]
+}

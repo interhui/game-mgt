@@ -1,0 +1,24 @@
+{
+    "id": "psp-tekken-8",
+    "name": "Tekken 8",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2021-10-12",
+    "platform": "psp",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "platformer"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Koei Tecmo",
+    "genre": [
+        "platformer"
+    ]
+}

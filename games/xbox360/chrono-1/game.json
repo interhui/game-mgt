@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-chrono-1",
+    "name": "Chrono 1",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2023-10-30",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 42,
+    "totalPlayTime": 1977,
+    "lastPlayed": "2023-04-15",
+    "firstPlayed": "2018-04-28",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "sports",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Bethesda Game Studios",
+    "publisher": "Compile Heart",
+    "genre": [
+        "sports",
+        "simulation"
+    ]
+}

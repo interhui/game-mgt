@@ -1,0 +1,24 @@
+{
+    "id": "psp-saints-row-19",
+    "name": "Saints Row 19",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2020-06-23",
+    "platform": "psp",
+    "status": "playing",
+    "playCount": 28,
+    "totalPlayTime": 4550,
+    "lastPlayed": "2021-09-15",
+    "firstPlayed": "2023-02-14",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "Compile Heart",
+    "genre": [
+        "rpg"
+    ]
+}

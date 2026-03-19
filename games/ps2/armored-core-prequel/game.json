@@ -1,0 +1,26 @@
+{
+    "id": "ps2-armored-core-prequel",
+    "name": "Armored Core Prequel",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2002-04-03",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 45,
+    "totalPlayTime": 157,
+    "lastPlayed": "2021-04-24",
+    "firstPlayed": "2018-04-27",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "life"
+    ],
+    "customTags": [],
+    "developer": "Santa Monica Studio",
+    "publisher": "FromSoftware",
+    "genre": [
+        "simulation",
+        "life"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "ps2-devil-trigger-4",
+    "name": "Devil Trigger 4",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2022-01-27",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "party"
+    ],
+    "customTags": [],
+    "developer": "Sucker Punch",
+    "publisher": "Level-5",
+    "genre": [
+        "party"
+    ]
+}

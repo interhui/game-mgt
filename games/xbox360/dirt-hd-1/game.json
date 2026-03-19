@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-dirt-hd-1",
+    "name": "Dirt HD 1",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2012-09-16",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 36,
+    "totalPlayTime": 4180,
+    "lastPlayed": "2022-06-02",
+    "firstPlayed": "2018-05-17",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "sports"
+    ],
+    "customTags": [],
+    "developer": "Omega Force",
+    "publisher": "Nintendo",
+    "genre": [
+        "sports"
+    ]
+}

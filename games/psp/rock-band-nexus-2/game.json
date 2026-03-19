@@ -1,0 +1,26 @@
+{
+    "id": "psp-rock-band-nexus-2",
+    "name": "Rock Band Nexus 2",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2006-07-03",
+    "platform": "psp",
+    "status": "played",
+    "playCount": 10,
+    "totalPlayTime": 2454,
+    "lastPlayed": "2021-07-08",
+    "firstPlayed": "2018-10-19",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "music",
+        "rhythm"
+    ],
+    "customTags": [],
+    "developer": "Koei",
+    "publisher": "Activision",
+    "genre": [
+        "music",
+        "rhythm"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "ps2-mlb",
+    "name": "MLB",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2023-06-28",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 13,
+    "totalPlayTime": 1477,
+    "lastPlayed": "2023-11-21",
+    "firstPlayed": "2019-04-01",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "simulation"
+    ]
+}

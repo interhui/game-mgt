@@ -1,0 +1,24 @@
+{
+    "id": "ps1-rock-band-resurrection",
+    "name": "Rock Band Resurrection",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2007-06-14",
+    "platform": "ps1",
+    "status": "completed",
+    "playCount": 24,
+    "totalPlayTime": 1784,
+    "lastPlayed": "2021-10-09",
+    "firstPlayed": "2022-07-15",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "puzzle"
+    ],
+    "customTags": [],
+    "developer": "343 Industries",
+    "publisher": "Sega",
+    "genre": [
+        "puzzle"
+    ]
+}

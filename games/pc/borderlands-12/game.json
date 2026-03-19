@@ -1,0 +1,24 @@
+{
+    "id": "pc-borderlands-12",
+    "name": "Borderlands 12",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2011-12-26",
+    "platform": "pc",
+    "status": "completed",
+    "playCount": 47,
+    "totalPlayTime": 4368,
+    "lastPlayed": "2020-02-18",
+    "firstPlayed": "2022-05-22",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "platformer"
+    ],
+    "customTags": [],
+    "developer": "Intelligent Systems",
+    "publisher": "Rockstar Games",
+    "genre": [
+        "platformer"
+    ]
+}

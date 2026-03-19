@@ -1,0 +1,26 @@
+{
+    "id": "psp-grand-theft-auto-13",
+    "name": "Grand Theft Auto 13",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2005-11-10",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 2,
+    "totalPlayTime": 1011,
+    "lastPlayed": "2021-04-12",
+    "firstPlayed": "2018-10-20",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Rockstar Leeds",
+    "publisher": "Atlus",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

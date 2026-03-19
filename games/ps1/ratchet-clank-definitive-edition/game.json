@@ -1,0 +1,24 @@
+{
+    "id": "ps1-ratchet-clank-definitive-edition",
+    "name": "Ratchet & Clank Definitive Edition",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2012-11-20",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Bandai Namco",
+    "publisher": "Microsoft Game Studios",
+    "genre": [
+        "rpg"
+    ]
+}

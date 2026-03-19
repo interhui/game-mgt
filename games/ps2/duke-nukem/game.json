@@ -1,0 +1,24 @@
+{
+    "id": "ps2-duke-nukem",
+    "name": "Duke Nukem",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2005-06-25",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 40,
+    "totalPlayTime": 3031,
+    "lastPlayed": "2022-06-02",
+    "firstPlayed": "2019-05-26",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "puzzle"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "puzzle"
+    ]
+}

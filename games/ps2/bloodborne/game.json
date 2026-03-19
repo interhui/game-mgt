@@ -1,0 +1,26 @@
+{
+    "id": "ps2-bloodborne",
+    "name": "Bloodborne",
+    "description": "一款充满动作冒险元素的作品，玩家将在游戏中体验到精彩的故事情节和紧张刺激的战斗。",
+    "publishDate": "2011-11-06",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 23,
+    "totalPlayTime": 2069,
+    "lastPlayed": "2024-09-03",
+    "firstPlayed": "2023-08-31",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Rockstar North",
+    "publisher": "Microsoft Game Studios",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

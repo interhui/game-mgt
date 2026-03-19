@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-condemned-saga-7",
+    "name": "Condemned Saga 7",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2021-02-26",
+    "platform": "xbox360",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "platformer",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Sega",
+    "publisher": "Idea Factory",
+    "genre": [
+        "platformer",
+        "adventure"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "wii-star-ocean-remake",
+    "name": "Star Ocean Remake",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2009-03-30",
+    "platform": "wii",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Bandai Namco",
+    "publisher": "Compile Heart",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

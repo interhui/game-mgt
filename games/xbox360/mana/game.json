@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-mana",
+    "name": "Mana",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2008-06-16",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 14,
+    "totalPlayTime": 1531,
+    "lastPlayed": "2020-12-17",
+    "firstPlayed": "2023-03-28",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "racing"
+    ],
+    "customTags": [],
+    "developer": "Obsidian Entertainment",
+    "publisher": "Capcom",
+    "genre": [
+        "racing"
+    ]
+}

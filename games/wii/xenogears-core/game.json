@@ -1,0 +1,28 @@
+{
+    "id": "wii-xenogears-core",
+    "name": "Xenogears Core",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2000-12-23",
+    "platform": "wii",
+    "status": "completed",
+    "playCount": 38,
+    "totalPlayTime": 3932,
+    "lastPlayed": "2021-08-13",
+    "firstPlayed": "2021-01-12",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "action",
+        "adventure",
+        "open-world"
+    ],
+    "customTags": [],
+    "developer": "Rockstar Leeds",
+    "publisher": "FromSoftware",
+    "genre": [
+        "action",
+        "adventure",
+        "open-world"
+    ]
+}

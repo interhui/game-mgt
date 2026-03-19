@@ -1,0 +1,28 @@
+{
+    "id": "psp-battlefield",
+    "name": "Battlefield",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2023-06-26",
+    "platform": "psp",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "adventure",
+        "open-world"
+    ],
+    "customTags": [],
+    "developer": "Game Freak",
+    "publisher": "Microsoft Game Studios",
+    "genre": [
+        "action",
+        "adventure",
+        "open-world"
+    ]
+}

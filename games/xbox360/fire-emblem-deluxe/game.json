@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-fire-emblem-deluxe",
+    "name": "Fire Emblem Deluxe",
+    "description": "一款充满动作冒险元素的作品，玩家将在游戏中体验到精彩的故事情节和紧张刺激的战斗。",
+    "publishDate": "2019-04-11",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 21,
+    "totalPlayTime": 2256,
+    "lastPlayed": "2024-07-31",
+    "firstPlayed": "2018-06-27",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "Level-5",
+    "genre": [
+        "adventure"
+    ]
+}

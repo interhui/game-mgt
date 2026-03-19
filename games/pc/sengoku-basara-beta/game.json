@@ -1,0 +1,26 @@
+{
+    "id": "pc-sengoku-basara-beta",
+    "name": "Sengoku Basara Beta",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2000-02-13",
+    "platform": "pc",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "action",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Nintendo EPD",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "action",
+        "adventure"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "switch-sengoku-basara-revolution",
+    "name": "Sengoku Basara Revolution",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2019-08-23",
+    "platform": "switch",
+    "status": "played",
+    "playCount": 37,
+    "totalPlayTime": 1243,
+    "lastPlayed": "2023-11-07",
+    "firstPlayed": "2020-06-14",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Team Ninja",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "racing",
+        "arcade"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "ps1-warcraft-chronicles",
+    "name": "Warcraft Chronicles",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2001-04-12",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 1,
+    "totalPlayTime": 1002,
+    "lastPlayed": "2021-09-13",
+    "firstPlayed": "2022-07-15",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "sports"
+    ],
+    "customTags": [],
+    "developer": "Bandai Namco",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "sports"
+    ]
+}

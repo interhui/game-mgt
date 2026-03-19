@@ -1,0 +1,24 @@
+{
+    "id": "ps1-xenogears",
+    "name": "Xenogears",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2003-10-08",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 20,
+    "totalPlayTime": 541,
+    "lastPlayed": "2021-07-11",
+    "firstPlayed": "2019-04-21",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "fighting"
+    ],
+    "customTags": [],
+    "developer": "Rockstar Leeds",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "fighting"
+    ]
+}

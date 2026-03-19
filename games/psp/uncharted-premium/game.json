@@ -1,0 +1,26 @@
+{
+    "id": "psp-uncharted-premium",
+    "name": "Uncharted Premium",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2018-02-22",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 6,
+    "totalPlayTime": 698,
+    "lastPlayed": "2023-01-09",
+    "firstPlayed": "2023-04-21",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Sega",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

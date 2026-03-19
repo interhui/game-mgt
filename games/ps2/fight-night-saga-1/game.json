@@ -1,0 +1,26 @@
+{
+    "id": "ps2-fight-night-saga-1",
+    "name": "Fight Night Saga 1",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2010-07-18",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 9,
+    "totalPlayTime": 2229,
+    "lastPlayed": "2022-07-31",
+    "firstPlayed": "2021-04-09",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "343 Industries",
+    "publisher": "PlatinumGames",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

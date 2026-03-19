@@ -1,0 +1,24 @@
+{
+    "id": "ps1-gears-of-war-part-3",
+    "name": "Gears of War Part 3",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2010-10-11",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 38,
+    "totalPlayTime": 2945,
+    "lastPlayed": "2020-08-02",
+    "firstPlayed": "2020-07-24",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Rockstar North",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "simulation"
+    ]
+}

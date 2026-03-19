@@ -1,0 +1,26 @@
+{
+    "id": "ps1-dead-island-legend",
+    "name": "Dead Island Legend",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2006-12-18",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "platformer",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Koei",
+    "publisher": "Nintendo",
+    "genre": [
+        "platformer",
+        "action"
+    ]
+}

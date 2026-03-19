@@ -1,0 +1,26 @@
+{
+    "id": "ps2-rainbow-six-revolution-2",
+    "name": "Rainbow Six Revolution 2",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2022-01-12",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "PlatinumGames",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

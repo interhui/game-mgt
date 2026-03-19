@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-saints-row-prequel-1",
+    "name": "Saints Row Prequel 1",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2012-05-29",
+    "platform": "xbox360",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Nintendo EPD",
+    "publisher": "Koei Tecmo",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

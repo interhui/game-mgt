@@ -1,0 +1,26 @@
+{
+    "id": "ps1-star-ocean-memories",
+    "name": "Star Ocean Memories",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2024-04-26",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "PlatinumGames",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

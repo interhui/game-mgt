@@ -1,0 +1,26 @@
+{
+    "id": "psp-dark-souls-anthology",
+    "name": "Dark Souls Anthology",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2007-05-17",
+    "platform": "psp",
+    "status": "played",
+    "playCount": 44,
+    "totalPlayTime": 283,
+    "lastPlayed": "2023-07-14",
+    "firstPlayed": "2021-05-29",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Activision",
+    "genre": [
+        "rpg",
+        "strategy"
+    ]
+}

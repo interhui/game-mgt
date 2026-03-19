@@ -1,0 +1,24 @@
+{
+    "id": "ps2-grand-theft-auto",
+    "name": "Grand Theft Auto",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2004-01-06",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 32,
+    "totalPlayTime": 3848,
+    "lastPlayed": "2024-06-29",
+    "firstPlayed": "2023-04-10",
+    "favorite": true,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "sports"
+    ],
+    "customTags": [],
+    "developer": "Obsidian Entertainment",
+    "publisher": "Bandai Namco",
+    "genre": [
+        "sports"
+    ]
+}

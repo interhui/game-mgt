@@ -1,0 +1,26 @@
+{
+    "id": "pc-dragon-quest-9",
+    "name": "Dragon Quest 9",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2003-08-12",
+    "platform": "pc",
+    "status": "playing",
+    "playCount": 35,
+    "totalPlayTime": 4975,
+    "lastPlayed": "2021-09-30",
+    "firstPlayed": "2019-02-09",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "FromSoftware",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

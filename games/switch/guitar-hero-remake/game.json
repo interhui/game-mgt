@@ -1,0 +1,26 @@
+{
+    "id": "switch-guitar-hero-remake",
+    "name": "Guitar Hero Remake",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2019-07-20",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 21,
+    "totalPlayTime": 3173,
+    "lastPlayed": "2020-12-01",
+    "firstPlayed": "2021-11-21",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "adventure",
+        "puzzle"
+    ],
+    "customTags": [],
+    "developer": "FromSoftware",
+    "publisher": "Konami",
+    "genre": [
+        "adventure",
+        "puzzle"
+    ]
+}

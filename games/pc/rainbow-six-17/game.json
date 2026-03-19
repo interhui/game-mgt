@@ -1,0 +1,24 @@
+{
+    "id": "pc-rainbow-six-17",
+    "name": "Rainbow Six 17",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2015-08-28",
+    "platform": "pc",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Compile Heart",
+    "genre": [
+        "strategy"
+    ]
+}

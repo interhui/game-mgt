@@ -1,0 +1,26 @@
+{
+    "id": "ps2-lufia-beta",
+    "name": "Lufia Beta",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2014-12-25",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "platformer",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Bethesda Game Studios",
+    "publisher": "Idea Factory",
+    "genre": [
+        "platformer",
+        "adventure"
+    ]
+}

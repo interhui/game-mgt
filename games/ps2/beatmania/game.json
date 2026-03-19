@@ -1,0 +1,26 @@
+{
+    "id": "ps2-beatmania",
+    "name": "Beatmania",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2006-06-09",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 14,
+    "totalPlayTime": 678,
+    "lastPlayed": "2024-02-19",
+    "firstPlayed": "2023-12-03",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Game Freak",
+    "publisher": "Konami",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

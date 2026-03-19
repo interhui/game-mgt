@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-spyro",
+    "name": "Spyro",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2010-12-05",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 37,
+    "totalPlayTime": 3828,
+    "lastPlayed": "2021-05-10",
+    "firstPlayed": "2022-10-29",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "racing"
+    ],
+    "customTags": [],
+    "developer": "Intelligent Systems",
+    "publisher": "Capcom",
+    "genre": [
+        "racing"
+    ]
+}

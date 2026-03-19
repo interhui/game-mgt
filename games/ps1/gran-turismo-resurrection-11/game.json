@@ -1,0 +1,24 @@
+{
+    "id": "ps1-gran-turismo-resurrection-11",
+    "name": "Gran Turismo Resurrection 11",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2000-12-23",
+    "platform": "ps1",
+    "status": "completed",
+    "playCount": 32,
+    "totalPlayTime": 1265,
+    "lastPlayed": "2020-04-27",
+    "firstPlayed": "2023-03-09",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "platformer"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "platformer"
+    ]
+}

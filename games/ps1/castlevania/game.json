@@ -1,0 +1,26 @@
+{
+    "id": "ps1-castlevania",
+    "name": "Castlevania",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2017-08-04",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 17,
+    "totalPlayTime": 1789,
+    "lastPlayed": "2021-07-30",
+    "firstPlayed": "2019-12-01",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "music",
+        "rhythm"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "music",
+        "rhythm"
+    ]
+}

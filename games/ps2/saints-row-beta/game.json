@@ -1,0 +1,26 @@
+{
+    "id": "ps2-saints-row-beta",
+    "name": "Saints Row Beta",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2023-05-24",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 9,
+    "totalPlayTime": 829,
+    "lastPlayed": "2022-05-22",
+    "firstPlayed": "2022-05-22",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "fps"
+    ],
+    "customTags": [],
+    "developer": "Bandai Namco",
+    "publisher": "Nintendo",
+    "genre": [
+        "shooter",
+        "fps"
+    ]
+}

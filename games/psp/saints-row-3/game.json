@@ -1,0 +1,26 @@
+{
+    "id": "psp-saints-row-3",
+    "name": "Saints Row 3",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2017-01-10",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 33,
+    "totalPlayTime": 4884,
+    "lastPlayed": "2020-07-30",
+    "firstPlayed": "2021-10-23",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "FromSoftware",
+    "publisher": "Capcom",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

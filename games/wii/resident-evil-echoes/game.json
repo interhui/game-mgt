@@ -1,0 +1,26 @@
+{
+    "id": "wii-resident-evil-echoes",
+    "name": "Resident Evil Echoes",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2020-03-13",
+    "platform": "wii",
+    "status": "completed",
+    "playCount": 50,
+    "totalPlayTime": 4078,
+    "lastPlayed": "2022-04-21",
+    "firstPlayed": "2019-04-15",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "Sega",
+    "publisher": "Nintendo",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

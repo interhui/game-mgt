@@ -1,0 +1,26 @@
+{
+    "id": "ps2-dance-dance-revolution",
+    "name": "Dance Dance Revolution",
+    "description": "一款充满动作冒险元素的作品，玩家将在游戏中体验到精彩的故事情节和紧张刺激的战斗。",
+    "publishDate": "2000-05-10",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 22,
+    "totalPlayTime": 892,
+    "lastPlayed": "2024-05-28",
+    "firstPlayed": "2023-09-05",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "sports",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Koei",
+    "publisher": "Atlus",
+    "genre": [
+        "sports",
+        "simulation"
+    ]
+}

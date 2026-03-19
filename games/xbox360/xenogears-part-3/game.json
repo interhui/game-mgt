@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-xenogears-part-3",
+    "name": "Xenogears Part 3",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2024-06-06",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 29,
+    "totalPlayTime": 171,
+    "lastPlayed": "2020-12-11",
+    "firstPlayed": "2023-10-23",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Square Enix",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

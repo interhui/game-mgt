@@ -1,0 +1,26 @@
+{
+    "id": "switch-kratos",
+    "name": "Kratos",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2012-06-20",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 38,
+    "totalPlayTime": 5025,
+    "lastPlayed": "2021-04-29",
+    "firstPlayed": "2021-11-08",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Capcom",
+    "genre": [
+        "strategy",
+        "turn-based"
+    ]
+}

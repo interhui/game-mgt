@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-ghost-recon",
+    "name": "Ghost Recon",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2017-08-17",
+    "platform": "xbox360",
+    "status": "playing",
+    "playCount": 25,
+    "totalPlayTime": 3183,
+    "lastPlayed": "2023-03-07",
+    "firstPlayed": "2020-03-20",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

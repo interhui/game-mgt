@@ -1,0 +1,28 @@
+{
+    "id": "switch-elder-scrolls",
+    "name": "Elder Scrolls",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2020-12-24",
+    "platform": "switch",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "adventure",
+        "open-world"
+    ],
+    "customTags": [],
+    "developer": "Intelligent Systems",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "action",
+        "adventure",
+        "open-world"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "switch-street-fighter-11",
+    "name": "Street Fighter 11",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2007-03-24",
+    "platform": "switch",
+    "status": "played",
+    "playCount": 29,
+    "totalPlayTime": 942,
+    "lastPlayed": "2022-10-19",
+    "firstPlayed": "2018-04-07",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Omega Force",
+    "publisher": "Capcom",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

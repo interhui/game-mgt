@@ -1,0 +1,24 @@
+{
+    "id": "ps1-dead-space-10",
+    "name": "Dead Space 10",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2005-08-22",
+    "platform": "ps1",
+    "status": "played",
+    "playCount": 37,
+    "totalPlayTime": 1931,
+    "lastPlayed": "2024-03-04",
+    "firstPlayed": "2023-10-05",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "platformer"
+    ],
+    "customTags": [],
+    "developer": "FromSoftware",
+    "publisher": "Atlus",
+    "genre": [
+        "platformer"
+    ]
+}

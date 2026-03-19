@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-metroid-reborn",
+    "name": "Metroid Reborn",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2015-06-11",
+    "platform": "xbox360",
+    "status": "played",
+    "playCount": 28,
+    "totalPlayTime": 3107,
+    "lastPlayed": "2023-06-22",
+    "firstPlayed": "2023-08-15",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "BioWare",
+    "publisher": "Capcom",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

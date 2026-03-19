@@ -1,0 +1,26 @@
+{
+    "id": "pc-bioshock",
+    "name": "Bioshock",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2019-11-16",
+    "platform": "pc",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "action",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Konami",
+    "genre": [
+        "action",
+        "adventure"
+    ]
+}

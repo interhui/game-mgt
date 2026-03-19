@@ -1,0 +1,26 @@
+{
+    "id": "switch-guitar-hero-anthology-17",
+    "name": "Guitar Hero Anthology 17",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2006-07-26",
+    "platform": "switch",
+    "status": "played",
+    "playCount": 23,
+    "totalPlayTime": 2103,
+    "lastPlayed": "2023-03-18",
+    "firstPlayed": "2018-12-29",
+    "favorite": true,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Sucker Punch",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}

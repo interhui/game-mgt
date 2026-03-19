@@ -1,0 +1,26 @@
+{
+    "id": "ps2-call-of-duty-part-3",
+    "name": "Call of Duty Part 3",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2006-09-08",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "Santa Monica Studio",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

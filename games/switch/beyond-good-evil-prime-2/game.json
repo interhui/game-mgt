@@ -1,0 +1,26 @@
+{
+    "id": "switch-beyond-good-evil-prime-2",
+    "name": "Beyond Good & Evil Prime 2",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2024-02-19",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 8,
+    "totalPlayTime": 4218,
+    "lastPlayed": "2022-12-05",
+    "firstPlayed": "2022-01-17",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "Santa Monica Studio",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "wii-predator-fate-4",
+    "name": "Predator Fate 4",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2023-12-07",
+    "platform": "wii",
+    "status": "completed",
+    "playCount": 29,
+    "totalPlayTime": 1157,
+    "lastPlayed": "2020-12-28",
+    "firstPlayed": "2022-05-30",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "Sega",
+    "genre": [
+        "shooter",
+        "action"
+    ]
+}

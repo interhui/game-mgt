@@ -1,0 +1,26 @@
+{
+    "id": "psp-persona-evolution-2",
+    "name": "Persona Evolution 2",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2017-02-02",
+    "platform": "psp",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "Koei",
+    "publisher": "Compile Heart",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

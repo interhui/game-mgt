@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-mlb-zero-20",
+    "name": "MLB Zero 20",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2013-10-18",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 2,
+    "totalPlayTime": 3760,
+    "lastPlayed": "2022-03-18",
+    "firstPlayed": "2022-10-01",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "platformer",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Sucker Punch",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "platformer",
+        "action"
+    ]
+}

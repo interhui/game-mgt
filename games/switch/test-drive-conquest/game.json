@@ -1,0 +1,26 @@
+{
+    "id": "switch-test-drive-conquest",
+    "name": "Test Drive Conquest",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2004-12-20",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 23,
+    "totalPlayTime": 2310,
+    "lastPlayed": "2021-06-26",
+    "firstPlayed": "2018-09-10",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Techland",
+    "publisher": "Activision",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

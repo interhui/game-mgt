@@ -1,0 +1,26 @@
+{
+    "id": "switch-xenogears-domination",
+    "name": "Xenogears Domination",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2018-12-13",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 31,
+    "totalPlayTime": 3967,
+    "lastPlayed": "2020-11-21",
+    "firstPlayed": "2021-09-06",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "sports",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Sega",
+    "publisher": "Capcom",
+    "genre": [
+        "sports",
+        "arcade"
+    ]
+}

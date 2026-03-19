@@ -1,0 +1,26 @@
+{
+    "id": "switch-splinter-cell-saga-12",
+    "name": "Splinter Cell Saga 12",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2013-10-13",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 27,
+    "totalPlayTime": 672,
+    "lastPlayed": "2020-04-23",
+    "firstPlayed": "2018-09-07",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Koei",
+    "publisher": "Konami",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

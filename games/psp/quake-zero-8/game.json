@@ -1,0 +1,26 @@
+{
+    "id": "psp-quake-zero-8",
+    "name": "Quake Zero 8",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2018-07-21",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 28,
+    "totalPlayTime": 2309,
+    "lastPlayed": "2021-08-19",
+    "firstPlayed": "2021-04-17",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Square Enix",
+    "publisher": "Koei Tecmo",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

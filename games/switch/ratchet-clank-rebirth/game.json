@@ -1,0 +1,26 @@
+{
+    "id": "switch-ratchet-clank-rebirth",
+    "name": "Ratchet & Clank Rebirth",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2002-02-09",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 49,
+    "totalPlayTime": 3187,
+    "lastPlayed": "2024-06-28",
+    "firstPlayed": "2021-08-29",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "adventure",
+        "horror"
+    ],
+    "customTags": [],
+    "developer": "Insomniac Games",
+    "publisher": "Activision",
+    "genre": [
+        "adventure",
+        "horror"
+    ]
+}

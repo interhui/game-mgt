@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-mortal-kombat-6",
+    "name": "Mortal Kombat 6",
+    "description": "融合了多种游戏类型的创新之作，带给玩家全新的游戏体验。",
+    "publishDate": "2024-01-06",
+    "platform": "xbox360",
+    "status": "played",
+    "playCount": 40,
+    "totalPlayTime": 4314,
+    "lastPlayed": "2021-05-24",
+    "firstPlayed": "2022-06-08",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "racing",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "2K Boston",
+    "publisher": "Capcom",
+    "genre": [
+        "racing",
+        "simulation"
+    ]
+}

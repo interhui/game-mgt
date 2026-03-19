@@ -1,0 +1,26 @@
+{
+    "id": "pc-dj-hero-anthology",
+    "name": "DJ Hero Anthology",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2004-10-16",
+    "platform": "pc",
+    "status": "playing",
+    "playCount": 9,
+    "totalPlayTime": 2779,
+    "lastPlayed": "2023-09-27",
+    "firstPlayed": "2023-07-28",
+    "favorite": true,
+    "userRating": 3,
+    "userComment": "非常推荐！",
+    "tags": [
+        "horror",
+        "survival"
+    ],
+    "customTags": [],
+    "developer": "Team Ninja",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "horror",
+        "survival"
+    ]
+}

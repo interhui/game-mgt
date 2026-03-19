@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-chrono-legend",
+    "name": "Chrono Legend",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2016-03-15",
+    "platform": "xbox360",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "tps"
+    ],
+    "customTags": [],
+    "developer": "Sega",
+    "publisher": "Nintendo",
+    "genre": [
+        "shooter",
+        "tps"
+    ]
+}

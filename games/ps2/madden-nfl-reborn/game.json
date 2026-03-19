@@ -1,0 +1,24 @@
+{
+    "id": "ps2-madden-nfl-reborn",
+    "name": "Madden NFL Reborn",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2006-07-29",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "Santa Monica Studio",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "adventure"
+    ]
+}

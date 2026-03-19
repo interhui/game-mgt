@@ -1,0 +1,26 @@
+{
+    "id": "ps2-xenosaga",
+    "name": "Xenosaga",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2009-06-06",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 26,
+    "totalPlayTime": 4564,
+    "lastPlayed": "2024-05-09",
+    "firstPlayed": "2020-04-25",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "horror",
+        "survival"
+    ],
+    "customTags": [],
+    "developer": "Monolith Soft",
+    "publisher": "Ubisoft",
+    "genre": [
+        "horror",
+        "survival"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "pc-pro-evolution-soccer",
+    "name": "Pro Evolution Soccer",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2017-03-08",
+    "platform": "pc",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Obsidian Entertainment",
+    "publisher": "FromSoftware",
+    "genre": [
+        "rpg",
+        "strategy"
+    ]
+}

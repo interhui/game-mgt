@@ -1,0 +1,26 @@
+{
+    "id": "ps1-halo",
+    "name": "Halo",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2011-01-18",
+    "platform": "ps1",
+    "status": "completed",
+    "playCount": 24,
+    "totalPlayTime": 2888,
+    "lastPlayed": "2020-05-24",
+    "firstPlayed": "2021-06-09",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "CD Projekt Red",
+    "publisher": "Nintendo",
+    "genre": [
+        "shooter",
+        "action"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-kirby-fate",
+    "name": "Kirby Fate",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2003-08-26",
+    "platform": "xbox360",
+    "status": "played",
+    "playCount": 7,
+    "totalPlayTime": 1076,
+    "lastPlayed": "2020-01-07",
+    "firstPlayed": "2020-08-24",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Capcom",
+    "genre": [
+        "rpg"
+    ]
+}

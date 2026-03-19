@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-far-cry-deluxe",
+    "name": "Far Cry Deluxe",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2001-07-22",
+    "platform": "xbox360",
+    "status": "played",
+    "playCount": 28,
+    "totalPlayTime": 3560,
+    "lastPlayed": "2024-12-30",
+    "firstPlayed": "2019-12-17",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "Activision",
+    "genre": [
+        "action",
+        "rpg"
+    ]
+}

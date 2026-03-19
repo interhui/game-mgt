@@ -1,0 +1,26 @@
+{
+    "id": "ps2-crash-bandicoot-collection-19",
+    "name": "Crash Bandicoot Collection 19",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2003-03-02",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 25,
+    "totalPlayTime": 4065,
+    "lastPlayed": "2022-03-05",
+    "firstPlayed": "2018-01-13",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "fps"
+    ],
+    "customTags": [],
+    "developer": "2K Boston",
+    "publisher": "Capcom",
+    "genre": [
+        "shooter",
+        "fps"
+    ]
+}

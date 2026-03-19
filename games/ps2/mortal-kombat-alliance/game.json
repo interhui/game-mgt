@@ -1,0 +1,26 @@
+{
+    "id": "ps2-mortal-kombat-alliance",
+    "name": "Mortal Kombat Alliance",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2003-04-19",
+    "platform": "ps2",
+    "status": "played",
+    "playCount": 27,
+    "totalPlayTime": 1187,
+    "lastPlayed": "2024-10-15",
+    "firstPlayed": "2022-02-03",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "shooter",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Koei",
+    "publisher": "FromSoftware",
+    "genre": [
+        "shooter",
+        "action"
+    ]
+}

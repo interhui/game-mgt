@@ -1,0 +1,26 @@
+{
+    "id": "ps2-street-fighter",
+    "name": "Street Fighter",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2022-07-13",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 3,
+    "totalPlayTime": 4645,
+    "lastPlayed": "2021-12-14",
+    "firstPlayed": "2022-11-01",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "adventure",
+        "puzzle"
+    ],
+    "customTags": [],
+    "developer": "2K Boston",
+    "publisher": "Activision",
+    "genre": [
+        "adventure",
+        "puzzle"
+    ]
+}

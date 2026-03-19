@@ -1,0 +1,24 @@
+{
+    "id": "ps1-final-fantasy-11",
+    "name": "Final Fantasy 11",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2016-08-31",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "puzzle"
+    ],
+    "customTags": [],
+    "developer": "343 Industries",
+    "publisher": "Atlus",
+    "genre": [
+        "puzzle"
+    ]
+}

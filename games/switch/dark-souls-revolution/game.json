@@ -1,0 +1,26 @@
+{
+    "id": "switch-dark-souls-revolution",
+    "name": "Dark Souls Revolution",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2022-12-12",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 22,
+    "totalPlayTime": 580,
+    "lastPlayed": "2023-08-30",
+    "firstPlayed": "2022-09-03",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "FromSoftware",
+    "publisher": "Koei Tecmo",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

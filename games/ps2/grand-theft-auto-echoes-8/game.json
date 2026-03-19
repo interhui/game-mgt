@@ -1,0 +1,26 @@
+{
+    "id": "ps2-grand-theft-auto-echoes-8",
+    "name": "Grand Theft Auto Echoes 8",
+    "description": "具有深度策略元素的角色扮演游戏，需要玩家仔细规划每一步行动。",
+    "publishDate": "2016-06-15",
+    "platform": "ps2",
+    "status": "playing",
+    "playCount": 32,
+    "totalPlayTime": 3620,
+    "lastPlayed": "2020-02-14",
+    "firstPlayed": "2023-06-03",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "racing",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Compile Heart",
+    "genre": [
+        "racing",
+        "arcade"
+    ]
+}

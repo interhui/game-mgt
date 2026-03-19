@@ -1,0 +1,26 @@
+{
+    "id": "psp-metal-gear-destiny",
+    "name": "Metal Gear Destiny",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2004-08-15",
+    "platform": "psp",
+    "status": "playing",
+    "playCount": 23,
+    "totalPlayTime": 4722,
+    "lastPlayed": "2021-05-08",
+    "firstPlayed": "2019-06-12",
+    "favorite": true,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "rpg",
+        "turn-based"
+    ],
+    "customTags": [],
+    "developer": "Bandai Namco",
+    "publisher": "Activision",
+    "genre": [
+        "rpg",
+        "turn-based"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-battle-reborn",
+    "name": "Battle Reborn",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2005-01-15",
+    "platform": "xbox360",
+    "status": "completed",
+    "playCount": 33,
+    "totalPlayTime": 2289,
+    "lastPlayed": "2022-02-09",
+    "firstPlayed": "2020-03-26",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "rpg",
+        "strategy"
+    ]
+}

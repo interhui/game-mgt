@@ -1,0 +1,24 @@
+{
+    "id": "ps2-final-fantasy-fate",
+    "name": "Final Fantasy Fate",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2001-09-25",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "puzzle"
+    ],
+    "customTags": [],
+    "developer": "Bungie",
+    "publisher": "Capcom",
+    "genre": [
+        "puzzle"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "ps1-dj-hero-sequel",
+    "name": "DJ Hero Sequel",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2019-05-17",
+    "platform": "ps1",
+    "status": "playing",
+    "playCount": 37,
+    "totalPlayTime": 4433,
+    "lastPlayed": "2020-05-25",
+    "firstPlayed": "2019-07-21",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "TechTips",
+    "publisher": "Microsoft Game Studios",
+    "genre": [
+        "adventure"
+    ]
+}

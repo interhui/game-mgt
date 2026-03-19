@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-wolfenstein-revolution",
+    "name": "Wolfenstein Revolution",
+    "description": "史诗级的角色扮演游戏，拥有庞大的世界观和深度的角色培养系统。",
+    "publishDate": "2016-02-03",
+    "platform": "xbox360",
+    "status": "played",
+    "playCount": 21,
+    "totalPlayTime": 4746,
+    "lastPlayed": "2022-09-27",
+    "firstPlayed": "2023-02-17",
+    "favorite": true,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "action",
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Game Freak",
+    "publisher": "FromSoftware",
+    "genre": [
+        "action",
+        "rpg"
+    ]
+}

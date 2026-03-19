@@ -1,0 +1,26 @@
+{
+    "id": "ps2-god-of-war",
+    "name": "God of War",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2016-10-09",
+    "platform": "ps2",
+    "status": "completed",
+    "playCount": 39,
+    "totalPlayTime": 4409,
+    "lastPlayed": "2024-10-25",
+    "firstPlayed": "2022-09-23",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "fighting",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Obsidian Entertainment",
+    "publisher": "Microsoft Game Studios",
+    "genre": [
+        "fighting",
+        "arcade"
+    ]
+}

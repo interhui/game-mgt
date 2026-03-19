@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-wolfenstein-1",
+    "name": "Wolfenstein 1",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2020-08-19",
+    "platform": "xbox360",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "sports",
+        "simulation"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "Koei Tecmo",
+    "genre": [
+        "sports",
+        "simulation"
+    ]
+}

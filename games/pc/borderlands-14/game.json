@@ -1,0 +1,26 @@
+{
+    "id": "pc-borderlands-14",
+    "name": "Borderlands 14",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2000-11-20",
+    "platform": "pc",
+    "status": "completed",
+    "playCount": 16,
+    "totalPlayTime": 1856,
+    "lastPlayed": "2021-01-02",
+    "firstPlayed": "2022-10-03",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "非常推荐！",
+    "tags": [
+        "platformer",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Capcom",
+    "publisher": "Activision",
+    "genre": [
+        "platformer",
+        "action"
+    ]
+}

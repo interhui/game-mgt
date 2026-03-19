@@ -1,0 +1,24 @@
+{
+    "id": "switch-silent-hill-omega",
+    "name": "Silent Hill Omega",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2010-12-02",
+    "platform": "switch",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "",
+    "tags": [
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "343 Industries",
+    "publisher": "Level-5",
+    "genre": [
+        "adventure"
+    ]
+}

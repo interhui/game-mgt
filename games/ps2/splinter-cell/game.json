@@ -1,0 +1,26 @@
+{
+    "id": "ps2-splinter-cell",
+    "name": "Splinter Cell",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2016-11-09",
+    "platform": "ps2",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "非常推荐！",
+    "tags": [
+        "rpg",
+        "action"
+    ],
+    "customTags": [],
+    "developer": "Game Freak",
+    "publisher": "Electronic Arts",
+    "genre": [
+        "rpg",
+        "action"
+    ]
+}

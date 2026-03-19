@@ -1,0 +1,24 @@
+{
+    "id": "xbox360-rock-band-rebirth",
+    "name": "Rock Band Rebirth",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2012-09-12",
+    "platform": "xbox360",
+    "status": "played",
+    "playCount": 43,
+    "totalPlayTime": 4733,
+    "lastPlayed": "2024-03-23",
+    "firstPlayed": "2018-10-13",
+    "favorite": true,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "sports"
+    ],
+    "customTags": [],
+    "developer": "Nintendo EPD",
+    "publisher": "Rockstar Games",
+    "genre": [
+        "sports"
+    ]
+}

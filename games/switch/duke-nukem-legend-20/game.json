@@ -1,0 +1,26 @@
+{
+    "id": "switch-duke-nukem-legend-20",
+    "name": "Duke Nukem Legend 20",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2003-05-01",
+    "platform": "switch",
+    "status": "completed",
+    "playCount": 23,
+    "totalPlayTime": 803,
+    "lastPlayed": "2023-03-29",
+    "firstPlayed": "2019-10-03",
+    "favorite": false,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "adventure",
+        "horror"
+    ],
+    "customTags": [],
+    "developer": "343 Industries",
+    "publisher": "Rockstar Games",
+    "genre": [
+        "adventure",
+        "horror"
+    ]
+}

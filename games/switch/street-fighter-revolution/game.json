@@ -1,0 +1,26 @@
+{
+    "id": "switch-street-fighter-revolution",
+    "name": "Street Fighter Revolution",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2007-07-25",
+    "platform": "switch",
+    "status": "playing",
+    "playCount": 22,
+    "totalPlayTime": 1958,
+    "lastPlayed": "2023-01-12",
+    "firstPlayed": "2023-03-22",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "Naughty Dog",
+    "publisher": "Sega Sammy",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

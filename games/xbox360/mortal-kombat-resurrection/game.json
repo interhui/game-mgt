@@ -1,0 +1,26 @@
+{
+    "id": "xbox360-mortal-kombat-resurrection",
+    "name": "Mortal Kombat Resurrection",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2010-04-09",
+    "platform": "xbox360",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "sports",
+        "arcade"
+    ],
+    "customTags": [],
+    "developer": "Nintendo EPD",
+    "publisher": "Take-Two Interactive",
+    "genre": [
+        "sports",
+        "arcade"
+    ]
+}

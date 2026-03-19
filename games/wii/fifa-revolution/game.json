@@ -1,0 +1,26 @@
+{
+    "id": "wii-fifa-revolution",
+    "name": "FIFA Revolution",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2001-06-27",
+    "platform": "wii",
+    "status": "completed",
+    "playCount": 50,
+    "totalPlayTime": 3606,
+    "lastPlayed": "2020-05-15",
+    "firstPlayed": "2019-06-05",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "strategy",
+        "rts"
+    ],
+    "customTags": [],
+    "developer": "BioWare",
+    "publisher": "FromSoftware",
+    "genre": [
+        "strategy",
+        "rts"
+    ]
+}

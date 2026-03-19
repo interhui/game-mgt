@@ -1,0 +1,26 @@
+{
+    "id": "psp-dirt-3",
+    "name": "Dirt 3",
+    "description": "紧张刺激的动作游戏，华丽的战斗系统和令人惊叹的视觉效果。",
+    "publishDate": "2003-01-26",
+    "platform": "psp",
+    "status": "played",
+    "playCount": 44,
+    "totalPlayTime": 3359,
+    "lastPlayed": "2020-08-13",
+    "firstPlayed": "2018-11-19",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "action",
+        "rpg"
+    ],
+    "customTags": [],
+    "developer": "Rockstar North",
+    "publisher": "Idea Factory",
+    "genre": [
+        "action",
+        "rpg"
+    ]
+}

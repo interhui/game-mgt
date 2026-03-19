@@ -1,0 +1,24 @@
+{
+    "id": "psp-command-conquer-hd",
+    "name": "Command & Conquer HD",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2012-12-17",
+    "platform": "psp",
+    "status": "completed",
+    "playCount": 40,
+    "totalPlayTime": 3017,
+    "lastPlayed": "2023-03-22",
+    "firstPlayed": "2023-10-17",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "puzzle"
+    ],
+    "customTags": [],
+    "developer": "Rockstar San Diego",
+    "publisher": "Atlus",
+    "genre": [
+        "puzzle"
+    ]
+}

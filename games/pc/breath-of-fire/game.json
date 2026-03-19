@@ -1,0 +1,26 @@
+{
+    "id": "pc-breath-of-fire",
+    "name": "Breath of Fire",
+    "description": "经典系列的最新作，继承了前作的优秀元素，并加入了全新的游戏机制和内容。",
+    "publishDate": "2007-09-17",
+    "platform": "pc",
+    "status": "played",
+    "playCount": 3,
+    "totalPlayTime": 3104,
+    "lastPlayed": "2023-06-17",
+    "firstPlayed": "2019-05-12",
+    "favorite": false,
+    "userRating": 3,
+    "userComment": "",
+    "tags": [
+        "simulation",
+        "management"
+    ],
+    "customTags": [],
+    "developer": "Gearbox Software",
+    "publisher": "PlatinumGames",
+    "genre": [
+        "simulation",
+        "management"
+    ]
+}

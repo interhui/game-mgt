@@ -1,0 +1,26 @@
+{
+    "id": "switch-xenogears-memories-1",
+    "name": "Xenogears Memories 1",
+    "description": "节奏明快、战斗激烈的动作冒险游戏，让人欲罢不能。",
+    "publishDate": "2021-01-26",
+    "platform": "switch",
+    "status": "played",
+    "playCount": 50,
+    "totalPlayTime": 1799,
+    "lastPlayed": "2023-07-20",
+    "firstPlayed": "2021-07-26",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "",
+    "tags": [
+        "rpg",
+        "strategy"
+    ],
+    "customTags": [],
+    "developer": "Rockstar Leeds",
+    "publisher": "Sony Interactive Entertainment",
+    "genre": [
+        "rpg",
+        "strategy"
+    ]
+}

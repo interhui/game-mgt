@@ -1,0 +1,26 @@
+{
+    "id": "psp-the-witcher-nexus",
+    "name": "The Witcher Nexus",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2001-06-30",
+    "platform": "psp",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 5,
+    "userComment": "非常推荐！",
+    "tags": [
+        "action",
+        "adventure"
+    ],
+    "customTags": [],
+    "developer": "2K Boston",
+    "publisher": "Capcom",
+    "genre": [
+        "action",
+        "adventure"
+    ]
+}

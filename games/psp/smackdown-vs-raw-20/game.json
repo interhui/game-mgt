@@ -1,0 +1,26 @@
+{
+    "id": "psp-smackdown-vs-raw-20",
+    "name": "SmackDown vs Raw 20",
+    "description": "深受玩家喜爱的经典之作，无论是剧情还是游戏性都堪称一流。",
+    "publishDate": "2016-05-02",
+    "platform": "psp",
+    "status": "playing",
+    "playCount": 43,
+    "totalPlayTime": 451,
+    "lastPlayed": "2023-09-07",
+    "firstPlayed": "2019-07-11",
+    "favorite": true,
+    "userRating": 1,
+    "userComment": "非常推荐！",
+    "tags": [
+        "horror",
+        "survival"
+    ],
+    "customTags": [],
+    "developer": "Bandai Namco",
+    "publisher": "Ubisoft",
+    "genre": [
+        "horror",
+        "survival"
+    ]
+}

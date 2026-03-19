@@ -1,0 +1,24 @@
+{
+    "id": "ps1-borderlands-17",
+    "name": "Borderlands 17",
+    "description": "开放世界的自由探索游戏，玩家可以在游戏中做任何想做的事情。",
+    "publishDate": "2016-12-19",
+    "platform": "ps1",
+    "status": "completed",
+    "playCount": 40,
+    "totalPlayTime": 4366,
+    "lastPlayed": "2020-05-09",
+    "firstPlayed": "2021-07-16",
+    "favorite": false,
+    "userRating": 4,
+    "userComment": "",
+    "tags": [
+        "sports"
+    ],
+    "customTags": [],
+    "developer": "Sucker Punch",
+    "publisher": "Square Enix",
+    "genre": [
+        "sports"
+    ]
+}

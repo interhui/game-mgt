@@ -1,0 +1,26 @@
+{
+    "id": "ps1-mortal-kombat-domination",
+    "name": "Mortal Kombat Domination",
+    "description": "视觉效果出色、剧情引人入胜的AAA大作，值得反复游玩。",
+    "publishDate": "2022-01-31",
+    "platform": "ps1",
+    "status": "unplayed",
+    "playCount": 0,
+    "totalPlayTime": 0,
+    "lastPlayed": "",
+    "firstPlayed": "",
+    "favorite": false,
+    "userRating": 2,
+    "userComment": "",
+    "tags": [
+        "puzzle",
+        "logic"
+    ],
+    "customTags": [],
+    "developer": "Game Freak",
+    "publisher": "Sega",
+    "genre": [
+        "puzzle",
+        "logic"
+    ]
+}
