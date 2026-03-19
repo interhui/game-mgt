@@ -78,9 +78,20 @@ class BoxService {
             }
 
             const content = await this.fileService.readFile(filePath);
+
+            // 检查内容是否为空或无效
+            if (!content || content.trim() === '') {
+                console.warn(`Box file ${boxName}.json is empty, returning empty object`);
+                return {};
+            }
+
             return JSON.parse(content);
         } catch (error) {
             console.error('Error reading box file:', error);
+            // 如果是 JSON 解析错误，返回空对象而不是抛出异常
+            if (error instanceof SyntaxError) {
+                return {};
+            }
             throw error;
         }
     }

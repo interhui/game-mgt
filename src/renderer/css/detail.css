@@ -364,3 +364,8 @@ body {
     gap: 12px;
     justify-content: flex-end;
 }
+
+/* 隐藏启动游戏按钮 */
+.launch-hidden {
+    display: none !important;
+}

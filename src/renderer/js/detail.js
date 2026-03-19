@@ -230,7 +230,8 @@ function enterEditMode() {
     elements.gameDescriptionContainer.innerHTML = `<textarea id="edit-description" class="edit-textarea">${editData.description}</textarea>`;
 
     // 显示/隐藏按钮
-    elements.actionButtons.style.display = 'none';
+    elements.normalActions.style.display = 'none';
+    elements.boxActions.style.display = 'none';
     elements.editActions.style.display = 'flex';
 
     // 绑定编辑模式的事件
@@ -277,8 +278,14 @@ function exitEditMode() {
     elements.gameDescription = document.getElementById('game-description');
 
     // 显示/隐藏按钮
-    elements.actionButtons.style.display = 'flex';
     elements.editActions.style.display = 'none';
+    if (fromBox) {
+        elements.boxActions.style.display = 'flex';
+        elements.normalActions.style.display = 'none';
+    } else {
+        elements.normalActions.style.display = 'flex';
+        elements.boxActions.style.display = 'none';
+    }
 }
 
 /**
