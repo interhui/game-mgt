@@ -244,17 +244,36 @@ function updateSidebar(platforms) {
     // 绑定点击事件
     document.querySelectorAll('.platform-item').forEach(item => {
         item.addEventListener('click', () => {
-            // 清除平台选中状态
-            document.querySelectorAll('.platform-item').forEach(i => i.classList.remove('active'));
-            // 清除盒子选中状态
-            document.querySelectorAll('.box-item').forEach(i => i.classList.remove('active'));
-
-            item.classList.add('active');
-            state.currentPlatform = item.dataset.platform;
-            state.currentBox = ''; // 清除当前盒子
-            loadGames();
+            setCurrentPlatform(item.dataset.platform);
         });
     });
+}
+
+/**
+ * 设置当前平台筛选
+ * 统一处理左侧栏和下拉框的平台选择
+ */
+function setCurrentPlatform(platform) {
+    state.currentPlatform = platform;
+    state.currentBox = ''; // 清除当前盒子
+
+    // 更新左侧栏平台选中状态
+    document.querySelectorAll('.platform-item').forEach(item => {
+        if (item.dataset.platform === platform) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+
+    // 清除左侧栏盒子选中状态
+    document.querySelectorAll('.box-item').forEach(i => i.classList.remove('active'));
+
+    // 更新下拉框
+    elements.platformFilter.value = platform;
+
+    // 加载游戏
+    loadGames();
 }
 
 /**
@@ -609,8 +628,7 @@ async function loadStats() {
 function bindEvents() {
     // 平台筛选
     elements.platformFilter.addEventListener('change', (e) => {
-        state.currentPlatform = e.target.value;
-        loadGames();
+        setCurrentPlatform(e.target.value);
     });
 
     // 排序
