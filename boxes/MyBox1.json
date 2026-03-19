@@ -17,14 +17,6 @@
       "playCount": 0
     },
     {
-      "id": "ps1-final-fantasy-vii",
-      "status": "unplayed",
-      "firstPlayed": "",
-      "lastPlayed": "",
-      "totalPlayTime": 0,
-      "playCount": 0
-    },
-    {
       "id": "ps1-metal-gear-solid",
       "status": "unplayed",
       "firstPlayed": "",
@@ -60,16 +52,6 @@
     },
     {
       "id": "xbox360-red-dead-redemption",
-      "status": "unplayed",
-      "firstPlayed": "",
-      "lastPlayed": "",
-      "totalPlayTime": 0,
-      "playCount": 0
-    }
-  ],
-  "psp": [
-    {
-      "id": "psp-crisis-core-final-fantasy-vii",
       "status": "unplayed",
       "firstPlayed": "",
       "lastPlayed": "",

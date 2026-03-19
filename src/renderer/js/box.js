@@ -74,6 +74,11 @@ async function init() {
     // 绑定事件
     bindEvents();
 
+    // 监听盒子更新事件
+    window.electronAPI.onBoxUpdated(async () => {
+        await loadBoxData();
+    });
+
     // 加载盒子数据
     await loadBoxData();
 }
@@ -576,7 +581,11 @@ async function openGameDetail(gameId) {
     try {
         const game = state.games.find(g => g.gameId === gameId);
         if (game) {
-            await window.electronAPI.openGameDetail(game);
+            await window.electronAPI.openGameDetail({
+                ...game,
+                fromBox: true,
+                boxName: state.boxName
+            });
         }
     } catch (error) {
         console.error('Error opening game detail:', error);

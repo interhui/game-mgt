@@ -5,6 +5,8 @@
 let currentGame = null;
 let isEditMode = false;
 let editData = {};
+let fromBox = false;
+let boxName = '';
 
 // DOM 元素
 const elements = {
@@ -30,12 +32,15 @@ const elements = {
     saveEditBtn: document.getElementById('save-edit-btn'),
     cancelEditBtn: document.getElementById('cancel-edit-btn'),
     editActions: document.getElementById('edit-actions'),
-    actionButtons: document.querySelector('.action-buttons'),
+    normalActions: document.getElementById('normal-actions'),
+    boxActions: document.getElementById('box-actions'),
     addToBoxBtn: document.getElementById('add-to-box-btn'),
     addToBoxModal: document.getElementById('add-to-box-modal'),
     boxSelect: document.getElementById('box-select'),
     confirmAddToBox: document.getElementById('confirm-add-to-box'),
-    cancelAddToBox: document.getElementById('cancel-add-to-box')
+    cancelAddToBox: document.getElementById('cancel-add-to-box'),
+    removeFromBoxBtn: document.getElementById('remove-from-box-btn'),
+    launchBtnBox: document.getElementById('launch-btn-box')
 };
 
 /**
@@ -59,6 +64,8 @@ function init() {
  */
 function loadGameDetail(game) {
     currentGame = game;
+    fromBox = game.fromBox || false;
+    boxName = game.boxName || '';
 
     // 基本信息
     elements.gameTitle.textContent = game.name;
@@ -97,6 +104,15 @@ function loadGameDetail(game) {
 
     // 描述
     elements.gameDescription.textContent = game.description || '暂无描述';
+
+    // 根据来源显示不同的按钮
+    if (fromBox) {
+        elements.normalActions.style.display = 'none';
+        elements.boxActions.style.display = 'flex';
+    } else {
+        elements.normalActions.style.display = 'flex';
+        elements.boxActions.style.display = 'none';
+    }
 }
 
 /**
@@ -510,6 +526,43 @@ function bindEvents() {
     elements.addToBoxModal.addEventListener('click', (e) => {
         if (e.target === elements.addToBoxModal) {
             elements.addToBoxModal.style.display = 'none';
+        }
+    });
+
+    // 从盒子中移除游戏（盒子模式）
+    elements.removeFromBoxBtn.addEventListener('click', async () => {
+        if (!fromBox || !boxName) return;
+
+        const gameName = currentGame.name;
+        const confirmed = confirm(`确定要从游戏盒子"${boxName}"中移除游戏"${gameName}"吗？`);
+
+        if (confirmed) {
+            try {
+                const result = await window.electronAPI.removeGameFromBox({
+                    boxName: boxName,
+                    platform: currentGame.platform,
+                    gameId: currentGame.gameId
+                });
+
+                if (!result.error) {
+                    window.close();
+                } else {
+                    alert('移除失败: ' + result.error);
+                }
+            } catch (error) {
+                console.error('Error removing game from box:', error);
+                alert('移除失败: ' + error.message);
+            }
+        }
+    });
+
+    // 启动游戏（盒子模式）
+    elements.launchBtnBox.addEventListener('click', async () => {
+        try {
+            await window.electronAPI.launchGame(currentGame.path, currentGame.platform);
+        } catch (error) {
+            console.error('Error launching game:', error);
+            alert('启动游戏失败: ' + error.message);
         }
     });
 }

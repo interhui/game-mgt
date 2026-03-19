@@ -448,12 +448,11 @@ function setupIpcHandlers(services) {
         }
     });
 
-    // 通知主窗口刷新盒子列表
+    // 通知所有窗口刷新盒子列表
     function notifyBoxUpdated() {
-        const mainWindow = getMainWindow();
-        if (mainWindow) {
-            mainWindow.webContents.send('box-updated');
-        }
+        BrowserWindow.getAllWindows().forEach(win => {
+            win.webContents.send('box-updated');
+        });
     }
 
     // 创建游戏盒子
