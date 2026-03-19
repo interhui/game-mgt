@@ -24,6 +24,7 @@ const elements = {
     searchBtn: document.getElementById('search-btn'),
     clearSearchBtn: document.getElementById('clear-search-btn'),
     viewToggle: document.getElementById('view-toggle'),
+    batchRemoveBtn: document.getElementById('batch-remove-btn'),
     gamesGrid: document.getElementById('games-grid'),
     emptyState: document.getElementById('empty-state'),
     statsBar: {
@@ -128,6 +129,7 @@ function bindEvents() {
         state.viewMode = state.viewMode === 'grid' ? 'list' : 'grid';
         elements.gamesGrid.classList.toggle('list-view');
         renderGames(state.games);
+        updateBatchButtonVisibility();
     });
 
     // 平台筛选下拉框
@@ -145,6 +147,11 @@ function bindEvents() {
     elements.sortSelect.addEventListener('change', (e) => {
         state.currentSort = e.target.value;
         renderGames(state.games);
+    });
+
+    // 批量移除按钮
+    elements.batchRemoveBtn.addEventListener('click', async () => {
+        await batchRemoveGames();
     });
 }
 
@@ -453,6 +460,7 @@ function renderGames(games) {
                 state.selectedGames.clear();
             }
             renderGames(state.games);
+            updateBatchButtonVisibility();
         });
     }
 
@@ -466,6 +474,7 @@ function renderGames(games) {
                 state.selectedGames.delete(gameId);
             }
             updateSelectAllState();
+            updateBatchButtonVisibility();
         });
     });
 }
@@ -572,6 +581,69 @@ async function removeGameFromBox(gameId) {
     } catch (error) {
         console.error('Error removing game from box:', error);
         alert('移除失败: ' + error.message);
+    }
+}
+
+/**
+ * 批量从盒子中移除游戏
+ */
+async function batchRemoveGames() {
+    if (state.selectedGames.size === 0) {
+        alert('请先选择要移除的游戏');
+        return;
+    }
+
+    const confirmed = confirm(`确定要从盒子中移除选中的 ${state.selectedGames.size} 个游戏吗？`);
+
+    if (!confirmed) return;
+
+    try {
+        let successCount = 0;
+        let failCount = 0;
+
+        for (const gameId of state.selectedGames) {
+            const game = state.games.find(g => g.gameId === gameId);
+            if (!game) continue;
+
+            const result = await window.electronAPI.removeGameFromBox({
+                boxName: state.boxName,
+                platform: game.platform,
+                gameId: gameId
+            });
+
+            if (!result.error) {
+                successCount++;
+            } else {
+                failCount++;
+            }
+        }
+
+        if (failCount > 0) {
+            alert(`移除完成：成功 ${successCount} 个，失败 ${failCount} 个`);
+        } else {
+            alert(`已成功移除 ${successCount} 个游戏`);
+        }
+
+        // 清空选择
+        state.selectedGames.clear();
+
+        // 重新加载盒子数据
+        await loadBoxData();
+    } catch (error) {
+        console.error('Error batch removing games from box:', error);
+        alert('批量移除失败: ' + error.message);
+    }
+}
+
+/**
+ * 更新批量操作按钮可见性
+ */
+function updateBatchButtonVisibility() {
+    // 只在列表视图且有选中游戏时显示批量移除按钮
+    if (state.viewMode === 'list' && state.selectedGames.size > 0) {
+        elements.batchRemoveBtn.style.display = 'block';
+    } else {
+        elements.batchRemoveBtn.style.display = 'none';
     }
 }
 
