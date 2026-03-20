@@ -761,11 +761,6 @@ function bindEvents() {
         }
     });
 
-    // 主题切换
-    elements.themeSelect.addEventListener('change', (e) => {
-        applyTheme(e.target.value);
-    });
-
     // 监听刷新事件
     window.electronAPI.onRefreshLibrary(() => {
         loadPlatforms();
