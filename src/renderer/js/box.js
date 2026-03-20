@@ -79,6 +79,9 @@ async function init() {
     // 设置页面标题
     elements.boxTitle.textContent = state.boxName;
 
+    // 加载主题设置
+    await loadTheme();
+
     // 绑定事件
     bindEvents();
 
@@ -87,8 +90,56 @@ async function init() {
         await loadBoxData();
     });
 
+    // 监听主题变化
+    window.electronAPI.onThemeChanged((theme) => {
+        applyTheme(theme);
+    });
+
     // 加载盒子数据
     await loadBoxData();
+}
+
+/**
+ * 加载主题设置
+ */
+async function loadTheme() {
+    try {
+        const settings = await window.electronAPI.getSettings();
+        if (settings && settings.appearance) {
+            applyTheme(settings.appearance.theme);
+        }
+    } catch (error) {
+        console.error('Error loading theme:', error);
+    }
+}
+
+/**
+ * 应用主题
+ */
+function applyTheme(theme) {
+    // 找到所有 link 标签并找到主题 CSS
+    const links = document.querySelectorAll('link[rel="stylesheet"]');
+    let themeLink = null;
+    for (const link of links) {
+        const href = link.getAttribute('href') || '';
+        if (href.includes('themes/dark') || href.includes('themes/light')) {
+            themeLink = link;
+            break;
+        }
+    }
+    console.log('applyTheme called, theme:', theme, 'themeLink found:', themeLink ? themeLink.href : 'null');
+    if (themeLink) {
+        // 替换 href 中的主题文件名
+        const currentHref = themeLink.getAttribute('href');
+        let newHref;
+        if (theme === 'light') {
+            newHref = currentHref.replace(/themes\/dark\.css$/, 'themes/light.css');
+        } else {
+            newHref = currentHref.replace(/themes\/light\.css$/, 'themes/dark.css');
+        }
+        console.log('Theme CSS href changed from:', currentHref, 'to:', newHref);
+        themeLink.setAttribute('href', newHref);
+    }
 }
 
 /**

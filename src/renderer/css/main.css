@@ -328,6 +328,7 @@ body {
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     border-radius: 4px;
+    border: 1px solid var(--border-color);
     overflow: hidden;
     background-color: var(--card-bg);
     display: flex;

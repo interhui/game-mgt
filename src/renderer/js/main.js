@@ -157,11 +157,26 @@ async function loadSettings() {
  * 应用主题
  */
 function applyTheme(theme) {
-    const link = document.querySelector('link[rel="stylesheet"]');
-    if (theme === 'light') {
-        link.href = 'css/themes/light.css';
-    } else {
-        link.href = 'css/themes/dark.css';
+    // 找到所有 link 标签并找到主题 CSS
+    const links = document.querySelectorAll('link[rel="stylesheet"]');
+    let themeLink = null;
+    for (const link of links) {
+        const href = link.getAttribute('href') || '';
+        if (href.includes('themes/dark') || href.includes('themes/light')) {
+            themeLink = link;
+            break;
+        }
+    }
+    if (themeLink) {
+        // 替换 href 中的主题文件名
+        const currentHref = themeLink.getAttribute('href');
+        let newHref;
+        if (theme === 'light') {
+            newHref = currentHref.replace(/themes\/dark\.css$/, 'themes/light.css');
+        } else {
+            newHref = currentHref.replace(/themes\/light\.css$/, 'themes/dark.css');
+        }
+        themeLink.setAttribute('href', newHref);
     }
 }
 
@@ -768,6 +783,11 @@ function bindEvents() {
         elements.settingsModal.style.display = 'flex';
     });
 
+    // 监听主题变化
+    window.electronAPI.onThemeChanged((theme) => {
+        applyTheme(theme);
+    });
+
     // 点击模态框外部关闭
     elements.settingsModal.addEventListener('click', (e) => {
         if (e.target === elements.settingsModal) {
@@ -1287,7 +1307,8 @@ async function saveSettingsHandler() {
         await window.electronAPI.saveSettings(newSettings);
 
         state.settings = newSettings;
-        applyTheme(newSettings.appearance.theme);
+        // 调用 setTheme 广播主题变化到所有窗口
+        await window.electronAPI.setTheme(newSettings.appearance.theme);
         applyLayoutSettings(newSettings.layout);
 
         // 关闭模态框

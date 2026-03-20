@@ -85,6 +85,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
     onLoadGameDetail: (callback) => {
         ipcRenderer.on('load-game-detail', (event, gameData) => callback(gameData));
     },
+    onThemeChanged: (callback) => {
+        ipcRenderer.on('theme-changed', (event, theme) => callback(theme));
+    },
 
     // 移除事件监听
     removeAllListeners: (channel) => {
