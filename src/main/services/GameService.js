@@ -523,6 +523,158 @@ class GameService {
 
         return `${platform}-${normalizedName}`;
     }
+
+    /**
+     * 生成游戏文件夹名称
+     * @param {string} gameName - 游戏名称
+     * @returns {string} 文件夹名称
+     */
+    generateFolderName(gameName) {
+        // 将游戏名称转换为小写，去除特殊字符，只保留字母、数字和连字符
+        const normalizedName = gameName.toLowerCase()
+            .replace(/[^a-z0-9\u4e00-\u9fa5]/g, '-') // 非字母数字中文转为连字符
+            .replace(/-+/g, '-') // 多个连字符合并为一个
+            .replace(/^-|-$/g, ''); // 去除首尾连字符
+
+        return normalizedName;
+    }
+
+    /**
+     * 添加单个游戏
+     * @param {object} gameData - 游戏数据
+     * @param {string} gameData.name - 游戏名称
+     * @param {string} gameData.description - 游戏描述
+     * @param {string} gameData.platform - 平台
+     * @param {string} gameData.publishDate - 发行日期
+     * @param {string} gameData.publisher - 发行商
+     * @param {string[]} gameData.tags - 标签
+     * @param {string} coverImagePath - 封面图片路径
+     * @param {string} gamesDir - 游戏目录
+     * @returns {Promise<object>} 创建的游戏信息
+     */
+    async addGame(gameData, coverImagePath, gamesDir) {
+        try {
+            const { name, description, platform, publishDate, publisher, tags } = gameData;
+
+            // 生成游戏ID和文件夹名称
+            const gameId = this.generateGameId(platform, name);
+            const folderName = this.generateFolderName(name);
+
+            // 确保平台目录存在
+            const platformPath = path.join(gamesDir, platform);
+            await this.fileService.ensureDir(platformPath);
+
+            // 创建游戏文件夹
+            const gamePath = path.join(platformPath, folderName);
+            await this.fileService.ensureDir(gamePath);
+
+            // 准备游戏数据
+            const newGameData = {
+                id: gameId,
+                name: name,
+                description: description || '',
+                platform: platform,
+                publishDate: publishDate || '',
+                publisher: publisher || '',
+                tags: tags || [],
+                status: 'unplayed',
+                favorite: false,
+                userRating: 0,
+                userComment: '',
+                playCount: 0,
+                totalPlayTime: 0,
+                lastPlayed: '',
+                firstPlayed: ''
+            };
+
+            // 写入 game.json
+            await this.fileService.writeGameJson(gamePath, newGameData);
+
+            // 如果有封面图片，复制到游戏文件夹
+            if (coverImagePath) {
+                const ext = this.fileService.getFileExtension(coverImagePath);
+                const coverDestPath = path.join(gamePath, `cover${ext}`);
+                await this.fileService.copyFile(coverImagePath, coverDestPath);
+            }
+
+            return {
+                success: true,
+                game: this.generateGameData(newGameData, folderName, platform, gamePath)
+            };
+        } catch (error) {
+            console.error('Error adding game:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * 批量导入游戏
+     * @param {object[]} gamesData - 游戏数据数组
+     * @param {string} gamesDir - 游戏目录
+     * @returns {Promise<object>} 导入结果
+     */
+    async batchImportGames(gamesData, gamesDir) {
+        try {
+            const results = {
+                success: 0,
+                failed: 0,
+                errors: []
+            };
+
+            for (const gameData of gamesData) {
+                try {
+                    // 验证必填字段
+                    if (!gameData.name || !gameData.platform) {
+                        results.failed++;
+                        results.errors.push(`游戏 "${gameData.name || '未知'}" 缺少必填字段（name 或 platform）`);
+                        continue;
+                    }
+
+                    const gameId = this.generateGameId(gameData.platform, gameData.name);
+                    const folderName = this.generateFolderName(gameData.name);
+
+                    // 确保平台目录存在
+                    const platformPath = path.join(gamesDir, gameData.platform);
+                    await this.fileService.ensureDir(platformPath);
+
+                    // 创建游戏文件夹
+                    const gamePath = path.join(platformPath, folderName);
+                    await this.fileService.ensureDir(gamePath);
+
+                    // 准备游戏数据
+                    const newGameData = {
+                        id: gameId,
+                        name: gameData.name,
+                        description: gameData.description || '',
+                        platform: gameData.platform,
+                        publishDate: gameData.publishDate || '',
+                        publisher: gameData.publisher || '',
+                        tags: gameData.tags || [],
+                        status: 'unplayed',
+                        favorite: false,
+                        userRating: 0,
+                        userComment: '',
+                        playCount: 0,
+                        totalPlayTime: 0,
+                        lastPlayed: '',
+                        firstPlayed: ''
+                    };
+
+                    // 写入 game.json
+                    await this.fileService.writeGameJson(gamePath, newGameData);
+                    results.success++;
+                } catch (err) {
+                    results.failed++;
+                    results.errors.push(`游戏 "${gameData.name || '未知'}" 导入失败: ${err.message}`);
+                }
+            }
+
+            return results;
+        } catch (error) {
+            console.error('Error batch importing games:', error);
+            throw error;
+        }
+    }
 }
 
 module.exports = GameService;

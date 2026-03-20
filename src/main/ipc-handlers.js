@@ -627,6 +627,91 @@ function setupIpcHandlers(services) {
         }
     });
 
+    // ==================== 添加游戏 ====================
+
+    // 添加单个游戏
+    ipcMain.handle('add-game', async (event, gameData) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+
+            // 处理封面图片（如果是 base64 数据，则保存为文件）
+            let coverImagePath = null;
+            if (gameData.coverImage) {
+                // coverImage 可以是文件路径或 base64 数据
+                if (gameData.coverImage.startsWith('data:')) {
+                    // base64 数据，需要保存到文件
+                    const fs = require('fs');
+                    const base64Data = gameData.coverImage.replace(/^data:image\/\w+;base64,/, '');
+                    const ext = gameData.coverImage.match(/^data:image\/(\w+);base64,/)?.[1] || 'png';
+                    const tempPath = path.join(APP_ROOT, 'temp_cover_' + Date.now() + '.' + ext);
+                    fs.writeFileSync(tempPath, Buffer.from(base64Data, 'base64'));
+                    coverImagePath = tempPath;
+                } else {
+                    coverImagePath = gameData.coverImage;
+                }
+            }
+
+            const result = await gameService.addGame(gameData, coverImagePath, gamesDir);
+
+            // 删除临时文件
+            if (coverImagePath && coverImagePath.includes('temp_cover_')) {
+                require('fs').unlinkSync(coverImagePath);
+            }
+
+            // 通知主窗口刷新
+            const mainWindow = getMainWindow();
+            if (mainWindow) {
+                mainWindow.webContents.send('refresh-library');
+            }
+
+            return result;
+        } catch (error) {
+            console.error('Error adding game:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 批量导入游戏
+    ipcMain.handle('batch-import-games', async (event, gamesData) => {
+        try {
+            const settings = settingsService.getSettings();
+            const gamesDir = getGamesDirPath(settings.library.gamesDir);
+
+            const result = await gameService.batchImportGames(gamesData, gamesDir);
+
+            // 通知主窗口刷新
+            const mainWindow = getMainWindow();
+            if (mainWindow) {
+                mainWindow.webContents.send('refresh-library');
+            }
+
+            return result;
+        } catch (error) {
+            console.error('Error batch importing games:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 选择图片文件
+    ipcMain.handle('select-image', async () => {
+        try {
+            const result = await dialog.showOpenDialog({
+                properties: ['openFile'],
+                filters: [
+                    { name: 'Images', extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp'] }
+                ]
+            });
+            if (result.canceled) {
+                return { canceled: true };
+            }
+            return { canceled: false, path: result.filePaths[0] };
+        } catch (error) {
+            console.error('Error selecting image:', error);
+            return { error: error.message };
+        }
+    });
+
     // 设置窗口最小尺寸
     ipcMain.handle('set-min-size', async (event, minWidth, minHeight) => {
         try {

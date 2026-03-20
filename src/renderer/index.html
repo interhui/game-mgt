@@ -31,6 +31,8 @@
             </div>
             <div class="toolbar-right">
                 <button id="batch-add-btn" class="btn btn-secondary" style="display: none;">批量添加</button>
+                <button id="import-json-btn" class="btn btn-secondary">导入JSON</button>
+                <button id="add-game-btn" class="btn btn-primary">添加游戏</button>
                 <div class="search-box">
                     <input type="text" id="search-input" placeholder="搜索游戏...">
                     <button id="search-btn" class="icon-btn">🔍</button>
@@ -179,6 +181,115 @@
             <div class="modal-footer">
                 <button id="save-settings" class="btn btn-primary">保存</button>
                 <button id="cancel-settings" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加游戏模态框 -->
+    <div id="add-game-modal" class="modal" style="display: none;">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>添加游戏</h2>
+                <button class="close-btn" id="close-add-game">&times;</button>
+            </div>
+            <div class="modal-body add-game-body">
+                <div class="add-game-left">
+                    <div class="form-group">
+                        <label>游戏封面</label>
+                        <div class="cover-upload">
+                            <input type="file" id="game-cover-input" accept="image/*" style="display: none;">
+                            <div id="cover-preview" class="cover-preview-large">
+                                <div class="cover-placeholder">选择封面图片</div>
+                            </div>
+                            <button type="button" id="select-cover-btn" class="btn btn-secondary">选择图片</button>
+                            <span id="cover-name" class="cover-name"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-game-right">
+                    <form id="add-game-form">
+                        <div class="form-group">
+                            <label>游戏名称 *</label>
+                            <input type="text" id="game-name" class="form-input" placeholder="输入游戏名称" required>
+                        </div>
+                        <div class="form-group">
+                            <label>平台 *</label>
+                            <select id="game-platform" class="form-input" required>
+                                <option value="">选择平台...</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>发行日期</label>
+                                <input type="date" id="game-publish-date" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>发行商</label>
+                                <input type="text" id="game-publisher" class="form-input" placeholder="输入发行商">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>描述</label>
+                            <textarea id="game-description" class="form-input" rows="4" placeholder="输入游戏描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>标签</label>
+                            <div id="game-tags" class="tags-input">
+                                <!-- 标签将通过 JS 动态生成 -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-add-game" class="btn btn-primary">添加</button>
+                <button id="cancel-add-game" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导入JSON模态框 -->
+    <div id="import-json-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>导入游戏</h2>
+                <button class="close-btn" id="close-import-json">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 16px; color: var(--text-secondary);">请选择包含游戏信息的 JSON 文件</p>
+                <div class="form-group">
+                    <input type="file" id="json-file-input" accept=".json" style="display: none;">
+                    <button type="button" id="select-json-btn" class="btn btn-secondary">选择JSON文件</button>
+                    <span id="json-file-name" class="json-file-name"></span>
+                </div>
+                <div id="json-preview" class="json-preview" style="display: none;">
+                    <h4>预览：</h4>
+                    <div id="json-preview-content"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-import-json" class="btn btn-primary" disabled>导入</button>
+                <button id="cancel-import-json" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导入结果模态框 -->
+    <div id="import-result-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>导入结果</h2>
+                <button class="close-btn" id="close-import-result">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="import-result-text"></p>
+                <div id="import-errors" class="import-errors" style="display: none;">
+                    <h4>错误列表：</h4>
+                    <ul id="import-error-list"></ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="close-import-result-btn" class="btn btn-primary">关闭</button>
             </div>
         </div>
     </div>

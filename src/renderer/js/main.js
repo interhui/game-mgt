@@ -60,7 +60,44 @@ const elements = {
     batchBoxSelect: document.getElementById('batch-box-select'),
     confirmBatchAdd: document.getElementById('confirm-batch-add'),
     cancelBatchAdd: document.getElementById('cancel-batch-add'),
-    closeBatchAdd: document.getElementById('close-batch-add')
+    closeBatchAdd: document.getElementById('close-batch-add'),
+
+    // 添加游戏相关
+    addGameBtn: document.getElementById('add-game-btn'),
+    addGameModal: document.getElementById('add-game-modal'),
+    closeAddGame: document.getElementById('close-add-game'),
+    gameNameInput: document.getElementById('game-name'),
+    gamePlatformSelect: document.getElementById('game-platform'),
+    gamePublishDate: document.getElementById('game-publish-date'),
+    gamePublisher: document.getElementById('game-publisher'),
+    gameDescription: document.getElementById('game-description'),
+    gameTags: document.getElementById('game-tags'),
+    selectCoverBtn: document.getElementById('select-cover-btn'),
+    gameCoverInput: document.getElementById('game-cover-input'),
+    coverName: document.getElementById('cover-name'),
+    coverPreview: document.getElementById('cover-preview'),
+    confirmAddGame: document.getElementById('confirm-add-game'),
+    cancelAddGame: document.getElementById('cancel-add-game'),
+
+    // 导入JSON相关
+    importJsonBtn: document.getElementById('import-json-btn'),
+    importJsonModal: document.getElementById('import-json-modal'),
+    closeImportJson: document.getElementById('close-import-json'),
+    selectJsonBtn: document.getElementById('select-json-btn'),
+    jsonFileInput: document.getElementById('json-file-input'),
+    jsonFileName: document.getElementById('json-file-name'),
+    jsonPreview: document.getElementById('json-preview'),
+    jsonPreviewContent: document.getElementById('json-preview-content'),
+    confirmImportJson: document.getElementById('confirm-import-json'),
+    cancelImportJson: document.getElementById('cancel-import-json'),
+
+    // 导入结果相关
+    importResultModal: document.getElementById('import-result-modal'),
+    closeImportResult: document.getElementById('close-import-result'),
+    importResultText: document.getElementById('import-result-text'),
+    importErrors: document.getElementById('import-errors'),
+    importErrorList: document.getElementById('import-error-list'),
+    closeImportResultBtn: document.getElementById('close-import-result-btn')
 };
 
 /**
@@ -884,6 +921,340 @@ function bindEvents() {
             elements.batchAddModal.style.display = 'none';
         }
     });
+
+    // ==================== 添加游戏相关事件 ====================
+
+    // 添加游戏按钮
+    elements.addGameBtn.addEventListener('click', () => {
+        resetAddGameForm();
+        populatePlatformSelect();
+        populateTagsSelect();
+        elements.addGameModal.style.display = 'flex';
+        elements.gameNameInput.focus();
+    });
+
+    // 关闭添加游戏模态框
+    elements.closeAddGame.addEventListener('click', () => {
+        elements.addGameModal.style.display = 'none';
+    });
+
+    elements.cancelAddGame.addEventListener('click', () => {
+        elements.addGameModal.style.display = 'none';
+    });
+
+    // 点击模态框外部关闭
+    elements.addGameModal.addEventListener('click', (e) => {
+        if (e.target === elements.addGameModal) {
+            elements.addGameModal.style.display = 'none';
+        }
+    });
+
+    // 选择封面图片
+    elements.selectCoverBtn.addEventListener('click', () => {
+        elements.gameCoverInput.click();
+    });
+
+    // 封面图片选择变化
+    elements.gameCoverInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            elements.coverName.textContent = file.name;
+
+            // 预览图片
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                elements.coverPreview.innerHTML = `<img src="${event.target.result}" alt="Cover Preview">`;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // 确认添加游戏
+    elements.confirmAddGame.addEventListener('click', async () => {
+        const name = elements.gameNameInput.value.trim();
+        const platform = elements.gamePlatformSelect.value;
+
+        if (!name) {
+            alert('请输入游戏名称');
+            return;
+        }
+
+        if (!platform) {
+            alert('请选择平台');
+            return;
+        }
+
+        // 获取表单数据
+        const gameData = {
+            name: name,
+            platform: platform,
+            description: elements.gameDescription.value.trim(),
+            publishDate: elements.gamePublishDate.value,
+            publisher: elements.gamePublisher.value.trim(),
+            tags: getSelectedTags()
+        };
+
+        // 处理封面图片
+        const coverFile = elements.gameCoverInput.files[0];
+        if (coverFile) {
+            gameData.coverImage = await fileToBase64(coverFile);
+        }
+
+        try {
+            const result = await window.electronAPI.addGame(gameData);
+
+            if (result.error) {
+                alert('添加失败: ' + result.error);
+            } else {
+                alert('游戏添加成功！');
+                elements.addGameModal.style.display = 'none';
+                await loadGames();
+                await loadPlatforms();
+                await loadStats();
+            }
+        } catch (error) {
+            console.error('Error adding game:', error);
+            alert('添加失败: ' + error.message);
+        }
+    });
+
+    // ==================== 导入JSON相关事件 ====================
+
+    // 导入JSON按钮
+    elements.importJsonBtn.addEventListener('click', () => {
+        resetImportJsonForm();
+        elements.importJsonModal.style.display = 'flex';
+    });
+
+    // 关闭导入JSON模态框
+    elements.closeImportJson.addEventListener('click', () => {
+        elements.importJsonModal.style.display = 'none';
+    });
+
+    elements.cancelImportJson.addEventListener('click', () => {
+        elements.importJsonModal.style.display = 'none';
+    });
+
+    // 点击模态框外部关闭
+    elements.importJsonModal.addEventListener('click', (e) => {
+        if (e.target === elements.importJsonModal) {
+            elements.importJsonModal.style.display = 'none';
+        }
+    });
+
+    // 选择JSON文件
+    elements.selectJsonBtn.addEventListener('click', () => {
+        elements.jsonFileInput.click();
+    });
+
+    // JSON文件选择变化
+    elements.jsonFileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            elements.jsonFileName.textContent = file.name;
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    const games = Array.isArray(data) ? data : data.games;
+
+                    if (!Array.isArray(games)) {
+                        alert('JSON 格式错误：需要包含 games 数组');
+                        elements.confirmImportJson.disabled = true;
+                        elements.jsonPreview.style.display = 'none';
+                        return;
+                    }
+
+                    // 显示预览
+                    showJsonPreview(games);
+                    elements.confirmImportJson.disabled = false;
+                    elements.jsonFileInput.dataset.content = event.target.result;
+                } catch (err) {
+                    alert('JSON 解析失败: ' + err.message);
+                    elements.confirmImportJson.disabled = true;
+                    elements.jsonPreview.style.display = 'none';
+                }
+            };
+            reader.readAsText(file);
+        }
+    });
+
+    // 确认导入JSON
+    elements.confirmImportJson.addEventListener('click', async () => {
+        const content = elements.jsonFileInput.dataset.content;
+        if (!content) {
+            alert('请先选择 JSON 文件');
+            return;
+        }
+
+        try {
+            const data = JSON.parse(content);
+            const games = Array.isArray(data) ? data : data.games;
+
+            const result = await window.electronAPI.batchImportGames(games);
+
+            elements.importJsonModal.style.display = 'none';
+
+            // 显示结果
+            showImportResult(result);
+
+            // 刷新
+            await loadGames();
+            await loadPlatforms();
+            await loadStats();
+        } catch (error) {
+            console.error('Error importing games:', error);
+            alert('导入失败: ' + error.message);
+        }
+    });
+
+    // 关闭导入结果模态框
+    elements.closeImportResult.addEventListener('click', () => {
+        elements.importResultModal.style.display = 'none';
+    });
+
+    elements.closeImportResultBtn.addEventListener('click', () => {
+        elements.importResultModal.style.display = 'none';
+    });
+
+    elements.importResultModal.addEventListener('click', (e) => {
+        if (e.target === elements.importResultModal) {
+            elements.importResultModal.style.display = 'none';
+        }
+    });
+}
+
+/**
+ * 重置添加游戏表单
+ */
+function resetAddGameForm() {
+    elements.gameNameInput.value = '';
+    elements.gamePlatformSelect.value = '';
+    elements.gamePublishDate.value = '';
+    elements.gamePublisher.value = '';
+    elements.gameDescription.value = '';
+    elements.gameCoverInput.value = '';
+    elements.coverName.textContent = '';
+    elements.coverPreview.innerHTML = '<div class="cover-placeholder">选择封面图片</div>';
+
+    // 清空标签选择
+    const tagCheckboxes = elements.gameTags.querySelectorAll('input[type="checkbox"]');
+    tagCheckboxes.forEach(cb => cb.checked = false);
+}
+
+/**
+ * 填充平台选择下拉框
+ */
+function populatePlatformSelect() {
+    elements.gamePlatformSelect.innerHTML = '<option value="">选择平台...</option>';
+    state.platforms.forEach(platform => {
+        const option = document.createElement('option');
+        option.value = platform.id;
+        option.textContent = platform.name;
+        elements.gamePlatformSelect.appendChild(option);
+    });
+}
+
+/**
+ * 填充标签选择
+ */
+function populateTagsSelect() {
+    // 从预定义标签中获取
+    const predefinedTags = [
+        { id: 'action', name: '动作' },
+        { id: 'adventure', name: '冒险' },
+        { id: 'rpg', name: '角色扮演' },
+        { id: 'strategy', name: '策略' },
+        { id: 'simulation', name: '模拟' },
+        { id: 'sports', name: '体育' },
+        { id: 'racing', name: '竞速' },
+        { id: 'puzzle', name: '解谜' },
+        { id: 'horror', name: '恐怖' },
+        { id: 'multiplayer', name: '多人' }
+    ];
+
+    let html = '';
+    predefinedTags.forEach(tag => {
+        html += `
+            <label class="tag-checkbox">
+                <input type="checkbox" value="${tag.id}">
+                <span>${tag.name}</span>
+            </label>
+        `;
+    });
+
+    elements.gameTags.innerHTML = html;
+}
+
+/**
+ * 获取选中的标签
+ */
+function getSelectedTags() {
+    const selectedTags = [];
+    const checkboxes = elements.gameTags.querySelectorAll('input[type="checkbox"]:checked');
+    checkboxes.forEach(cb => {
+        selectedTags.push(cb.value);
+    });
+    return selectedTags;
+}
+
+/**
+ * 将文件转换为 base64
+ */
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+/**
+ * 显示JSON预览
+ */
+function showJsonPreview(games) {
+    const previewHtml = games.slice(0, 5).map((game, index) => `
+        <div class="json-preview-item">
+            <strong>${index + 1}. ${game.name || '未命名'}</strong>
+            <span>平台: ${game.platform || '未指定'}</span>
+            <span>发行日期: ${game.publishDate || '-'}</span>
+        </div>
+    `).join('');
+
+    const moreText = games.length > 5 ? `<p style="color: var(--text-secondary);">还有 ${games.length - 5} 个游戏...</p>` : '';
+
+    elements.jsonPreviewContent.innerHTML = previewHtml + moreText;
+    elements.jsonPreview.style.display = 'block';
+}
+
+/**
+ * 重置导入JSON表单
+ */
+function resetImportJsonForm() {
+    elements.jsonFileInput.value = '';
+    elements.jsonFileInput.dataset.content = '';
+    elements.jsonFileName.textContent = '';
+    elements.jsonPreview.style.display = 'none';
+    elements.confirmImportJson.disabled = true;
+}
+
+/**
+ * 显示导入结果
+ */
+function showImportResult(result) {
+    let text = `导入完成！成功: ${result.success} 个，失败: ${result.failed} 个`;
+
+    if (result.errors && result.errors.length > 0) {
+        elements.importErrors.style.display = 'block';
+        elements.importErrorList.innerHTML = result.errors.map(err => `<li>${err}</li>`).join('');
+    } else {
+        elements.importErrors.style.display = 'none';
+    }
+
+    elements.importResultText.textContent = text;
+    elements.importResultModal.style.display = 'flex';
 }
 
 /**

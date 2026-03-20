@@ -66,6 +66,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
     // 文件选择对话框
     selectDirectory: () => ipcRenderer.invoke('select-directory'),
     selectFile: (filters) => ipcRenderer.invoke('select-file', filters),
+    selectImage: () => ipcRenderer.invoke('select-image'),
+
+    // 添加游戏
+    addGame: (gameData) => ipcRenderer.invoke('add-game', gameData),
+    batchImportGames: (gamesData) => ipcRenderer.invoke('batch-import-games', gamesData),
 
     // 事件监听
     onRefreshLibrary: (callback) => {
