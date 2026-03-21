@@ -97,8 +97,40 @@ function createMainWindow() {
 function createApplicationMenu() {
     const template = [
         {
-            label: '文件',
+            label: '游戏',
             submenu: [
+                {
+                    label: '添加游戏',
+                    submenu: [
+                        {
+                            label: '手动添加',
+                            accelerator: 'CmdOrCtrl+N',
+                            click: () => {
+                                if (mainWindow) {
+                                    mainWindow.webContents.send('open-add-game');
+                                }
+                            }
+                        },
+                        {
+                            label: 'IGDB导入',
+                            accelerator: 'CmdOrCtrl+I',
+                            click: () => {
+                                if (mainWindow) {
+                                    mainWindow.webContents.send('open-igdb-import');
+                                }
+                            }
+                        },
+                        {
+                            label: 'JSON导入',
+                            click: () => {
+                                if (mainWindow) {
+                                    mainWindow.webContents.send('open-json-import');
+                                }
+                            }
+                        }
+                    ]
+                },
+                { type: 'separator' },
                 {
                     label: '刷新游戏库',
                     accelerator: 'CmdOrCtrl+R',
@@ -111,7 +143,7 @@ function createApplicationMenu() {
                 { type: 'separator' },
                 {
                     label: '设置',
-                    accelerator: 'CmdOrCtrl+,',
+                    accelerator: 'CmdOrCtrl+S',
                     click: () => {
                         if (mainWindow) {
                             mainWindow.webContents.send('open-settings');
@@ -123,23 +155,17 @@ function createApplicationMenu() {
             ]
         },
         {
-            label: '游戏',
-            submenu: [
-                {
-                    label: '从 IGDB 导入...',
-                    accelerator: 'CmdOrCtrl+I',
-                    click: () => {
-                        if (mainWindow) {
-                            mainWindow.webContents.send('open-igdb-import');
-                        }
-                    }
-                }
-            ]
-        },
-        {
             label: '视图',
             submenu: [
-                { role: 'reload' },
+                {
+                    label: '重新加载',
+                    accelerator: 'CmdOrCtrl+R',
+                    click: () => {
+                        if (mainWindow) {
+                            mainWindow.webContents.send('refresh-library');
+                        }
+                    }
+                },
                 { role: 'forceReload' },
                 { role: 'toggleDevTools' },
                 { type: 'separator' },

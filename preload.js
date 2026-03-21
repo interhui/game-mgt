@@ -104,6 +104,12 @@ contextBridge.exposeInMainWorld('electronAPI', {
     igdbSearchGames: (gameName) => ipcRenderer.invoke('igdb-search-games', gameName),
     onOpenIgdbImport: (callback) => {
         ipcRenderer.on('open-igdb-import', callback);
+    },
+    onOpenAddGame: (callback) => {
+        ipcRenderer.on('open-add-game', callback);
+    },
+    onOpenJsonImport: (callback) => {
+        ipcRenderer.on('open-json-import', callback);
     }
 });
 

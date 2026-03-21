@@ -24,6 +24,7 @@ const elements = {
     searchBtn: document.getElementById('search-btn'),
     clearSearchBtn: document.getElementById('clear-search-btn'),
     viewToggle: document.getElementById('view-toggle'),
+    refreshBtn: document.getElementById('refresh-btn'),
     settingsBtn: document.getElementById('settings-btn'),
     platformList: document.getElementById('platform-list'),
     boxList: document.getElementById('box-list'),
@@ -65,7 +66,6 @@ const elements = {
     closeBatchAdd: document.getElementById('close-batch-add'),
 
     // 添加游戏相关
-    addGameBtn: document.getElementById('add-game-btn'),
     addGameModal: document.getElementById('add-game-modal'),
     closeAddGame: document.getElementById('close-add-game'),
     gameNameInput: document.getElementById('game-name'),
@@ -82,7 +82,6 @@ const elements = {
     cancelAddGame: document.getElementById('cancel-add-game'),
 
     // 导入JSON相关
-    importJsonBtn: document.getElementById('import-json-btn'),
     importJsonModal: document.getElementById('import-json-modal'),
     closeImportJson: document.getElementById('close-import-json'),
     selectJsonBtn: document.getElementById('select-json-btn'),
@@ -756,6 +755,13 @@ function bindEvents() {
         renderGames(state.games);
     });
 
+    // 刷新游戏库按钮
+    elements.refreshBtn.addEventListener('click', () => {
+        loadPlatforms();
+        loadGames();
+        loadStats();
+    });
+
     // 设置按钮
     elements.settingsBtn.addEventListener('click', () => {
         elements.settingsModal.style.display = 'flex';
@@ -804,6 +810,21 @@ function bindEvents() {
     // 监听设置事件
     window.electronAPI.onOpenSettings(() => {
         elements.settingsModal.style.display = 'flex';
+    });
+
+    // 监听添加游戏事件
+    window.electronAPI.onOpenAddGame(() => {
+        resetAddGameForm();
+        populatePlatformSelect();
+        populateTagsSelect();
+        elements.addGameModal.style.display = 'flex';
+        elements.gameNameInput.focus();
+    });
+
+    // 监听JSON导入事件
+    window.electronAPI.onOpenJsonImport(() => {
+        resetImportJsonForm();
+        elements.importJsonModal.style.display = 'flex';
     });
 
     // 监听主题变化
@@ -967,15 +988,6 @@ function bindEvents() {
 
     // ==================== 添加游戏相关事件 ====================
 
-    // 添加游戏按钮
-    elements.addGameBtn.addEventListener('click', () => {
-        resetAddGameForm();
-        populatePlatformSelect();
-        populateTagsSelect();
-        elements.addGameModal.style.display = 'flex';
-        elements.gameNameInput.focus();
-    });
-
     // 关闭添加游戏模态框
     elements.closeAddGame.addEventListener('click', () => {
         elements.addGameModal.style.display = 'none';
@@ -1062,12 +1074,6 @@ function bindEvents() {
     });
 
     // ==================== 导入JSON相关事件 ====================
-
-    // 导入JSON按钮
-    elements.importJsonBtn.addEventListener('click', () => {
-        resetImportJsonForm();
-        elements.importJsonModal.style.display = 'flex';
-    });
 
     // 关闭导入JSON模态框
     elements.closeImportJson.addEventListener('click', () => {

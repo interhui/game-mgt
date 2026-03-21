@@ -30,15 +30,14 @@
                 </div>
             </div>
             <div class="toolbar-right">
-                <button id="batch-add-btn" class="btn btn-secondary" style="display: none;">批量添加</button>
-                <button id="import-json-btn" class="btn btn-secondary">导入JSON</button>
-                <button id="add-game-btn" class="btn btn-primary">添加游戏</button>
+                <button id="batch-add-btn" class="btn btn-secondary" style="display: none;">添加到盒子</button>
                 <div class="search-box">
                     <input type="text" id="search-input" placeholder="搜索游戏...">
                     <button id="search-btn" class="icon-btn">🔍</button>
                     <button id="clear-search-btn" class="icon-btn clear-search-btn" style="display: none;">✕</button>
                 </div>
                 <button id="view-toggle" class="icon-btn" title="切换视图">▦</button>
+                <button id="refresh-btn" class="icon-btn" title="刷新游戏库">⟳</button>
                 <button id="settings-btn" class="icon-btn" title="设置">⚙</button>
             </div>
         </header>
@@ -125,7 +124,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="confirm-batch-add" class="btn btn-primary">添加</button>
+                <button id="confirm-batch-add" class="btn btn-primary">确定</button>
                 <button id="cancel-batch-add" class="btn btn-secondary">取消</button>
             </div>
         </div>
@@ -256,7 +255,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="confirm-add-game" class="btn btn-primary">添加</button>
+                <button id="confirm-add-game" class="btn btn-primary">保存</button>
                 <button id="cancel-add-game" class="btn btn-secondary">取消</button>
             </div>
         </div>
