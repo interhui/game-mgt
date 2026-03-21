@@ -5,9 +5,62 @@
 const { ipcMain, dialog, BrowserWindow } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const https = require('https');
+const http = require('http');
 
 // 程序根目录
 const APP_ROOT = path.join(__dirname, '..', '..');
+
+/**
+ * 从 URL 下载文件到临时目录
+ * @param {string} url - 文件 URL
+ * @returns {Promise<string>} 临时文件路径
+ */
+function downloadFileToTemp(url) {
+    return new Promise((resolve, reject) => {
+        console.log('[Cover Download] Starting download:', url);
+        const ext = path.extname(url) || '.jpg';
+        const tempPath = path.join(APP_ROOT, `temp_cover_${Date.now()}${ext}`);
+        console.log('[Cover Download] Temp path:', tempPath);
+        const file = fs.createWriteStream(tempPath);
+
+        const protocol = url.startsWith('https:') ? https : http;
+
+        protocol.get(url, (response) => {
+            console.log('[Cover Download] Response status:', response.statusCode);
+            // 处理重定向
+            if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
+                console.log('[Cover Download] Redirect to:', response.headers.location);
+                file.close();
+                fs.unlinkSync(tempPath);
+                downloadFileToTemp(response.headers.location).then(resolve).catch(reject);
+                return;
+            }
+
+            if (response.statusCode !== 200) {
+                console.log('[Cover Download] Non-200 status, rejecting');
+                file.close();
+                fs.unlinkSync(tempPath);
+                reject(new Error(`Failed to download: ${response.statusCode}`));
+                return;
+            }
+
+            response.pipe(file);
+            file.on('finish', () => {
+                file.close();
+                console.log('[Cover Download] Download complete:', tempPath);
+                resolve(tempPath);
+            });
+        }).on('error', (err) => {
+            console.log('[Cover Download] Error:', err.message);
+            file.close();
+            if (fs.existsSync(tempPath)) {
+                fs.unlinkSync(tempPath);
+            }
+            reject(err);
+        });
+    });
+}
 
 /**
  * 获取游戏目录的绝对路径
@@ -39,6 +92,7 @@ function setupIpcHandlers(services) {
         launcherService,
         tagService,
         boxService,
+        igdbService,
         getMainWindow,
         createGameDetailWindow,
         createBoxWindow
@@ -635,19 +689,29 @@ function setupIpcHandlers(services) {
             const settings = settingsService.getSettings();
             const gamesDir = getGamesDirPath(settings.library.gamesDir);
 
-            // 处理封面图片（如果是 base64 数据，则保存为文件）
+            // 处理封面图片（如果是 URL 或 base64 数据，则下载/保存为文件）
             let coverImagePath = null;
             if (gameData.coverImage) {
-                // coverImage 可以是文件路径或 base64 数据
+                // coverImage 可以是文件路径、base64 数据或 URL
                 if (gameData.coverImage.startsWith('data:')) {
                     // base64 数据，需要保存到文件
-                    const fs = require('fs');
                     const base64Data = gameData.coverImage.replace(/^data:image\/\w+;base64,/, '');
                     const ext = gameData.coverImage.match(/^data:image\/(\w+);base64,/)?.[1] || 'png';
                     const tempPath = path.join(APP_ROOT, 'temp_cover_' + Date.now() + '.' + ext);
                     fs.writeFileSync(tempPath, Buffer.from(base64Data, 'base64'));
                     coverImagePath = tempPath;
+                } else if (gameData.coverImage.startsWith('http:') || gameData.coverImage.startsWith('https:')) {
+                    // URL，需要下载到临时文件
+                    console.log('[Add Game] Detected cover URL:', gameData.coverImage);
+                    try {
+                        coverImagePath = await downloadFileToTemp(gameData.coverImage);
+                        console.log('[Add Game] Downloaded to:', coverImagePath);
+                    } catch (downloadError) {
+                        console.error('[Add Game] Failed to download cover image:', downloadError);
+                        // 下载失败不影响游戏添加，只是不保存封面
+                    }
                 } else {
+                    // 假设是本地文件路径
                     coverImagePath = gameData.coverImage;
                 }
             }
@@ -722,6 +786,63 @@ function setupIpcHandlers(services) {
             return { success: true };
         } catch (error) {
             console.error('Error setting min size:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== IGDB 接口 ====================
+
+    // 获取 IGDB 配置
+    ipcMain.handle('get-igdb-config', async () => {
+        try {
+            const igdbConfig = settingsService.getIgdbConfig();
+            return igdbConfig;
+        } catch (error) {
+            console.error('Error getting IGDB config:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 保存 IGDB 配置
+    ipcMain.handle('save-igdb-config', async (event, config) => {
+        try {
+            settingsService.setIgdbConfig(config);
+            return { success: true };
+        } catch (error) {
+            console.error('Error saving IGDB config:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 搜索 IGDB 游戏
+    ipcMain.handle('igdb-search-games', async (event, gameName) => {
+        try {
+            const igdbConfig = settingsService.getIgdbConfig();
+
+            if (!igdbConfig.clientId || !igdbConfig.clientSecret) {
+                return { error: '请先配置 IGDB API 凭证（Client ID 和 Client Secret）' };
+            }
+
+            if (!gameName || gameName.trim() === '') {
+                return { error: '请输入游戏名称' };
+            }
+
+            // 获取 token
+            const accessToken = await igdbService.getAccessToken(
+                igdbConfig.clientId,
+                igdbConfig.clientSecret
+            );
+
+            // 搜索游戏
+            const games = await igdbService.searchGames(
+                accessToken,
+                igdbConfig.clientId,
+                gameName.trim()
+            );
+
+            return games;
+        } catch (error) {
+            console.error('Error searching IGDB games:', error);
             return { error: error.message };
         }
     });

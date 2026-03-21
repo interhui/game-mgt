@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file: https://images.igdb.com;">
     <title>游戏管理程序</title>
     <link rel="stylesheet" href="css/themes/dark.css">
     <link rel="stylesheet" href="css/main.css">
@@ -177,6 +177,20 @@
                         <button id="select-gamebox-dir-btn">选择</button>
                     </div>
                 </div>
+                <div class="settings-group">
+                    <h3>IGDB API</h3>
+                    <div class="form-group">
+                        <label>Client ID：</label>
+                        <input type="text" id="igdb-client-id" class="form-input" placeholder="输入 Twitch Client ID">
+                    </div>
+                    <div class="form-group">
+                        <label>Client Secret：</label>
+                        <input type="password" id="igdb-client-secret" class="form-input" placeholder="输入 Twitch Client Secret">
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">
+                        请前往 <a href="https://dev.twitch.tv/console/apps" target="_blank" style="color: var(--primary-color);">Twitch Developer Console</a> 创建应用获取凭证
+                    </p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button id="save-settings" class="btn btn-primary">保存</button>
@@ -290,6 +304,83 @@
             </div>
             <div class="modal-footer">
                 <button id="close-import-result-btn" class="btn btn-primary">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IGDB 导入模态框 -->
+    <div id="igdb-import-modal" class="modal" style="display: none;">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>从 IGDB 导入游戏</h2>
+                <button class="close-btn" id="close-igdb-import">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>游戏名称：</label>
+                    <div class="search-input-group">
+                        <input type="text" id="igdb-search-input" class="form-input" placeholder="输入游戏名称">
+                        <button id="igdb-search-btn" class="btn btn-secondary">搜索</button>
+                    </div>
+                </div>
+                <div id="igdb-search-loading" class="igdb-loading" style="display: none;">
+                    <span>搜索中...</span>
+                </div>
+                <div id="igdb-error" class="igdb-error" style="display: none;"></div>
+                <div id="igdb-results" class="igdb-results"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-igdb-import" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IGDB 游戏预览模态框 -->
+    <div id="igdb-preview-modal" class="modal" style="display: none;">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>游戏信息</h2>
+                <button class="close-btn" id="close-igdb-preview">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="igdb-preview-content">
+                    <div class="igdb-preview-left">
+                        <img id="igdb-preview-cover" src="" alt="游戏封面" class="igdb-preview-cover" style="display: none;">
+                        <div id="igdb-preview-cover-placeholder" class="igdb-preview-cover-placeholder">🎮</div>
+                    </div>
+                    <div class="igdb-preview-right">
+                        <div class="form-group">
+                            <label>游戏名称：</label>
+                            <span id="igdb-preview-name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>发行日期：</label>
+                            <span id="igdb-preview-date"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>发行商：</label>
+                            <span id="igdb-preview-publisher"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>平台：</label>
+                            <span id="igdb-preview-platforms"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>描述：</label>
+                            <p id="igdb-preview-description" class="igdb-preview-description"></p>
+                        </div>
+                        <div class="form-group">
+                            <label>平台 *</label>
+                            <select id="igdb-game-platform" class="form-input" required>
+                                <option value="">选择平台...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-igdb-add" class="btn btn-primary">确认添加</button>
+                <button id="cancel-igdb-preview" class="btn btn-secondary">取消</button>
             </div>
         </div>
     </div>
