@@ -115,6 +115,7 @@ const elements = {
     igdbPreviewModal: document.getElementById('igdb-preview-modal'),
     closeIgdbPreview: document.getElementById('close-igdb-preview'),
     igdbPreviewCover: document.getElementById('igdb-preview-cover'),
+    igdbPreviewCoverPlaceholder: document.getElementById('igdb-preview-cover-placeholder'),
     igdbPreviewName: document.getElementById('igdb-preview-name'),
     igdbPreviewDate: document.getElementById('igdb-preview-date'),
     igdbPreviewPublisher: document.getElementById('igdb-preview-publisher'),
@@ -1511,9 +1512,15 @@ function displayIgdbResults(games) {
  * 显示 IGDB 游戏预览
  */
 function showIgdbGamePreview(game) {
-    elements.igdbPreviewCover.src = game.coverUrl || '';
-    elements.igdbPreviewCover.style.display = game.coverUrl ? 'block' : 'none';
-    elements.igdbPreviewCover.nextElementSibling.style.display = game.coverUrl ? 'none' : 'flex';
+    if (game.coverUrl) {
+        elements.igdbPreviewCover.src = game.coverUrl;
+        elements.igdbPreviewCover.style.display = 'block';
+        elements.igdbPreviewCoverPlaceholder.style.display = 'none';
+    } else {
+        elements.igdbPreviewCover.src = '';
+        elements.igdbPreviewCover.style.display = 'none';
+        elements.igdbPreviewCoverPlaceholder.style.display = 'flex';
+    }
     elements.igdbPreviewName.textContent = game.name;
     elements.igdbPreviewDate.textContent = game.publishDate || '-';
     elements.igdbPreviewPublisher.textContent = game.publisher || '-';

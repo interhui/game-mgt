@@ -92,6 +92,8 @@ class GameService {
                 if (gameData) {
                     // 生成完整游戏数据
                     const game = this.generateGameData(gameData, folderName, platform, folderPath);
+                    // 添加海报/封面路径
+                    game.poster = await this.getGamePoster(folderPath);
                     games.push(game);
                 }
             }

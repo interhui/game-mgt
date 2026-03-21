@@ -1000,6 +1000,17 @@ body {
     background-color: var(--sidebar-bg);
 }
 
+.igdb-preview-cover-placeholder {
+    width: 180px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    font-size: 48px;
+}
+
 .igdb-preview-right {
     flex: 1;
 }

@@ -94,7 +94,7 @@ class IgdbService {
     async searchGames(accessToken, clientId, gameName) {
         return new Promise((resolve, reject) => {
             // 请求体严格按照要求
-            const body = `search "${gameName}"; fields name,summary,platforms.name,videos,language_supports.language,cover.url,screenshots,release_dates,involved_companies.company.name;`;
+            const body = `search "${gameName}"; fields name,summary,platforms.name,videos,language_supports.language,cover.url,screenshots,first_release_date,involved_companies.company.name;`;
 
             const options = {
                 hostname: this.igdbApiUrl,
@@ -151,8 +151,8 @@ class IgdbService {
     processGameData(game) {
         // 转换发行日期
         let publishDate = '';
-        if (game.release_dates && game.release_dates.length > 0) {
-            const timestamp = game.release_dates[0];
+        if (game.first_release_date) {
+            const timestamp = game.first_release_date;
             const date = new Date(timestamp * 1000);
             publishDate = date.toISOString().split('T')[0]; // yyyy-MM-dd 格式
         }

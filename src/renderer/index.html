@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file: https://images.igdb.com;">
     <title>游戏管理程序</title>
     <link rel="stylesheet" href="css/themes/dark.css">
     <link rel="stylesheet" href="css/main.css">
@@ -345,7 +345,8 @@
             <div class="modal-body">
                 <div class="igdb-preview-content">
                     <div class="igdb-preview-left">
-                        <img id="igdb-preview-cover" src="" alt="游戏封面" class="igdb-preview-cover">
+                        <img id="igdb-preview-cover" src="" alt="游戏封面" class="igdb-preview-cover" style="display: none;">
+                        <div id="igdb-preview-cover-placeholder" class="igdb-preview-cover-placeholder">🎮</div>
                     </div>
                     <div class="igdb-preview-right">
                         <div class="form-group">
