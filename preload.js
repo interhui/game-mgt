@@ -96,7 +96,15 @@ contextBridge.exposeInMainWorld('electronAPI', {
 
     // 窗口操作
     resizeWindow: (width, height) => ipcRenderer.invoke('resize-window', width, height),
-    setMinSize: (minWidth, minHeight) => ipcRenderer.invoke('set-min-size', minWidth, minHeight)
+    setMinSize: (minWidth, minHeight) => ipcRenderer.invoke('set-min-size', minWidth, minHeight),
+
+    // IGDB
+    getIgdbConfig: () => ipcRenderer.invoke('get-igdb-config'),
+    saveIgdbConfig: (config) => ipcRenderer.invoke('save-igdb-config', config),
+    igdbSearchGames: (gameName) => ipcRenderer.invoke('igdb-search-games', gameName),
+    onOpenIgdbImport: (callback) => {
+        ipcRenderer.on('open-igdb-import', callback);
+    }
 });
 
 console.log('Preload script loaded');

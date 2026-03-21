@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdate": 1774017722393,
+  "lastUpdate": 1774074110612,
   "appearance": {
     "theme": "dark",
     "language": "zh-CN",
@@ -72,5 +72,9 @@
   },
   "gamebox": {
     "gameboxDir": "D:\\Develop\\Workspace\\game-mgt\\src\\gameboxes"
+  },
+  "igdb": {
+    "clientId": "",
+    "clientSecret": ""
   }
 }

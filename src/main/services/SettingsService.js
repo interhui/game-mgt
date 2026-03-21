@@ -195,6 +195,23 @@ class SettingsService {
     }
 
     /**
+     * 获取 IGDB 配置
+     * @returns {object} IGDB 配置
+     */
+    getIgdbConfig() {
+        return this.settings.igdb || { clientId: '', clientSecret: '' };
+    }
+
+    /**
+     * 设置 IGDB 配置
+     * @param {object} config - IGDB 配置
+     */
+    setIgdbConfig(config) {
+        this.settings.igdb = { ...this.settings.igdb, ...config };
+        this.saveSettings(this.settings);
+    }
+
+    /**
      * 获取默认配置
      * @returns {object} 默认配置
      */
@@ -281,6 +298,11 @@ class SettingsService {
 
             gamebox: {
                 gameboxDir: path.join(__dirname, '..', '..', 'gameboxes')
+            },
+
+            igdb: {
+                clientId: '',
+                clientSecret: ''
             }
         };
     }

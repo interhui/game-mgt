@@ -46,6 +46,8 @@ const elements = {
     selectDirBtn: document.getElementById('select-dir-btn'),
     gameboxDirInput: document.getElementById('gamebox-dir-input'),
     selectGameboxDirBtn: document.getElementById('select-gamebox-dir-btn'),
+    igdbClientId: document.getElementById('igdb-client-id'),
+    igdbClientSecret: document.getElementById('igdb-client-secret'),
     addBoxBtn: document.getElementById('add-box-btn'),
     boxList: document.getElementById('box-list'),
     createBoxModal: document.getElementById('create-box-modal'),
@@ -97,7 +99,30 @@ const elements = {
     importResultText: document.getElementById('import-result-text'),
     importErrors: document.getElementById('import-errors'),
     importErrorList: document.getElementById('import-error-list'),
-    closeImportResultBtn: document.getElementById('close-import-result-btn')
+    closeImportResultBtn: document.getElementById('close-import-result-btn'),
+
+    // IGDB 导入相关
+    igdbImportModal: document.getElementById('igdb-import-modal'),
+    closeIgdbImport: document.getElementById('close-igdb-import'),
+    igdbSearchInput: document.getElementById('igdb-search-input'),
+    igdbSearchBtn: document.getElementById('igdb-search-btn'),
+    igdbSearchLoading: document.getElementById('igdb-search-loading'),
+    igdbError: document.getElementById('igdb-error'),
+    igdbResults: document.getElementById('igdb-results'),
+    cancelIgdbImport: document.getElementById('cancel-igdb-import'),
+
+    // IGDB 预览相关
+    igdbPreviewModal: document.getElementById('igdb-preview-modal'),
+    closeIgdbPreview: document.getElementById('close-igdb-preview'),
+    igdbPreviewCover: document.getElementById('igdb-preview-cover'),
+    igdbPreviewName: document.getElementById('igdb-preview-name'),
+    igdbPreviewDate: document.getElementById('igdb-preview-date'),
+    igdbPreviewPublisher: document.getElementById('igdb-preview-publisher'),
+    igdbPreviewPlatforms: document.getElementById('igdb-preview-platforms'),
+    igdbPreviewDescription: document.getElementById('igdb-preview-description'),
+    igdbGamePlatform: document.getElementById('igdb-game-platform'),
+    confirmIgdbAdd: document.getElementById('confirm-igdb-add'),
+    cancelIgdbPreview: document.getElementById('cancel-igdb-preview')
 };
 
 /**
@@ -146,6 +171,8 @@ async function loadSettings() {
         elements.posterSize.value = state.settings.layout.posterSize || 'medium';
         elements.gamesDirInput.value = state.settings.library.gamesDir;
         elements.gameboxDirInput.value = state.settings.gamebox.gameboxDir;
+        elements.igdbClientId.value = state.settings.igdb?.clientId || '';
+        elements.igdbClientSecret.value = state.settings.igdb?.clientSecret || '';
 
         state.viewMode = state.settings.layout.viewMode;
     } catch (error) {
@@ -1138,6 +1165,62 @@ function bindEvents() {
             elements.importResultModal.style.display = 'none';
         }
     });
+
+    // ==================== IGDB 导入相关事件 ====================
+
+    // 监听打开 IGDB 导入
+    window.electronAPI.onOpenIgdbImport(() => {
+        resetIgdbImportForm();
+        populateIgdbPlatformSelect();
+        elements.igdbImportModal.style.display = 'flex';
+        elements.igdbSearchInput.focus();
+    });
+
+    // 关闭 IGDB 导入模态框
+    elements.closeIgdbImport.addEventListener('click', () => {
+        elements.igdbImportModal.style.display = 'none';
+    });
+
+    elements.cancelIgdbImport.addEventListener('click', () => {
+        elements.igdbImportModal.style.display = 'none';
+    });
+
+    elements.igdbImportModal.addEventListener('click', (e) => {
+        if (e.target === elements.igdbImportModal) {
+            elements.igdbImportModal.style.display = 'none';
+        }
+    });
+
+    // IGDB 搜索
+    elements.igdbSearchBtn.addEventListener('click', async () => {
+        await searchIgdbGames();
+    });
+
+    elements.igdbSearchInput.addEventListener('keypress', async (e) => {
+        if (e.key === 'Enter') {
+            await searchIgdbGames();
+        }
+    });
+
+    // 关闭 IGDB 预览模态框
+    elements.closeIgdbPreview.addEventListener('click', () => {
+        elements.igdbPreviewModal.style.display = 'none';
+    });
+
+    elements.cancelIgdbPreview.addEventListener('click', () => {
+        elements.igdbPreviewModal.style.display = 'none';
+    });
+
+    elements.igdbPreviewModal.addEventListener('click', (e) => {
+        if (e.target === elements.igdbPreviewModal) {
+            elements.igdbPreviewModal.style.display = 'none';
+        }
+    });
+
+    // 确认添加 IGDB 游戏
+    elements.confirmIgdbAdd.addEventListener('click', async () => {
+        await confirmIgdbGameAdd();
+    });
 }
 
 /**
@@ -1296,6 +1379,11 @@ async function saveSettingsHandler() {
             gamebox: {
                 ...state.settings.gamebox,
                 gameboxDir: elements.gameboxDirInput.value
+            },
+            igdb: {
+                ...state.settings.igdb,
+                clientId: elements.igdbClientId.value,
+                clientSecret: elements.igdbClientSecret.value
             }
         };
 
@@ -1317,6 +1405,174 @@ async function saveSettingsHandler() {
         await loadBoxes();
     } catch (error) {
         console.error('Error saving settings:', error);
+    }
+}
+
+/**
+ * 重置 IGDB 导入表单
+ */
+function resetIgdbImportForm() {
+    elements.igdbSearchInput.value = '';
+    elements.igdbSearchLoading.style.display = 'none';
+    elements.igdbError.style.display = 'none';
+    elements.igdbError.textContent = '';
+    elements.igdbResults.innerHTML = '';
+}
+
+/**
+ * 填充 IGDB 平台选择下拉框
+ */
+function populateIgdbPlatformSelect() {
+    elements.igdbGamePlatform.innerHTML = '<option value="">选择平台...</option>';
+    state.platforms.forEach(platform => {
+        const option = document.createElement('option');
+        option.value = platform.id;
+        option.textContent = platform.name;
+        elements.igdbGamePlatform.appendChild(option);
+    });
+}
+
+/**
+ * 搜索 IGDB 游戏
+ */
+async function searchIgdbGames() {
+    const gameName = elements.igdbSearchInput.value.trim();
+
+    if (!gameName) {
+        elements.igdbError.textContent = '请输入游戏名称';
+        elements.igdbError.style.display = 'block';
+        return;
+    }
+
+    // 显示加载状态
+    elements.igdbSearchLoading.style.display = 'block';
+    elements.igdbError.style.display = 'none';
+    elements.igdbResults.innerHTML = '';
+
+    try {
+        const result = await window.electronAPI.igdbSearchGames(gameName);
+
+        elements.igdbSearchLoading.style.display = 'none';
+
+        if (result.error) {
+            elements.igdbError.textContent = result.error;
+            elements.igdbError.style.display = 'block';
+            return;
+        }
+
+        if (!result || result.length === 0) {
+            elements.igdbError.textContent = '未找到相关游戏';
+            elements.igdbError.style.display = 'block';
+            return;
+        }
+
+        // 显示搜索结果
+        displayIgdbResults(result);
+    } catch (error) {
+        elements.igdbSearchLoading.style.display = 'none';
+        elements.igdbError.textContent = '搜索失败: ' + error.message;
+        elements.igdbError.style.display = 'block';
+    }
+}
+
+/**
+ * 显示 IGDB 搜索结果
+ */
+function displayIgdbResults(games) {
+    const html = games.map((game, index) => `
+        <div class="igdb-result-item" data-index="${index}">
+            <div class="igdb-result-cover">
+                ${game.coverUrl ?
+            `<img src="${game.coverUrl}" alt="${game.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     <div class="igdb-result-cover-placeholder" style="display: none;">🎮</div>` :
+            `<div class="igdb-result-cover-placeholder">🎮</div>`
+        }
+            </div>
+            <div class="igdb-result-info">
+                <div class="igdb-result-name">${game.name}</div>
+                <div class="igdb-result-date">${game.publishDate || '-'}</div>
+                <div class="igdb-result-publisher">${game.publisher || '-'}</div>
+            </div>
+        </div>
+    `).join('');
+
+    elements.igdbResults.innerHTML = html;
+
+    // 绑定点击事件
+    document.querySelectorAll('.igdb-result-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const index = parseInt(item.dataset.index);
+            showIgdbGamePreview(games[index]);
+        });
+    });
+}
+
+/**
+ * 显示 IGDB 游戏预览
+ */
+function showIgdbGamePreview(game) {
+    elements.igdbPreviewCover.src = game.coverUrl || '';
+    elements.igdbPreviewCover.style.display = game.coverUrl ? 'block' : 'none';
+    elements.igdbPreviewCover.nextElementSibling.style.display = game.coverUrl ? 'none' : 'flex';
+    elements.igdbPreviewName.textContent = game.name;
+    elements.igdbPreviewDate.textContent = game.publishDate || '-';
+    elements.igdbPreviewPublisher.textContent = game.publisher || '-';
+    elements.igdbPreviewPlatforms.textContent = game.platforms ? game.platforms.join(', ') : '-';
+    elements.igdbPreviewDescription.textContent = game.description || '暂无描述';
+
+    // 保存当前预览的游戏数据
+    elements.igdbPreviewModal.dataset.gameData = JSON.stringify(game);
+
+    // 重置平台选择
+    elements.igdbGamePlatform.value = '';
+
+    elements.igdbPreviewModal.style.display = 'flex';
+}
+
+/**
+ * 确认添加 IGDB 游戏
+ */
+async function confirmIgdbGameAdd() {
+    const platform = elements.igdbGamePlatform.value;
+
+    if (!platform) {
+        alert('请选择游戏平台');
+        return;
+    }
+
+    const gameDataStr = elements.igdbPreviewModal.dataset.gameData;
+    if (!gameDataStr) {
+        alert('游戏数据无效');
+        return;
+    }
+
+    const gameData = JSON.parse(gameDataStr);
+
+    const addGameData = {
+        name: gameData.name,
+        description: gameData.description,
+        platform: platform,
+        publishDate: gameData.publishDate,
+        publisher: gameData.publisher,
+        coverImage: gameData.coverUrl
+    };
+
+    try {
+        const result = await window.electronAPI.addGame(addGameData);
+
+        if (result.error) {
+            alert('添加失败: ' + result.error);
+        } else {
+            alert('游戏添加成功！');
+            elements.igdbPreviewModal.style.display = 'none';
+            elements.igdbImportModal.style.display = 'none';
+            await loadGames();
+            await loadPlatforms();
+            await loadStats();
+        }
+    } catch (error) {
+        console.error('Error adding IGDB game:', error);
+        alert('添加失败: ' + error.message);
     }
 }
 

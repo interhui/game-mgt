@@ -18,6 +18,7 @@ const DatabaseService = require('./src/main/services/DatabaseService');
 const SettingsService = require('./src/main/services/SettingsService');
 const LauncherService = require('./src/main/services/LauncherService');
 const TagService = require('./src/main/services/TagService');
+const IgdbService = require('./src/main/services/IgdbService');
 const { setupIpcHandlers } = require('./src/main/ipc-handlers');
 
 // 全局变量
@@ -32,6 +33,7 @@ let settingsService = null;
 let launcherService = null;
 let tagService = null;
 let boxService = null;
+let igdbService = null;
 
 /**
  * 初始化服务
@@ -46,6 +48,7 @@ function initializeServices() {
     launcherService = new LauncherService(settingsService.getSettings().emulators || {});
     tagService = new TagService(dbService.getDatabase());
     boxService = new BoxService();
+    igdbService = new IgdbService();
 
     log.info('Services initialized successfully');
 }
@@ -116,6 +119,20 @@ function createApplicationMenu() {
                 },
                 { type: 'separator' },
                 { label: '退出', role: 'quit' }
+            ]
+        },
+        {
+            label: '游戏',
+            submenu: [
+                {
+                    label: '从 IGDB 导入...',
+                    accelerator: 'CmdOrCtrl+I',
+                    click: () => {
+                        if (mainWindow) {
+                            mainWindow.webContents.send('open-igdb-import');
+                        }
+                    }
+                }
             ]
         },
         {
@@ -259,6 +276,7 @@ app.whenReady().then(() => {
         launcherService,
         tagService,
         boxService,
+        igdbService,
         getMainWindow: () => mainWindow,
         createGameDetailWindow,
         createBoxWindow

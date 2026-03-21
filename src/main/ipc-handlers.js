@@ -39,6 +39,7 @@ function setupIpcHandlers(services) {
         launcherService,
         tagService,
         boxService,
+        igdbService,
         getMainWindow,
         createGameDetailWindow,
         createBoxWindow
@@ -722,6 +723,63 @@ function setupIpcHandlers(services) {
             return { success: true };
         } catch (error) {
             console.error('Error setting min size:', error);
+            return { error: error.message };
+        }
+    });
+
+    // ==================== IGDB 接口 ====================
+
+    // 获取 IGDB 配置
+    ipcMain.handle('get-igdb-config', async () => {
+        try {
+            const igdbConfig = settingsService.getIgdbConfig();
+            return igdbConfig;
+        } catch (error) {
+            console.error('Error getting IGDB config:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 保存 IGDB 配置
+    ipcMain.handle('save-igdb-config', async (event, config) => {
+        try {
+            settingsService.setIgdbConfig(config);
+            return { success: true };
+        } catch (error) {
+            console.error('Error saving IGDB config:', error);
+            return { error: error.message };
+        }
+    });
+
+    // 搜索 IGDB 游戏
+    ipcMain.handle('igdb-search-games', async (event, gameName) => {
+        try {
+            const igdbConfig = settingsService.getIgdbConfig();
+
+            if (!igdbConfig.clientId || !igdbConfig.clientSecret) {
+                return { error: '请先配置 IGDB API 凭证（Client ID 和 Client Secret）' };
+            }
+
+            if (!gameName || gameName.trim() === '') {
+                return { error: '请输入游戏名称' };
+            }
+
+            // 获取 token
+            const accessToken = await igdbService.getAccessToken(
+                igdbConfig.clientId,
+                igdbConfig.clientSecret
+            );
+
+            // 搜索游戏
+            const games = await igdbService.searchGames(
+                accessToken,
+                igdbConfig.clientId,
+                gameName.trim()
+            );
+
+            return games;
+        } catch (error) {
+            console.error('Error searching IGDB games:', error);
             return { error: error.message };
         }
     });
