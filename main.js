@@ -78,7 +78,8 @@ function createMainWindow() {
     // 显示窗口后ready-to-show
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
-        log.info('Main window displayed');
+        mainWindow.maximize();
+        log.info('Main window displayed and maximized');
     });
 
     // 窗口关闭事件
