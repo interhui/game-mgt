@@ -17,7 +17,6 @@ const BoxService = require('./src/main/services/BoxService');
 const DatabaseService = require('./src/main/services/DatabaseService');
 const SettingsService = require('./src/main/services/SettingsService');
 const LauncherService = require('./src/main/services/LauncherService');
-const TagService = require('./src/main/services/TagService');
 const IgdbService = require('./src/main/services/IgdbService');
 const { setupIpcHandlers } = require('./src/main/ipc-handlers');
 
@@ -31,7 +30,6 @@ let gameService = null;
 let dbService = null;
 let settingsService = null;
 let launcherService = null;
-let tagService = null;
 let boxService = null;
 let igdbService = null;
 
@@ -46,7 +44,6 @@ function initializeServices() {
     dbService = new DatabaseService(path.join(userDataPath, 'database', 'games.db'));
     settingsService = new SettingsService(path.join(__dirname, 'config', 'settings.json'));
     launcherService = new LauncherService(settingsService.getSettings().emulators || {});
-    tagService = new TagService(dbService.getDatabase());
     boxService = new BoxService();
     igdbService = new IgdbService();
 
@@ -301,7 +298,6 @@ app.whenReady().then(() => {
         dbService,
         settingsService,
         launcherService,
-        tagService,
         boxService,
         igdbService,
         getMainWindow: () => mainWindow,

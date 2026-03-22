@@ -19,12 +19,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
     toggleFavorite: (gameId) => ipcRenderer.invoke('toggle-favorite', gameId),
     saveGameRating: (data) => ipcRenderer.invoke('save-game-rating', data),
 
-    // 标签管理
-    getTags: () => ipcRenderer.invoke('get-tags'),
-    createTag: (tagData) => ipcRenderer.invoke('create-tag', tagData),
-    deleteTag: (tagId) => ipcRenderer.invoke('delete-tag', tagId),
-    manageGameTags: (data) => ipcRenderer.invoke('manage-game-tags', data),
-
     // 游戏启动
     launchGame: (gamePath, platform) => ipcRenderer.invoke('launch-game', gamePath, platform),
     getEmulators: () => ipcRenderer.invoke('get-emulators'),

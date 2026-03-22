@@ -90,7 +90,6 @@ function setupIpcHandlers(services) {
         dbService,
         settingsService,
         launcherService,
-        tagService,
         boxService,
         igdbService,
         getMainWindow,
@@ -223,53 +222,6 @@ function setupIpcHandlers(services) {
             return { success: true };
         } catch (error) {
             console.error('Error saving rating:', error);
-            return { error: error.message };
-        }
-    });
-
-    // ==================== 标签管理 ====================
-
-    // 获取所有标签
-    ipcMain.handle('get-tags', async () => {
-        try {
-            const tags = await tagService.getAllTags();
-            return tags;
-        } catch (error) {
-            console.error('Error getting tags:', error);
-            return { error: error.message };
-        }
-    });
-
-    // 创建新标签
-    ipcMain.handle('create-tag', async (event, tagData) => {
-        try {
-            const tag = await tagService.createTag(tagData.name, tagData.color);
-            return tag;
-        } catch (error) {
-            console.error('Error creating tag:', error);
-            return { error: error.message };
-        }
-    });
-
-    // 删除标签
-    ipcMain.handle('delete-tag', async (event, tagId) => {
-        try {
-            await tagService.deleteTag(tagId);
-            return { success: true };
-        } catch (error) {
-            console.error('Error deleting tag:', error);
-            return { error: error.message };
-        }
-    });
-
-    // 为游戏添加/移除标签
-    ipcMain.handle('manage-game-tags', async (event, data) => {
-        try {
-            const { gameId, tags, action } = data;
-            const result = await tagService.manageTags(gameId, tags, action);
-            return result;
-        } catch (error) {
-            console.error('Error managing tags:', error);
             return { error: error.message };
         }
     });

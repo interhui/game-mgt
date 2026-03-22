@@ -92,7 +92,6 @@ describe('ApplicationMenu 菜单结构测试', () => {
         jest.doMock('../src/main/services/GameService', () => jest.fn());
         jest.doMock('../src/main/services/BoxService', () => jest.fn());
         jest.doMock('../src/main/services/LauncherService', () => jest.fn());
-        jest.doMock('../src/main/services/TagService', () => jest.fn());
         jest.doMock('../src/main/services/IgdbService', () => jest.fn());
         jest.doMock('../src/main/ipc-handlers', () => ({
             setupIpcHandlers: jest.fn()

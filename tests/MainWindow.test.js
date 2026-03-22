@@ -78,7 +78,6 @@ describe('MainWindow 窗口最大化功能', () => {
         jest.doMock('../src/main/services/GameService', () => jest.fn());
         jest.doMock('../src/main/services/BoxService', () => jest.fn());
         jest.doMock('../src/main/services/LauncherService', () => jest.fn());
-        jest.doMock('../src/main/services/TagService', () => jest.fn());
         jest.doMock('../src/main/services/IgdbService', () => jest.fn());
 
         // 模拟 ipc-handlers - 必须导出 setupIpcHandlers 函数
