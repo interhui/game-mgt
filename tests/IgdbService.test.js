@@ -35,7 +35,7 @@ describe('IgdbService', () => {
             const rawGame = {
                 name: 'Test Game',
                 summary: 'Test Description',
-                release_dates: [1704067200], // 2024-01-01
+                first_release_date: 1704067200, // 2024-01-01
                 involved_companies: [{ company: { name: 'Test Publisher' } }],
                 platforms: [{ name: 'PS2' }, { name: 'PS1' }],
                 cover: { url: '//images.igdb.com/igdb/image/upload/t_cover_big/abc123.jpg' }
@@ -70,7 +70,7 @@ describe('IgdbService', () => {
         test('应该处理没有发行商的游戏数据', () => {
             const rawGame = {
                 name: 'Game Without Publisher',
-                release_dates: [1704067200]
+                first_release_date: 1704067200
                 // involved_companies 为空或未定义
             };
 
