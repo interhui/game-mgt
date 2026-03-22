@@ -7,6 +7,7 @@ let isEditMode = false;
 let editData = {};
 let fromBox = false;
 let boxName = '';
+let pendingGameData = null; // 暂存待切换的游戏数据
 
 // DOM 元素
 const elements = {
@@ -123,6 +124,20 @@ function applyTheme(theme) {
  * 加载游戏详情
  */
 function loadGameDetail(game) {
+    // 如果当前处于编辑模式，不允许切换游戏
+    if (isEditMode) {
+        pendingGameData = game;
+        const switchConfirmed = confirm('当前有未保存的编辑，是否放弃更改并切换到选中的游戏？\n\n点击"确定"放弃更改，点击"取消"继续编辑当前游戏。');
+        if (switchConfirmed) {
+            // 用户确认放弃更改，退出编辑模式并切换游戏
+            discardChangesAndSwitch(game);
+        } else {
+            // 用户取消，清理待切换游戏数据
+            pendingGameData = null;
+        }
+        return;
+    }
+
     currentGame = game;
     fromBox = game.fromBox || false;
     boxName = game.boxName || '';
@@ -392,6 +407,9 @@ function enterEditMode() {
 
     // 绑定编辑模式的事件
     bindEditModeEvents();
+
+    // 通知主窗口锁定游戏卡片点击
+    window.electronAPI.setDetailEditMode(true);
 }
 
 /**
@@ -442,6 +460,9 @@ function exitEditMode() {
         elements.normalActions.style.display = 'flex';
         elements.boxActions.style.display = 'none';
     }
+
+    // 通知主窗口解锁游戏卡片点击
+    window.electronAPI.setDetailEditMode(false);
 }
 
 /**
@@ -515,12 +536,37 @@ function cancelEdit() {
 }
 
 /**
+ * 放弃更改并切换游戏
+ */
+function discardChangesAndSwitch(game) {
+    isEditMode = false;
+    pendingGameData = null;
+    // 通知主窗口解锁
+    window.electronAPI.setDetailEditMode(false);
+    // 重置窗口大小
+    window.electronAPI.resizeWindow(800, 600);
+    window.electronAPI.setMinSize(600, 500);
+    // 重新加载游戏详情
+    loadGameDetail(game);
+}
+
+/**
  * 绑定事件
  */
 function bindEvents() {
     // 关闭按钮
-    elements.closeBtn.addEventListener('click', async () => {
-        window.close();
+    elements.closeBtn.addEventListener('click', () => {
+        if (isEditMode) {
+            const confirmed = confirm('当前编辑未保存，是否强制退出？');
+            if (confirmed) {
+                // 通知主窗口解锁
+                window.electronAPI.setDetailEditMode(false);
+                window.close();
+            }
+            // 取消则继续处于编辑模式，不关闭
+        } else {
+            window.close();
+        }
     });
 
     // 评分点击

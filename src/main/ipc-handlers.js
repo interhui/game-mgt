@@ -621,6 +621,21 @@ function setupIpcHandlers(services) {
         }
     });
 
+    // 设置详情窗口编辑模式状态（锁定/解锁主窗口游戏卡片点击）
+    ipcMain.handle('set-detail-edit-mode', async (event, isEditing) => {
+        try {
+            // 发送事件给主窗口，通知游戏卡片是否应该被锁定
+            const mainWindow = services.getMainWindow();
+            if (mainWindow) {
+                mainWindow.webContents.send('detail-edit-mode-changed', isEditing);
+            }
+            return { success: true };
+        } catch (error) {
+            console.error('Error setting detail edit mode:', error);
+            return { error: error.message };
+        }
+    });
+
     // 打开游戏盒子窗口
     ipcMain.handle('open-box-window', async (event, boxName) => {
         try {

@@ -62,6 +62,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     openGameDetail: (gameData) => ipcRenderer.invoke('open-game-detail', gameData),
     closeDetailWindow: () => ipcRenderer.invoke('close-detail-window'),
     openBoxWindow: (boxName) => ipcRenderer.invoke('open-box-window', boxName),
+    setDetailEditMode: (isEditing) => ipcRenderer.invoke('set-detail-edit-mode', isEditing),
 
     // 文件选择对话框
     selectDirectory: () => ipcRenderer.invoke('select-directory'),
@@ -87,6 +88,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
     },
     onThemeChanged: (callback) => {
         ipcRenderer.on('theme-changed', (event, theme) => callback(theme));
+    },
+    onDetailEditModeChanged: (callback) => {
+        ipcRenderer.on('detail-edit-mode-changed', (event, isEditing) => callback(isEditing));
     },
 
     // 移除事件监听

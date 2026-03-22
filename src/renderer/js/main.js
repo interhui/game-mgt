@@ -13,7 +13,8 @@ const state = {
     searchKeyword: '',
     viewMode: 'grid',
     settings: {},
-    selectedGames: new Set()
+    selectedGames: new Set(),
+    detailEditModeLocked: false
 };
 
 // DOM 元素
@@ -205,6 +206,35 @@ function applyTheme(theme) {
         }
         themeLink.setAttribute('href', newHref);
     }
+}
+
+/**
+ * 显示Toast提示
+ */
+function showToast(message, duration = 3000) {
+    // 检查是否已存在toast容器
+    let toastContainer = document.getElementById('toast-container');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.id = 'toast-container';
+        toastContainer.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10000; pointer-events: none;';
+        document.body.appendChild(toastContainer);
+    }
+
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.cssText = 'background: rgba(0, 0, 0, 0.85); color: white; padding: 12px 24px; border-radius: 8px; margin-bottom: 8px; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); pointer-events: none;';
+    toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s';
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 300);
+    }, duration);
 }
 
 /**
@@ -670,6 +700,10 @@ function getPlatformName(platformId) {
  * 打开游戏详情
  */
 async function openGameDetail(gameId) {
+    // 检查详情窗口是否处于编辑模式，锁定状态下禁止点击
+    if (state.detailEditModeLocked) {
+        return;
+    }
     try {
         const game = state.games.find(g => g.id === gameId);
         if (game) {
@@ -800,6 +834,11 @@ function bindEvents() {
         loadPlatforms();
         loadGames();
         loadStats();
+    });
+
+    // 监听详情窗口编辑模式变化（锁定/解锁游戏卡片点击）
+    window.electronAPI.onDetailEditModeChanged((isEditing) => {
+        state.detailEditModeLocked = isEditing;
     });
 
     // 监听盒子更新事件

@@ -13,7 +13,8 @@ const state = {
     currentSort: 'name-asc',
     searchKeyword: '',
     viewMode: 'grid',
-    selectedGames: new Set()
+    selectedGames: new Set(),
+    detailEditModeLocked: false
 };
 
 // DOM 元素
@@ -93,6 +94,11 @@ async function init() {
     // 监听主题变化
     window.electronAPI.onThemeChanged((theme) => {
         applyTheme(theme);
+    });
+
+    // 监听详情窗口编辑模式变化（锁定/解锁游戏卡片点击）
+    window.electronAPI.onDetailEditModeChanged((isEditing) => {
+        state.detailEditModeLocked = isEditing;
     });
 
     // 加载盒子数据
@@ -802,6 +808,10 @@ async function confirmStatusChange() {
  * 打开游戏详情
  */
 async function openGameDetail(gameId) {
+    // 检查详情窗口是否处于编辑模式，锁定状态下禁止点击
+    if (state.detailEditModeLocked) {
+        return;
+    }
     try {
         const game = state.games.find(g => g.gameId === gameId);
         if (game) {
